@@ -1,6 +1,5 @@
 import React from "react";
-import IntroSection from "../components/home/IntroSection";
-import ContactSection from "../components/home/ContactSection";
+import { IntroSection, ContactSection } from "../components";
 import personalInfo from "../data/personalInfo.json";
 
 const HomePage = () => {

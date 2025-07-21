@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ProjectsNavigation from "../components/projects/ProjectsNavigation";
-import ProjectSection from "../components/projects/ProjectSection";
+import { ProjectsNavigation, ProjectSection } from "../components";
 import projectsData from "../data/projectsData.json";
 
 const ProjectsPage = () => {

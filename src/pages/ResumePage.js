@@ -1,9 +1,11 @@
 import React from "react";
 import resumeData from "../data/resumeData.json";
-import ResumeSection from "../components/resume/ResumeSection";
-import SkillsSection from "../components/resume/SkillsSection";
-import CertificationsSection from "../components/resume/CertificationsSection";
-import OtherInterestsSection from "../components/resume/OtherInterestsSection";
+import {
+  ResumeSection,
+  SkillsSection,
+  CertificationsSection,
+  OtherInterestsSection,
+} from "../components";
 
 const ResumePage = () => {
   // Find specific sections

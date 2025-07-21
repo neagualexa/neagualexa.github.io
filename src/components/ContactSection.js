@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SocialLink from "../common/SocialLink";
+import SocialLink from "./SocialLink";
 
 const ContactSection = ({ contact }) => {
   return (

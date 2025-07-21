@@ -91,6 +91,24 @@ git push origin main
 - `main` branch: Contains the React app source code
 - `gh-pages` branch: Contains the built/distributable version
 
+## 🏗️ Project Structure
+
+```
+src/
+├── components/           # All reusable React components
+├── pages/               # Top-level page components
+│   ├── HomePage.js      # Home page
+│   ├── ProjectsPage.js  # Projects page
+│   └── ResumePage.js    # Resume page
+├── data/                # JSON content files
+│   ├── personalInfo.json
+│   ├── projectsData.json
+│   └── resumeData.json
+├── App.js               # Main application component
+├── index.js             # Application entry point
+└── styles.css           # Global styles
+```
+
 ---
 
 © 2024 Alexandra Neagu. Built with ❤️ for GitHub Pages.

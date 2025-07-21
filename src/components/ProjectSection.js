@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ProjectCard from "../common/ProjectCard";
+import ProjectCard from "./ProjectCard";
 
 const ProjectSection = ({ section }) => {
   return (
