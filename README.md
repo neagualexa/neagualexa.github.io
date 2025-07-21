@@ -8,6 +8,10 @@ A clean, professional portfolio website showcasing my projects, education, and e
 
 This portfolio website presents my academic journey, research focus on Large Language Models in STEM education, and various projects from my MEng in Electrical and Electronic Engineering at Imperial College London.
 
+## 🗂️ Content Management
+
+This website uses a **data-driven approach** where all content is stored in JSON files located in the `src/data/` folder. This makes it easy to update content without modifying React components.
+
 ## 🔧 Local Development
 
 ### Prerequisites
