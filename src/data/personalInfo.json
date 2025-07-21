@@ -5,8 +5,8 @@
     "greeting": "Hello",
     "subtitle": "A Bit About Me",
     "description": [
-      "I'm Alexandra Neagu, a PhD student at Imperial College London under the guidance of Dr. Peter B. Johnson.",
-      "My research focuses on the use of Large Language Models (LLMs) in automatically generating dialogic feedback for STEM education."
+      "I'm <strong>Alexandra Neagu</strong>, a PhD student at <a href='https://www.imperial.ac.uk/' target='_blank' rel='noopener noreferrer'>Imperial College London</a> under the guidance of Dr. Peter B. Johnson.",
+      "My research focuses on the use of <em>Large Language Models (LLMs)</em> in automatically generating <strong>formative dialogic feedback</strong> for STEM education."
     ]
   },
   "contact": {
@@ -28,7 +28,7 @@
     {
       "text": "View Resume",
       "link": "/resume",
-      "type": "primary"
+      "type": "secondary"
     },
     {
       "text": "See Projects",

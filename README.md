@@ -110,5 +110,3 @@ src/
 ```
 
 ---
-
-© 2024 Alexandra Neagu. Built with ❤️ for GitHub Pages.

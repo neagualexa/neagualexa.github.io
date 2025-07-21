@@ -5,7 +5,7 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="project-card">
       <h4>{project.title}</h4>
-      <p>{project.description}</p>
+      <p dangerouslySetInnerHTML={{ __html: project.description }}></p>
 
       {project.technologies && project.technologies.length > 0 && (
         <div className="project-technologies">

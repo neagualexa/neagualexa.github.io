@@ -7,8 +7,7 @@ const ContactSection = ({ contact }) => {
     <div className="contact-info">
       <h3>Contact Information</h3>
       <p>
-        Email:
-        <a href={`mailto:${contact.email}`}>{contact.email}</a>
+        Email: <a href={`mailto:${contact.email}`}>{contact.email}</a>
       </p>
       <p className="social-links">
         {contact.socialLinks.map((social, index) => (

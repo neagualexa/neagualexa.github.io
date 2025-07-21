@@ -8,7 +8,7 @@ const IntroSection = ({ introduction, callToAction }) => {
       <h1>{introduction.greeting}</h1>
       <h3>{introduction.subtitle}</h3>
       {introduction.description.map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
+        <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }}></p>
       ))}
 
       <div className="cta-buttons">
