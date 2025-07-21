@@ -1,0 +1,254 @@
+{
+  "sections": [
+    {
+      "title": "Education",
+      "items": [
+        {
+          "period": "2024 - 2028",
+          "title": "PhD Automated Dialogic Feedback using AI in Education",
+          "institution": "Imperial College London",
+          "details": [
+            "Supervised by Dr Peter Johnson, leader of Lambda Feedback",
+            "\"To what extent can we utilise existing GenAI tools to provide effective dialogic feedback, whilst aligning with educational values and ensuring domain-specific technical accuracy?\""
+          ],
+          "publications": [
+            "Neagu, A., Johnson, P., Nelson, R. (2025). \"Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information\" In Proceedings of the UK and Ireland Engineering Education Research Network (EERN) Annual Symposium. (Awaiting Link)"
+          ]
+        },
+        {
+          "period": "2020 - 2024",
+          "title": "MEng Electronic and Information Engineering",
+          "institution": "Imperial College London",
+          "details": [
+            "First Class Honours",
+            "Awarded the Undergraduate President's Scholarship"
+          ],
+          "dissertation": "\"Enhancing Puzzle-Solving with User-Tailored AI Assistance: A Study on Nonogram Learning Outcomes\" (use of LLMs for personalised feedback generation)",
+          "yearBreakdown": {
+            "4th year": [
+              "Self-Organised Multi-Agent Systems (AI Agents & World Simulation in Go)",
+              "Scheduling and Resource Allocation (Jobs Workflow analysis, Competitive Decision Making & Game Theory)",
+              "Human-Centered Robotics (Human Computer Interaction Research and Experiment Design)",
+              "Machine Learning for Medical Imaging (Image Segmentation, Registration, Super-Resolution & GANs)",
+              "Neuroscience for ML (Synapse Understanding)",
+              "Privacy Engineering (Anonymisation, QBS Protection, Differential Privacy & Attacks)"
+            ],
+            "3rd year": [
+              "Artificial intelligence (Graph Search Algorithms & Knowledge Representation in Prolog)",
+              "Machine Learning (Learning Algorithms in Python)",
+              "Computer Vision (Detection Algorithms)",
+              "Robotics (Monte Carlo Localisation, SLAM)",
+              "Network & Web Security",
+              "Embedded Systems (IoT and Cloud Infrastructure)",
+              "Communication Networks (Data Transmission in TCP/IP Layer Model)"
+            ],
+            "2nd year": [
+              "Software Systems (Networking and Databases)",
+              "Information Processing (Signals Processing & FPGA to Cloud Infrastructure Project)",
+              "Instruction Architecture and Compilers (Bus-based MIPS CPU design in Verilog & C-to-MIPS Compiler design in C++)",
+              "Discrete Mathematics (algorithms & complexity)",
+              "Signals and Systems & Communication Systems",
+              "Control Systems (mathematical design)"
+            ],
+            "1st year": [
+              "Digital and Computer Architecture",
+              "Analysis and Design of Circuits",
+              "Introductions to Signals and Communications, Power Electronics, Diodes and Electromagnetic Waves"
+            ]
+          },
+          "languages": "Extra-curricular Language studies: Chinese (HSK 5 level), German (B2 level)"
+        },
+        {
+          "period": "2018 - 2020",
+          "title": "IB Diploma Programme",
+          "institution": "Sevenoaks School, Kent",
+          "details": [
+            "Higher Level Subjects: Mathematics (7), Physics (7), Geography (6)",
+            "Standard Level Subjects: English Literature (5), German B (5), Mandarin B (6)",
+            "Coordinator of students' Coding Club and helped students with personal projects"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Experience",
+      "items": [
+        {
+          "period": "Apr-Sept 2023",
+          "title": "Professional Services Intern",
+          "institution": "Amazon Web Services, London",
+          "details": ["6 months industrial placement"],
+          "projects": [
+            "Project 1: Setting up the Monitoring and Alarming System for the largely scalable EC2 Instance Fleet of the Managed Environments for Outside Work, a fully managed virtual desktop service",
+            "Project 2: Building a Serverless Infrastructure for a text to speech converter and generation of natural voices using AWS Polly; also set up a web interface using AWS Amplify"
+          ]
+        },
+        {
+          "period": "Jul-Sept 2022",
+          "title": "Professional Services Intern",
+          "institution": "Amazon Web Services, London",
+          "details": [
+            "3 months summer internship",
+            "Transferred the Landing Zone Assessment Offering onto the AWS Assessment Tool and created a demo web assessment with AWS Amplify"
+          ]
+        },
+        {
+          "period": "Jul 2018",
+          "title": "Junior Assistant",
+          "institution": "Audit Systems SRL, Bucharest",
+          "details": [
+            "1 month internship in preparing ISO 27001 information security policies and procedures for clients",
+            "Applied and improved my information security management knowledge"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Technical Skills and Languages",
+      "categories": [
+        {
+          "name": "Full Stack - Front End Dev",
+          "skills": "JavaScript, TypeScript, React, CSS"
+        },
+        {
+          "name": "Back End Dev",
+          "skills": "Python, C++, C, C#"
+        },
+        {
+          "name": "Cloud & Infrastructure as Code",
+          "skills": "AWS CDK, Terraform"
+        },
+        {
+          "name": "IoT Dev",
+          "skills": "Arduino, Raspberry Pi, ESP32"
+        },
+        {
+          "name": "Other Dev Skills",
+          "skills": "Git, Linux, Bash scripting, SystemVerilog, Prolog, SQL"
+        },
+        {
+          "name": "Languages",
+          "skills": "Romanian (native), English (fluent), German (B1-B2), Mandarin (HSK 4-5), French (A1-A2)"
+        },
+        {
+          "name": "Other Skills",
+          "skills": "Trained in ISO 27001 information security management system"
+        }
+      ]
+    },
+    {
+      "title": "Certifications",
+      "items": [
+        "AWS Certified Machine Learning Specialty",
+        "AWS Certified Solutions Architect Associate",
+        "AWS Certified Cloud Practitioner",
+        "HashiCorp Certified: Terraform Associate (003)"
+      ]
+    },
+    {
+      "title": "Other Interests and Experiences",
+      "items": [
+        {
+          "period": "2025 - currently",
+          "title": "Imperial Outreach Leader",
+          "institution": "Imperial College London",
+          "details": [
+            "Engaging students into STEM subjects through hands-on activities and workshops hosted by Imperial College London Wohl Reach Out Lab"
+          ],
+          "link": {
+            "text": "Imperial College London Wohl Reach Out Lab",
+            "url": "https://www.imperial.ac.uk/be-inspired/schools-outreach/wohl-reach-out-lab/"
+          }
+        },
+        {
+          "period": "2025 - currently",
+          "title": "Postgraduate Teaching Assistant",
+          "institution": "Imperial College London",
+          "details": [
+            "Assisting with labs and tutorials for various modules in different departments: Machine Learning and Data Science (MSci ESE), Machine Reasoning (3rd year EE), Robotics (3rd year DoC), Maths Methods 2 (1st year ESE)"
+          ]
+        },
+        {
+          "period": "2023 - 2024",
+          "title": "Undergraduate Teaching Assistant",
+          "institution": "Imperial College London, Electrical Engineering Department",
+          "details": [
+            "Assisting with labs and tutorials for various modules: Machine Reasoning"
+          ]
+        },
+        {
+          "period": "2021 - 2023",
+          "title": "Vice President Industry, EESoc",
+          "institution": "Imperial College London",
+          "details": [
+            "In charge of organising industry talks, webinars, and the Careers' Fair; gaining sponsorship for the society",
+            "Contacting companies and sustaining a good relationship with the society",
+            "Developed professional social skills and improved organisational skills"
+          ]
+        },
+        {
+          "period": "2020 - 2021",
+          "title": "Chairperson, Tizard Hall",
+          "institution": "Imperial College London",
+          "details": [
+            "Overseeing organisation of social events and management of the hall budget",
+            "Chaired meetings for discussions on planning and promoting events, receiving residents' feedbacks, and designating event-related team roles",
+            "Developed good listening and team management skills"
+          ]
+        },
+        {
+          "period": "2018 - 2019",
+          "title": "Volunteer teacher in Rajasthan, India",
+          "institution": "Sevenoaks School",
+          "details": [
+            "Gathered funds for 7 months by selling self-made pastries and organising charitable events in Sevenoaks",
+            "Aim to provide funds collected throughout the academic year for the disabled children at SKSN School",
+            "Prepared teaching materials and taught Geography in English to students of SKSN School, Rajasthan"
+          ]
+        },
+        {
+          "period": "2016 - 2017",
+          "title": "Mentor for Arduino Coding Club",
+          "institution": "CoderDojo Bucharest",
+          "details": [
+            "Taught Arduino programming and created small projects alongside 8 – 15-year-old children",
+            "Demonstrated patience and good social observation skills by identifying students in need of help throughout the projects, improved my skills of listening and explaining"
+          ]
+        },
+        {
+          "period": "past - future",
+          "title": "Travelling",
+          "details": [
+            "Visited multiple countries throughout the Globe, inside Europe, China, Costa Rica, India, Japan, Madagascar, Tanzania, Peru, Egypt, USA, ...",
+            "Encountered many different cultures and assimilated learned traditions and history"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Achievements & Awards",
+      "items": [
+        {
+          "title": "ICHack24 Hackathon Winner",
+          "description": "1st place overall for NonoAI project",
+          "year": "2024"
+        },
+        {
+          "title": "Undergraduate President's Scholarship",
+          "description": "Imperial College London",
+          "year": "2020-2024"
+        },
+        {
+          "title": "UK Space Design Competition Reserve",
+          "description": "Selected as Reserve to represent the UK at the International Space Settlement Design Competition",
+          "year": "2019"
+        },
+        {
+          "title": "Coolest Projects International Awards",
+          "description": "Multiple awards including Runner Up (2018), Enterprise and Evolution awards (2016)",
+          "year": "2016-2018"
+        }
+      ]
+    }
+  ]
+}

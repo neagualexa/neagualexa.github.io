@@ -1,0 +1,277 @@
+{
+  "navigation": [
+    { "id": "fourth-year", "label": "4th Year University Projects" },
+    { "id": "third-year", "label": "3rd Year University Projects" },
+    { "id": "second-year", "label": "2nd Year University Projects" },
+    { "id": "first-year", "label": "1st Year University Projects" },
+    { "id": "internships", "label": "Internships & Hackathons Projects" },
+    { "id": "pre-university", "label": "Pre-University Projects" }
+  ],
+  "sections": [
+    {
+      "id": "fourth-year",
+      "title": "4th Year University Projects",
+      "projects": [
+        {
+          "title": "Individual Project: Enhancing Puzzle-Solving with User-Tailored AI Assistance: A Study on Nonogram Learning Outcomes",
+          "description": "The study explored how AI assistants can be applied in educational settings to improve learning a new puzzle-solving skill. It used a simple control environment (Nonogram puzzle game developed in Unity) to investigate how to tailor an LLM (Meta's Llama 3 8b Instruct) through prompt engineering, without requiring further training, in order to provide personalised help based on the user's in-game progress and thought-process when solving the puzzles.",
+          "technologies": [
+            "Unity",
+            "Python",
+            "Meta Llama 3",
+            "Machine Learning",
+            "Educational AI"
+          ],
+          "links": [
+            {
+              "text": "View AI Assistant Code on GitHub",
+              "url": "https://github.com/neagualexa/LLM-nonogram-assistant"
+            },
+            {
+              "text": "View Unity Nonogram Game Code on GitHub",
+              "url": "https://github.com/neagualexa/NonogramUnity"
+            }
+          ]
+        },
+        {
+          "title": "Group Project: Avatour - VR-mediated Robot Telepresence System for Exploration of the Real World",
+          "description": "This project explored the integration of VR technology into remote robotic telepresence, envisioning a scenario where individuals can explore any real-world location, whether due to health constraints or financial limitations. We used a 360-degree camera mounted on a legged manipulator (Boston Dynamics SPOT) to enable the interactive exploration of a remote human-populated environment. We hypothesised that the 360-degree VR user interface will increase immersion and trust by enabling interactivity and adaptability to different remote scenarios in contrast to traditional 2D interfaces.",
+          "technologies": [
+            "VR",
+            "Boston Dynamics SPOT",
+            "360-degree Camera",
+            "Robotics",
+            "Telepresence"
+          ],
+          "links": [
+            {
+              "text": "View on GitHub",
+              "url": "https://github.com/orgs/HCR-Avatour/repositories"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "third-year",
+      "title": "3rd Year University Projects",
+      "projects": [
+        {
+          "title": "CharKey - Synthesizer Project",
+          "description": "This coursework built a synthesizer on an STM32 Microcontroller connected to a StackSynth keyboard. The finalized synthesizer supports polyphony, different waveforms, different octaves, connecting a synth to other synths using CAN and a 44.1kHz sampling frequency.",
+          "technologies": [
+            "STM32",
+            "Embedded Systems",
+            "CAN Bus",
+            "Audio Processing",
+            "C++"
+          ],
+          "links": [
+            {
+              "text": "View on GitHub",
+              "url": "https://github.com/L2R3/charIOT-Key-C"
+            }
+          ]
+        },
+        {
+          "title": "CharIoT",
+          "description": "CharIOT is an embedded system containing IoT devices based on Raspberry Pi. The goal of CharIOT is to monitor the quality and reliability of a research space, such as a cleanroom for microchip design. The repo contains the web platform where the users can monitor the readings from the devices through multiple dashboards and live warning animations. The user can set specific expected settings for each specific device, considering that they could be positioned in set locations in the cleanroom and require specific accepted measurement ranges.",
+          "technologies": [
+            "IoT",
+            "Device Communication",
+            "Embedded Systems",
+            "Protocols"
+          ],
+          "links": [
+            {
+              "text": "Web platform repo",
+              "url": "https://github.com/neagualexa/charIOT-Web"
+            },
+            {
+              "text": "Hub platform repo (private)",
+              "url": "https://github.com/JoachimSand/charIOT-Hub"
+            }
+          ]
+        },
+        {
+          "title": "Self-Localising Robot",
+          "description": "This project involved making use of one ultrasonic sensor to build a probabilistic localisation algorithm for a rover to keep track of its possible position in an arena. We used Monte Carlo Localisation and took inspiration from ideologies of SLAM to build the algorithms.",
+          "technologies": [
+            "Robotics",
+            "Probabilistic Algorithms",
+            "Ultrasonic Sensors",
+            "Localisation"
+          ],
+          "links": [
+            {
+              "text": "View on Github",
+              "url": "https://github.com/DoC-Robotics/Control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second-year",
+      "title": "2nd Year University Projects",
+      "projects": [
+        {
+          "title": "Instability Rover",
+          "description": "This project's goal was to build a Mars rover with the aim of mapping an undiscovered arena, identifying and locating the aliens, obstacles, and underground structures in its course. The rover must be able to avoid these obstacles and get back on track without getting derailed from its course. I was in charge of setting up the data transmission and visualisation. Live information regarding the position and status of the rover needs to be transmitted securely, while all data can be visualised on a website. This web-page also allows the users to manually send movement commands for the rover to complete. The project also involved a separate power station that the rover returns to when the battery requires charging.",
+          "technologies": [
+            "Mars Rover",
+            "Data Transmission",
+            "Web Visualisation",
+            "Python",
+            "JavaScript"
+          ],
+          "links": [
+            {
+              "text": "View on GitHub",
+              "url": "https://github.com/neagualexa/Instability"
+            }
+          ]
+        },
+        {
+          "title": "Medusa I/O",
+          "description": "Medusa I/O aimed to modernise the iconic 1980s game snake, expanding its functionality whilst preserving the signature game mechanics. New adapted features include a multiplayer mode, and power-ups such as increased speed or teleportation. Additionally, the Medusa I/O system features DE-10 Lite FPGA boards as a human interfaces, using the accelerometer as an input, and LEDs and 7-segment displays as some of the outputs.",
+          "technologies": [
+            "Systems Programming",
+            "I/O Systems",
+            "Data Processing",
+            "Performance Optimization"
+          ],
+          "links": [
+            {
+              "text": "View on GitHub",
+              "url": "https://github.com/InformationProcessing/Medusa_IO"
+            }
+          ]
+        },
+        {
+          "title": "C90 to MIPS Compiler",
+          "description": "The program read C source code from a file, and write MIPS assembly to another file.",
+          "technologies": [
+            "C++",
+            "MIPS Assembly",
+            "Compiler Design",
+            "Language Processing"
+          ],
+          "links": []
+        },
+        {
+          "title": "Bus-based MIPS CPU",
+          "description": "This project involved developing a working synthesisable MIPS-compatible CPU. This CPU interfaces with the world using a memory-mapped bus, which gives it access to memory and other peripherals. The aim was to develop a piece of IP which could be sold and distributed to many clients, allowing them to integrate the CPU into any number of products. As a consequence the emphasis is on producing a production quality CPU with a robust testing process - you should deliver something that you expect to work on any FPGA or ASIC, rather than something that just works on a single device.",
+          "technologies": [
+            "SystemVerilog",
+            "CPU Design",
+            "MIPS Architecture",
+            "Digital Design"
+          ],
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "first-year",
+      "title": "1st Year University Projects",
+      "projects": [
+        {
+          "title": "AVS Sim - a SPICE-based Circuit Simulator",
+          "description": "AVS is a circuit simulator, written in C++, which uses Modified Nodal Analysis (MNA) to perform both DC Operating Point calculations and AC frequency sweeps on a circuit given by the user in the form of a SPICE Netlist. This program is intended to be a general-purpose command-line Circuit Simulator capable of performing AC sweep, and quiescent operating point simulations on any circuit defined in the popular SPICE Netlist format.",
+          "technologies": [
+            "SPICE",
+            "Circuit Simulation",
+            "Electronic Design",
+            "Analysis Tools"
+          ],
+          "links": [
+            {
+              "text": "View on GitHub",
+              "url": "https://github.com/VladiMarinov/avs-sim"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "internships",
+      "title": "Internships & Hackathons Projects",
+      "projects": [
+        {
+          "title": "Lazy Browsing Chrome Extension for Agentic-based personalised shopping",
+          "description": "An AI assistant that helps you centralise your search for multiple products of same characteristics online. Using browser-use, a Python package that allows AI to interact with web browsers, I built an AI agent that can browse the web and gather information about products.",
+          "technologies": [
+            "Python",
+            "AI Agents",
+            "Chrome Extension",
+            "Web Scraping",
+            "E-commerce"
+          ],
+          "links": [
+            {
+              "text": "View on GitHub",
+              "url": "https://github.com/neagualexa/lazy-browsing"
+            }
+          ]
+        },
+        {
+          "title": "NonoAI - ICHack24 Hackathon Winner",
+          "description": "NonoAI is an AI-powered Nonogram solver and generator that combines computer vision with advanced algorithms to solve and create Nonogram puzzles. Built during ICHack24, this project won 1st place overall. The system can capture puzzles from images, solve them using constraint satisfaction algorithms, and generate new puzzles of varying difficulty levels.",
+          "technologies": [
+            "Computer Vision",
+            "AI",
+            "Constraint Satisfaction",
+            "Python",
+            "Image Processing"
+          ],
+          "links": [
+            {
+              "text": "View on GitHub",
+              "url": "https://github.com/neagualexa/NonoAI"
+            }
+          ]
+        },
+        {
+          "title": "QuestZone - Gamified Learning Platform",
+          "description": "QuestZone is a gamified learning platform that transforms educational content into interactive quests and challenges. Students can embark on learning adventures, complete missions, earn rewards, and track their progress in a game-like environment. The platform includes features like leaderboards, achievement systems, and collaborative quests.",
+          "technologies": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Gamification",
+            "Educational Technology"
+          ],
+          "links": [
+            {
+              "text": "View on GitHub",
+              "url": "https://github.com/neagualexa/QuestZone"
+            }
+          ]
+        },
+        {
+          "title": "UK Space Design Competition, Regional & National Stages",
+          "description": "Participated in the UK Space Design Competition, advancing through regional to national stages. The project aims were: for Regional stage: designing a solution to house 4000 people under the ice of Jupiter's moon, Europa, in the year 2118. For National stage: designing an economic and touristic port orbiting the Moon. I was the team leader for the Automation Team who oversaw the setting up, usage and maintenance of the building robots, the networking system, and the security & cybersecurity on the base. I was chosen as Reserve to represent the UK at the International Space Settlement Design Competition.",
+          "technologies": [
+            "Space Engineering",
+            "Mission Design",
+            "Competition",
+            "Team Collaboration"
+          ],
+          "links": [
+            {
+              "text": "View UKSDC Finals 2019 Programme",
+              "url": "https://uksdc.org/2019/03/2019-uksdc-finals-programme-book/"
+            }
+          ]
+        },
+        {
+          "title": "Team projects at Coolest Projects International",
+          "description": "Multiple award-winning projects at Coolest Projects International including: Second World (2018) - Runner Up prize for a modded Minecraft server teaching children the value of money; Smart house (2017) - IoT home automation system; Warehouse 2.0 (2016) - Enterprise and Evolution awards for a smart inventory management system.",
+          "technologies": ["Young Developers"],
+          "links": []
+        }
+      ]
+    }
+  ]
+}

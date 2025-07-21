@@ -9,6 +9,13 @@ body {
   line-height: 1.6;
   color: #333;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 /* Navigation */
@@ -351,9 +358,84 @@ h4 {
   color: inherit;
 }
 
+/* Skills Section */
+.skills-category {
+  margin-bottom: 2rem;
+}
+
+.skills-category h4 {
+  color: #007acc;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: #f0f8ff;
+  color: #007acc;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  border: 1px solid #e0e0e0;
+}
+
+/* Achievements Section */
+.achievement-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.achievement-year {
+  font-weight: bold;
+  color: #007acc;
+  white-space: nowrap;
+}
+
+.achievement-item h4 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.achievement-item p {
+  color: #666;
+}
+
+/* Project Links */
+.project-links {
+  margin-top: 1rem;
+}
+
+.project-links .project-link {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 @media (max-width: 768px) {
   .social-links {
     flex-direction: column;
     align-items: center;
+  }
+
+  .skills-list {
+    justify-content: center;
+  }
+
+  .achievement-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .achievement-year {
+    font-size: 0.9rem;
   }
 }
