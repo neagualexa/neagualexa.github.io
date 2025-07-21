@@ -1,68 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alexandra Neagu - Resume</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="resume.html" class="nav-link active">Resume</a></li>
-      </ul>
-    </nav>
+import React from "react";
 
-    <!-- Resume Section -->
+const Resume = () => {
+  return (
     <section id="resume">
       <h2>Resume</h2>
 
-      <div class="resume-grid">
-        <!-- Education -->
-        <div class="resume-section">
+      <div className="resume-grid">
+        {/* Education */}
+        <div className="resume-section">
           <h3>Education</h3>
 
-          <div class="resume-item">
-            <div class="date">2024 - 2028</div>
+          <div className="resume-item">
+            <div className="date">2024 - 2028</div>
             <h4>PhD Automated Dialogic Feedback using AI in Education</h4>
-            <div class="institution">Imperial College London</div>
+            <div className="institution">Imperial College London</div>
             <ul>
               <li>Supervised by Dr Peter Johnson, leader of Lambda Feedback</li>
               <li>
-                <em
-                  >"To what extent can we utilise existing GenAI tools to
-                  provide effective dialogic feedback, whilst aligning with
-                  educational values and ensuring domain-specific technical
-                  accuracy?"</em
-                >
+                <em>
+                  "To what extent can we utilise existing GenAI tools to provide
+                  effective dialogic feedback, whilst aligning with educational
+                  values and ensuring domain-specific technical accuracy?"
+                </em>
               </li>
               <li>
-                <strong>Publications:</strong> 
+                <strong>Publications:</strong>
                 <ul>
                   <li>
-                    Neagu, A., Johnson, P., Nelson, R. (2025). "Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information"
-                    In Proceedings of the UK and Ireland Engineering Education Research Network (EERN) Annual Symposium. <a href="">(Awaiting Link)</a>
+                    Neagu, A., Johnson, P., Nelson, R. (2025). "Chatbots for
+                    Dialogic Feedback during Self-Study: The Importance of
+                    Contextual Information" In Proceedings of the UK and Ireland
+                    Engineering Education Research Network (EERN) Annual
+                    Symposium. (Awaiting Link)
                   </li>
+                </ul>
               </li>
             </ul>
           </div>
 
-          <div class="resume-item">
-            <div class="date">2020 - 2024</div>
+          <div className="resume-item">
+            <div className="date">2020 - 2024</div>
             <h4>MEng Electronic and Information Engineering</h4>
-            <div class="institution">Imperial College London</div>
+            <div className="institution">Imperial College London</div>
             <ul>
               <li>First Class Honours</li>
               <li>Awarded the Undergraduate President's Scholarship</li>
               <li>
                 <strong>Final Year Dissertation Project:</strong>
-                <em
-                  >"Enhancing Puzzle-Solving with User-Tailored AI Assistance: A
-                  Study on Nonogram Learning Outcomes"</em
-                >
+                <em>
+                  "Enhancing Puzzle-Solving with User-Tailored AI Assistance: A
+                  Study on Nonogram Learning Outcomes"
+                </em>
                 (use of LLMs for personalised feedback generation)
               </li>
 
@@ -99,7 +87,6 @@
                     Artificial intelligence (Graph Search Algorithms & Knowledge
                     Representation in Prolog);
                   </li>
-                  <li>Machine Learning (Learning Algorithms in Python);</li>
                   <li>Machine Learning (Learning Algorithms in Python);</li>
                   <li>Computer Vision (Detection Algorithms);</li>
                   <li>Robotics (Monte Carlo Localisation, SLAM);</li>
@@ -146,10 +133,10 @@
             </ul>
           </div>
 
-          <div class="resume-item">
-            <div class="date">2018 - 2020</div>
+          <div className="resume-item">
+            <div className="date">2018 - 2020</div>
             <h4>IB Diploma Programme</h4>
-            <div class="institution">Sevenoaks School, Kent</div>
+            <div className="institution">Sevenoaks School, Kent</div>
             <ul>
               <li>
                 Higher Level Subjects: Mathematics (7), Physics (7), Geography
@@ -167,14 +154,14 @@
           </div>
         </div>
 
-        <!-- Experience -->
-        <div class="resume-section">
+        {/* Experience */}
+        <div className="resume-section">
           <h3>Experience</h3>
 
-          <div class="resume-item">
-            <div class="date">Apr-Sept 2023</div>
+          <div className="resume-item">
+            <div className="date">Apr-Sept 2023</div>
             <h4>Professional Services Intern</h4>
-            <div class="institution">Amazon Web Services, London</div>
+            <div className="institution">Amazon Web Services, London</div>
             <ul>
               <li>6 months industrial placement</li>
               <li>
@@ -191,10 +178,10 @@
             </ul>
           </div>
 
-          <div class="resume-item">
-            <div class="date">Jul-Sept 2022</div>
+          <div className="resume-item">
+            <div className="date">Jul-Sept 2022</div>
             <h4>Professional Services Intern</h4>
-            <div class="institution">Amazon Web Services, London</div>
+            <div className="institution">Amazon Web Services, London</div>
             <ul>
               <li>3 months summer internship</li>
               <li>
@@ -205,10 +192,10 @@
             </ul>
           </div>
 
-          <div class="resume-item">
-            <div class="date">Jul 2018</div>
+          <div className="resume-item">
+            <div className="date">Jul 2018</div>
             <h4>Junior Assistant</h4>
-            <div class="institution">Audit Systems SRL, Bucharest</div>
+            <div className="institution">Audit Systems SRL, Bucharest</div>
             <ul>
               <li>
                 1 month internship in preparing ISO 27001 information security
@@ -223,46 +210,46 @@
         </div>
       </div>
 
-      <!-- Skills -->
-      <div class="resume-section" style="margin-top: 3rem">
+      {/* Skills */}
+      <div className="resume-section" style={{ marginTop: "3rem" }}>
         <h3>Technical Skills and Languages</h3>
-        <div class="skills-grid">
-          <div class="skill-category">
+        <div className="skills-grid">
+          <div className="skill-category">
             <h5>Full Stack - Front End Dev</h5>
             <p>JavaScript, TypeScript, React, CSS</p>
           </div>
-          <div class="skill-category">
+          <div className="skill-category">
             <h5>Back End Dev</h5>
             <p>Python, C++, C, C#</p>
           </div>
-          <div class="skill-category">
+          <div className="skill-category">
             <h5>Cloud & Infrastructure as Code</h5>
             <p>AWS CDK, Terraform</p>
           </div>
-          <div class="skill-category">
+          <div className="skill-category">
             <h5>IoT Dev</h5>
             <p>Arduino, Raspberry Pi, ESP32</p>
           </div>
-          <div class="skill-category">
+          <div className="skill-category">
             <h5>Other Dev Skills</h5>
             <p>Git, Linux, Bash scripting, SystemVerilog, Prolog, SQL</p>
           </div>
-          <div class="skill-category">
+          <div className="skill-category">
             <h5>Languages</h5>
             <p>
               Romanian (native), English (fluent), German (B1-B2), Mandarin (HSK
               4-5), French (A1-A2)
             </p>
           </div>
-          <div class="skill-category">
+          <div className="skill-category">
             <h5>Other Skills</h5>
             <p>Trained in ISO 27001 information security management system</p>
           </div>
         </div>
       </div>
 
-      <!-- Certifications -->
-      <div class="resume-section" style="margin-top: 3rem">
+      {/* Certifications */}
+      <div className="resume-section" style={{ marginTop: "3rem" }}>
         <h3>Certifications</h3>
         <ul>
           <li>AWS Certified Machine Learning Specialty</li>
@@ -272,48 +259,61 @@
         </ul>
       </div>
 
-      <!-- Other Interests -->
-      <div class="resume-section" style="margin-top: 3rem">
+      {/* Other Interests */}
+      <div className="resume-section" style={{ marginTop: "3rem" }}>
         <h3>Other Interests and Experiences</h3>
-        <div class="resume-grid">
-          <div class="resume-item">
-            <div class="date">2025 - currently</div>
+        <div className="resume-grid">
+          <div className="resume-item">
+            <div className="date">2025 - currently</div>
             <h4>Imperial Outreach Leader</h4>
-            <div class="institution">Imperial College London</div>
+            <div className="institution">Imperial College London</div>
             <ul>
               <li>
-                Engaging students into STEM subjects through hands-on
-                activities and workshops hosted by <a href="https://www.imperial.ac.uk/be-inspired/schools-outreach/wohl-reach-out-lab/" target="_blank">Imperial College London Wohl Reach Out Lab</a>
+                Engaging students into STEM subjects through hands-on activities
+                and workshops hosted by{" "}
+                <a
+                  href="https://www.imperial.ac.uk/be-inspired/schools-outreach/wohl-reach-out-lab/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Imperial College London Wohl Reach Out Lab
+                </a>
               </li>
             </ul>
           </div>
 
-          <div class="resume-item">
-            <div class="date">2025 - currently</div>
+          <div className="resume-item">
+            <div className="date">2025 - currently</div>
             <h4>Postgraduate Teaching Assistant</h4>
-            <div class="institution">Imperial College London</div>
+            <div className="institution">Imperial College London</div>
             <ul>
               <li>
-                Assisting with labs and tutorials for various modules in different departments: Machine Learning and Data Science (MSci ESE), Machine Reasoning (3rd year EE), Robotics (3rd year DoC), Maths Methods 2 (1st year ESE)
+                Assisting with labs and tutorials for various modules in
+                different departments: Machine Learning and Data Science (MSci
+                ESE), Machine Reasoning (3rd year EE), Robotics (3rd year DoC),
+                Maths Methods 2 (1st year ESE)
               </li>
             </ul>
           </div>
 
-          <div class="resume-item">
-            <div class="date">2023 - 2024</div>
+          <div className="resume-item">
+            <div className="date">2023 - 2024</div>
             <h4>Undergraduate Teaching Assistant</h4>
-            <div class="institution">Imperial College London, Electrical Engineering Department</div>
+            <div className="institution">
+              Imperial College London, Electrical Engineering Department
+            </div>
             <ul>
               <li>
-                Assisting with labs and tutorials for various modules: Machine Reasoning
+                Assisting with labs and tutorials for various modules: Machine
+                Reasoning
               </li>
             </ul>
           </div>
 
-          <div class="resume-item">
-            <div class="date">2021 - 2023</div>
+          <div className="resume-item">
+            <div className="date">2021 - 2023</div>
             <h4>Vice President Industry, EESoc</h4>
-            <div class="institution">Imperial College London</div>
+            <div className="institution">Imperial College London</div>
             <ul>
               <li>
                 In charge of organising industry talks, webinars, and the
@@ -330,10 +330,10 @@
             </ul>
           </div>
 
-          <div class="resume-item">
-            <div class="date">2020 - 2021</div>
+          <div className="resume-item">
+            <div className="date">2020 - 2021</div>
             <h4>Chairperson, Tizard Hall</h4>
-            <div class="institution">Imperial College London</div>
+            <div className="institution">Imperial College London</div>
             <ul>
               <li>
                 Overseeing organisation of social events and management of the
@@ -348,10 +348,10 @@
             </ul>
           </div>
 
-          <div class="resume-item">
-            <div class="date">2018 - 2019</div>
+          <div className="resume-item">
+            <div className="date">2018 - 2019</div>
             <h4>Volunteer teacher in Rajasthan, India</h4>
-            <div class="institution">Sevenoaks School</div>
+            <div className="institution">Sevenoaks School</div>
             <ul>
               <li>
                 Gathered funds for 7 months by selling self-made pastries and
@@ -368,10 +368,10 @@
             </ul>
           </div>
 
-          <div class="resume-item">
-            <div class="date">2016 - 2017</div>
+          <div className="resume-item">
+            <div className="date">2016 - 2017</div>
             <h4>Mentor for Arduino Coding Club</h4>
-            <div class="institution">CoderDojo Bucharest</div>
+            <div className="institution">CoderDojo Bucharest</div>
             <ul>
               <li>
                 Taught Arduino programming and created small projects alongside
@@ -385,13 +385,14 @@
             </ul>
           </div>
 
-          <div class="resume-item">
+          <div className="resume-item">
+            <div className="date">past - future</div>
             <h4>Travelling</h4>
             <ul>
               <li>
                 Visited multiple countries throughout the Globe, inside Europe,
                 China, Costa Rica, India, Japan, Madagascar, Tanzania, Peru,
-                Egypt, USA
+                Egypt, USA, ...
               </li>
               <li>
                 Encountered many different cultures and assimilated learned
@@ -402,5 +403,7 @@
         </div>
       </div>
     </section>
-  </body>
-</html>
+  );
+};
+
+export default Resume;
