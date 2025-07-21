@@ -85,6 +85,48 @@ h4 {
   color: #34495e;
 }
 
+/* Common HTML Elements */
+/* Links - Global default styles */
+a {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #005999;
+}
+
+/* Text formatting */
+strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+em {
+  color: #007acc;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Lists - Global default styles */
+ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* Paragraphs - Global default styles */
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
 /* Home Section */
 #home {
   display: flex;
@@ -101,29 +143,6 @@ h4 {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   line-height: 1.8;
-}
-
-.intro-text p a {
-  color: #007acc;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.intro-text p a:hover {
-  text-decoration: underline;
-  color: #005999;
-}
-
-.intro-text p strong {
-  color: #2c3e50;
-  font-weight: 600;
-}
-
-.intro-text p em {
-  color: #007acc;
-  font-style: italic;
-  font-weight: 500;
 }
 
 .cta-buttons {
@@ -217,31 +236,6 @@ h4 {
 
 .project-card p {
   margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.project-card p a {
-  color: #007acc;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.project-card p a:hover {
-  text-decoration: underline;
-}
-
-.project-card p strong {
-  color: #2c3e50;
-  font-weight: 600;
-}
-
-.project-card p ul {
-  margin: 0.5rem 0;
-  padding-left: 1.5rem;
-}
-
-.project-card p li {
-  margin-bottom: 0.25rem;
 }
 
 .project-technologies {
@@ -330,15 +324,6 @@ h4 {
   padding: 2rem;
   background: #f8f9fa;
   border-radius: 10px;
-}
-
-.contact-info a {
-  color: #007acc;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
 }
 
 /* Responsive Design */
