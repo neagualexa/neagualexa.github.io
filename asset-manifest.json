@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1e2bf573.css",
-    "main.js": "/static/js/main.c4151d55.js",
+    "main.css": "/static/css/main.65ba918d.css",
+    "main.js": "/static/js/main.76dcb13b.js",
     "static/media/Synthesiser_demo_video.mp4": "/static/media/Synthesiser_demo_video.99582d2d456b18f85f13.mp4",
     "static/media/Medusa_IO_presentation_video.mp4": "/static/media/Medusa_IO_presentation_video.9df9959aae716e291807.mp4",
     "static/media/Synthesiser_songs_video.mp4": "/static/media/Synthesiser_songs_video.7013802cbea49aac81ce.mp4",
@@ -46,11 +46,11 @@
     "static/media/ImperialCollegeLondon_logo_new.png": "/static/media/ImperialCollegeLondon_logo_new.2c1301d3314a4b3c6f7e.png",
     "static/media/UKSDC_logo.png": "/static/media/UKSDC_logo.aa34788da2f34f7ada97.png",
     "index.html": "/index.html",
-    "main.1e2bf573.css.map": "/static/css/main.1e2bf573.css.map",
-    "main.c4151d55.js.map": "/static/js/main.c4151d55.js.map"
+    "main.65ba918d.css.map": "/static/css/main.65ba918d.css.map",
+    "main.76dcb13b.js.map": "/static/js/main.76dcb13b.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e2bf573.css",
-    "static/js/main.c4151d55.js"
+    "static/css/main.65ba918d.css",
+    "static/js/main.76dcb13b.js"
   ]
 }
