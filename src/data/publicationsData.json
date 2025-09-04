@@ -1,0 +1,50 @@
+{
+  "navigation": [
+    { "id": "conference-papers", "label": "Conference Papers" },
+    { "id": "preprints", "label": "Preprints" }
+  ],
+  "sections": [
+    {
+      "id": "conference-papers",
+      "title": "Conference Papers",
+      "publications": [
+        {
+          "title": "Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information",
+          "authors": [
+            "Alexandra Neagu",
+            "Dr. Peter B. Johnson",
+            "Dr. Rhodri Nelson"
+          ],
+          "conference": "UK and Ireland Engineering Education Research Network Annual Symposium",
+          "year": "2025",
+          "location": "Manchester, UK",
+          "pages": "432-440",
+          "doi": "10.71535/f5dfe8de-1b80-4192-8573-54d934996dec",
+          "abstract": "Self-study often leads to impasses – getting stuck. Impasses can be a valuable learning opportunity if supported by timely feedback, especially dialogic feedback. LLM-based chatbots can provide timely, dialogic feedback for all students in a large cohort, however their use requires careful consideration. Two key challenges of LLM chatbots are aligning with educational values and ensuring technical accuracy. \n\nThis paper examines how providing chatbots with contextual information affects their educational value. Using a framework of impasse-driven learning, we introduce concepts of objective context (e.g. course materials) and subjective context (e.g. student's thought process). We theoretically analyse the risks and benefits of context-awareness in chatbots when supporting a student during an impasse. \n\nTo gain empirical insight, we deployed chatbots to students on a self-study learning platform (Lambda Feedback) that can provide objective context to the chatbot. Qualitative analysis of conversations from 23 students show that students frequently reference objective context in their queries, allowing the dialogue to focus on their impasse and reducing cognitive load. \n\nEvidence provided here shows the benefits of contextual awareness for chatbots. We also discuss the potential risks, namely removing student agency and ‘productive struggle’. We conclude that, on balance, chatbots are likely to be most educationally beneficial if context is available, but that chatbots should be configured to manage the risks. We outline future work on managing the risks.",
+          "keywords": [
+            "Chatbot",
+            "Large Language Model",
+            "Dialogic Feedback",
+            "Self-Study",
+            "Impasse-Driven Learning"
+          ],
+          "links": [
+            {
+              "type": "DOI",
+              "url": "https://doi.org/10.71535/f5dfe8de-1b80-4192-8573-54d934996dec"
+            },
+            {
+              "type": "PDF",
+              "filename": "2025_EERN_Paper_Proceedings_Extracted.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "preprints",
+      "title": "Preprints",
+      "publications": []
+    }
+  ]
+}

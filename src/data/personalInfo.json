@@ -26,13 +26,18 @@
   },
   "callToAction": [
     {
-      "text": "View Resume",
+      "text": "Resume",
       "link": "/resume",
       "type": "secondary"
     },
     {
-      "text": "See Projects",
+      "text": "Projects",
       "link": "/projects",
+      "type": "secondary"
+    },
+    {
+      "text": "Publications",
+      "link": "/publications",
       "type": "secondary"
     }
   ]

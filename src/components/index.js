@@ -15,6 +15,11 @@ export { default as ContactSection } from "./ContactSection";
 export { default as ProjectsNavigation } from "./ProjectsNavigation";
 export { default as ProjectSection } from "./ProjectSection";
 
+// Publications Components
+export { default as PublicationsNavigation } from "./PublicationsNavigation";
+export { default as PublicationSection } from "./PublicationSection";
+export { default as PublicationCard } from "./PublicationCard";
+
 // Resume Components
 export { default as ResumeSection } from "./ResumeSection";
 export { default as SkillsSection } from "./SkillsSection";

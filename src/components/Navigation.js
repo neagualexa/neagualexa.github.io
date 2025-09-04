@@ -41,6 +41,15 @@ const Navigation = () => {
             Projects
           </Link>
         </li>
+        <li>
+          <Link
+            to="/publications"
+            className={`nav-link ${isActive("/publications") ? "active" : ""}`}
+            onClick={handleNavClick}
+          >
+            Publications
+          </Link>
+        </li>
       </ul>
     </nav>
   );
