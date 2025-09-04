@@ -276,24 +276,6 @@
             "Personalization",
             "JavaScript"
           ],
-          "images": [],
-          "links": [
-            {
-              "text": "View on GitHub",
-              "url": "https://github.com/neagualexa/ichack25_lazy_browsing",
-              "type": "github"
-            }
-          ]
-        },
-        {
-          "title": "Lazy Browsing Chrome Extension for Agentic-based personalised shopping",
-          "description": "An AI assistant that helps you centralise your search for multiple products of same characteristics online. Using <a href='https://github.com/browser-use/browser-use' target='_blank' rel='noopener noreferrer'>browser use</a> for agents that control a chromium tab to interact with and complete the task.",
-          "technologies": [
-            "Chrome Extension",
-            "AI Agents",
-            "Personalization",
-            "JavaScript"
-          ],
           "links": [
             {
               "text": "View on GitHub",
