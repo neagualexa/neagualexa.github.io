@@ -1,14 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.74a4f4d8.css",
-    "main.js": "/static/js/main.09b891ae.js",
+    "main.css": "/static/css/main.1fee816b.css",
+    "main.js": "/static/js/main.24f1f5e8.js",
     "static/media/profile_photo.jpg": "/static/media/profile_photo.840804aa0d5266b86415.jpg",
+    "static/media/SevenoaksSchool_logo.png": "/static/media/SevenoaksSchool_logo.11c245fc4d2d849d806b.png",
+    "static/media/AWS_SolutionsArchitectCert.png": "/static/media/AWS_SolutionsArchitectCert.34e40fe6bfb136e4420e.png",
+    "static/media/AWS_MachineLearningCert.png": "/static/media/AWS_MachineLearningCert.91190318fcfe9201993a.png",
+    "static/media/AWS_CloudPractitionerCert.png": "/static/media/AWS_CloudPractitionerCert.91e80e7c89b8814b4e32.png",
+    "static/media/world_globe_png.png": "/static/media/world_globe_png.f52a5448edd776aa5388.png",
+    "static/media/Terraform_AssociateCert.png": "/static/media/Terraform_AssociateCert.b64d082825c4a43c2db8.png",
+    "static/media/AWS_logo.png": "/static/media/AWS_logo.6a338144c88f56a36837.png",
+    "static/media/ImperialCollegeLondon_logo_old.png": "/static/media/ImperialCollegeLondon_logo_old.62164b86de28c54490e8.png",
+    "static/media/eesoc_logo.png": "/static/media/eesoc_logo.0325f7cf33b534f3ad10.png",
+    "static/media/ImperialCollegeLondon_logo_new.png": "/static/media/ImperialCollegeLondon_logo_new.6e49e0c58595963ac180.png",
     "index.html": "/index.html",
-    "main.74a4f4d8.css.map": "/static/css/main.74a4f4d8.css.map",
-    "main.09b891ae.js.map": "/static/js/main.09b891ae.js.map"
+    "main.1fee816b.css.map": "/static/css/main.1fee816b.css.map",
+    "main.24f1f5e8.js.map": "/static/js/main.24f1f5e8.js.map"
   },
   "entrypoints": [
-    "static/css/main.74a4f4d8.css",
-    "static/js/main.09b891ae.js"
+    "static/css/main.1fee816b.css",
+    "static/js/main.24f1f5e8.js"
   ]
 }
