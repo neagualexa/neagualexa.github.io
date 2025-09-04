@@ -16,14 +16,13 @@ const IntroSection = ({ introduction, callToAction }) => {
           {introduction.description.map((paragraph, index) => (
             <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }}></p>
           ))}
-
-          <div className="cta-buttons">
-            {callToAction.map((cta, index) => (
-              <Button key={index} to={cta.link} variant={cta.type}>
-                {cta.text}
-              </Button>
-            ))}
-          </div>
+        </div>
+        <div className="cta-buttons">
+          {callToAction.map((cta, index) => (
+            <Button key={index} to={cta.link} variant={cta.type}>
+              {cta.text}
+            </Button>
+          ))}
         </div>
       </div>
     </div>
