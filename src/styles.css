@@ -28,13 +28,63 @@ nav {
   z-index: 1000;
   padding: 1rem 2rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
+/* Navigation visibility states for mobile */
+nav.nav-visible {
+  transform: translateY(0);
+}
+
+nav.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* Ensure body has proper top spacing for fixed nav */
+body {
+  padding-top: 0;
+}
+
+/* Main content spacing to account for fixed navigation */
+.main-content {
+  margin-top: 70px; /* Simple fixed value */
+  transition: margin-top 0.3s ease-in-out;
+}
+
+/* When navigation is hidden on mobile, reduce spacing */
+@media (max-width: 768px) {
+  body.nav-hidden .main-content {
+    margin-top: 0;
+  }
+}
+
+/* Desktop navigation always visible */
+@media (min-width: 769px) {
+  nav.nav-hidden {
+    transform: translateY(0) !important;
+  }
+
+  .main-content {
+    margin-top: 70px; /* Simple fixed value */
+  }
+}
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Medium screens - reduce gap */
+@media (max-width: 1024px) and (min-width: 769px) {
+  nav ul {
+    gap: 0.75rem;
+  }
 }
 
 nav a {
@@ -44,6 +94,9 @@ nav a {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: fit-content;
+  text-align: center;
 }
 
 nav a:hover,
@@ -55,7 +108,7 @@ nav a.active {
 /* Sections */
 section {
   min-height: 100vh;
-  padding: 6rem 2rem 2rem;
+  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -667,14 +720,59 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Ensure navigation transitions work smoothly on mobile */
+  nav {
+    will-change: transform;
+    padding: 0.75rem 1rem;
+  }
+
   nav ul {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  /* Mobile-friendly navigation links */
+  nav a {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    min-height: 44px; /* Recommended touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   #home {
     flex-direction: column;
     text-align: center;
+  }
+
+  /* Reduce section padding on mobile for better space usage */
+  section {
+    padding: 1.5rem;
+  }
+}
+
+/* Extra small screens - even more compact navigation */
+@media (max-width: 480px) {
+  nav {
+    padding: 0.5rem;
+  }
+
+  nav ul {
+    gap: 0.25rem;
+  }
+
+  nav a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  /* Even smaller section padding for tiny screens */
+  section {
+    padding: 1rem;
   }
 
   h1 {

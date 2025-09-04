@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const location = useLocation();
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const isActive = (path) => location.pathname === path;
 
@@ -11,8 +13,49 @@ const Navigation = () => {
     window.scrollTo(0, 0);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isMobile = window.innerWidth <= 768;
+
+      if (!isMobile) {
+        setIsVisible(true);
+        return;
+      }
+
+      // Show nav when at the top of the page
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      } else {
+        // Hide nav when scrolling down, show when scrolling up
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setIsVisible(false);
+        } else if (currentScrollY < lastScrollY) {
+          setIsVisible(true);
+        }
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
+  // Simple body class toggle for spacing control
+  useEffect(() => {
+    if (isVisible) {
+      document.body.classList.remove("nav-hidden");
+    } else {
+      document.body.classList.add("nav-hidden");
+    }
+  }, [isVisible]);
+
   return (
-    <nav>
+    <nav className={`${isVisible ? "nav-visible" : "nav-hidden"}`}>
       <ul>
         <li>
           <Link
