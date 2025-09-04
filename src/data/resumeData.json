@@ -13,7 +13,10 @@
             "\"To what extent can we utilise existing GenAI tools to provide effective dialogic feedback, whilst aligning with educational values and ensuring domain-specific technical accuracy?\""
           ],
           "publications": [
-            "Neagu, A., Johnson, P., Nelson, R. (2025). \"Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information\" In Proceedings of the UK and Ireland Engineering Education Research Network (EERN) Annual Symposium. (Awaiting Link)"
+            {
+              "id": "2025-eern-chatbots-context",
+              "citation": "Neagu, A., Johnson, P., Nelson, R. (2025). \"Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information\" In Proceedings of the UK and Ireland Engineering Education Research Network (EERN) Annual Symposium."
+            }
           ]
         },
         {

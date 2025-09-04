@@ -1,7 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 const ResumeSection = ({ section }) => {
+  const navigate = useNavigate();
+
   const getLogoPath = (logoFileName) => {
     if (!logoFileName) return null;
     try {
@@ -50,7 +54,22 @@ const ResumeSection = ({ section }) => {
               <strong>Publications:</strong>
               <ul>
                 {item.publications.map((pub, pubIndex) => (
-                  <li key={pubIndex}>{pub}</li>
+                  <li key={pubIndex}>
+                    {typeof pub === "string" ? (
+                      pub
+                    ) : (
+                      <div className="publication-item">
+                        <span className="publication-text">{pub.citation}</span>
+                        <Button
+                          variant="secondary"
+                          onClick={() => navigate(`/publications#${pub.id}`)}
+                          title="View full publication details"
+                        >
+                          View Details
+                        </Button>
+                      </div>
+                    )}
+                  </li>
                 ))}
               </ul>
             </div>

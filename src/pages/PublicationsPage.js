@@ -21,13 +21,33 @@ const PublicationsPage = () => {
       setActiveSection(current);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Handle hash navigation to specific publications
+    const handleHashNavigation = () => {
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }
+        }, 100);
+      }
+    };
 
-    // Initial scroll position check
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("hashchange", handleHashNavigation);
+
+    // Initial scroll position check and hash navigation
     handleScroll();
+    handleHashNavigation();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHashNavigation);
     };
   }, []);
 

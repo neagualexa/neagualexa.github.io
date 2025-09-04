@@ -55,7 +55,7 @@ const PublicationCard = ({ publication }) => {
   };
 
   return (
-    <div className="publication-card">
+    <div className="publication-card" id={publication.id}>
       <div className="publication-citation">{formatCitation()}</div>
 
       {publication.doi && (

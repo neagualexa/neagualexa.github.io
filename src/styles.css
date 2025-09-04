@@ -647,6 +647,20 @@ p {
   margin-top: 0.5rem;
 }
 
+/* Publication item with button */
+.publication-item {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.publication-text {
+  font-style: italic;
+  color: #333;
+  line-height: 1.4;
+}
+
 /* Certifications Grid */
 .certifications-grid {
   display: grid;
