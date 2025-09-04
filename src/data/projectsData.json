@@ -22,6 +22,10 @@
             "Machine Learning",
             "Educational AI"
           ],
+          "images": [
+            "Nonogram_AIAssistant_ArchitecturePipeline.png",
+            "Nonogram_AIAssistant_LogicPipeline.png"
+          ],
           "links": [
             {
               "text": "View AI Assistant Code on GitHub",
@@ -43,6 +47,8 @@
             "Robotics",
             "Telepresence"
           ],
+          "images": ["Spot_robot_photo.jpeg"],
+          "videos": ["Spot_presentation_video.mp4"],
           "links": [
             {
               "text": "View on GitHub",
@@ -66,6 +72,14 @@
             "Audio Processing",
             "C++"
           ],
+          "images": [
+            "Synthesiser_clarinet_wave.jpg",
+            "Synthesiser_octaves.jpg"
+          ],
+          "videos": [
+            "Synthesiser_demo_video.mp4",
+            "Synthesiser_songs_video.mp4"
+          ],
           "links": [
             {
               "text": "View on GitHub",
@@ -81,6 +95,10 @@
             "Device Communication",
             "Embedded Systems",
             "Protocols"
+          ],
+          "images": [
+            "CharIOT_ArchitecturePipeline.png",
+            "CharIOT_product_photo.png"
           ],
           "links": [
             {
@@ -102,6 +120,8 @@
             "Ultrasonic Sensors",
             "Localisation"
           ],
+          "images": ["Localising_robot_profile.jpg"],
+          "videos": ["Localising_robot_arena_demo.mp4"],
           "links": [
             {
               "text": "View on Github",
@@ -125,6 +145,11 @@
             "Python",
             "JavaScript"
           ],
+          "images": [
+            "Instability_rover_profile.png",
+            "Instability_ArchitecturePipeline.png",
+            "Instability_website_map.png"
+          ],
           "links": [
             {
               "text": "View on GitHub",
@@ -141,6 +166,8 @@
             "Data Processing",
             "Performance Optimization"
           ],
+          "images": ["Medusa_IO_photo.jpg"],
+          "videos": ["Medusa_IO_presentation_video.mp4"],
           "links": [
             {
               "text": "View on GitHub",
@@ -157,6 +184,7 @@
             "Compiler Design",
             "Language Processing"
           ],
+          "images": [],
           "links": []
         },
         {
@@ -168,6 +196,7 @@
             "MIPS Architecture",
             "Digital Design"
           ],
+          "images": ["CPU_MIPS_datapath.jpg"],
           "links": []
         }
       ]
@@ -207,6 +236,23 @@
             "Personalization",
             "JavaScript"
           ],
+          "images": [],
+          "links": [
+            {
+              "text": "View on GitHub",
+              "url": "https://github.com/neagualexa/ichack25_lazy_browsing"
+            }
+          ]
+        },
+        {
+          "title": "Lazy Browsing Chrome Extension for Agentic-based personalised shopping",
+          "description": "An AI assistant that helps you centralise your search for multiple products of same characteristics online. Using <a href='https://github.com/browser-use/browser-use' target='_blank' rel='noopener noreferrer'>browser use</a> for agents that control a chromium tab to interact with and complete the task.",
+          "technologies": [
+            "Chrome Extension",
+            "AI Agents",
+            "Personalization",
+            "JavaScript"
+          ],
           "links": [
             {
               "text": "View on GitHub",
@@ -218,6 +264,7 @@
           "title": "Monitoring and Alarming System of global EC2 Instance Fleet, AWS",
           "description": "I set up a Monitoring and Alarming System for the largely scalable EC2 Instance Fleet of the <strong>Managed Environments for Outside Work</strong>, a fully managed virtual desktop service.<br><br>I built a cloud infrastructure for fetching, preparing, and visualising device metrics including:<br><ul><li>CPU Utilisation</li><li>RAM Usage</li><li>Network Performance</li><li>Disk Utilisation</li></ul><br>The system is easily deployed through <strong>AWS CDK</strong>, an Infrastructure as Code toolkit, that allows for easy resource provisioning for cloud solutions. The architecture diagram presented is the final infrastructure of the Monitoring and Alarming System.",
           "technologies": ["AWS", "EC2", "Monitoring", "Cloud Infrastructure"],
+          "images": ["AWS_MEOW_PlacementProject_ArchitecturePipeline.jpg"],
           "links": []
         },
         {
@@ -228,6 +275,10 @@
             "Serverless",
             "AWS Amplify",
             "Text-to-Speech"
+          ],
+          "images": [
+            "AWS_Polly_PlacementProject_ArchitecturePipeline.jpg",
+            "AWS_Polly_PlacementProject_WebApp.png"
           ],
           "links": []
         },
@@ -241,6 +292,7 @@
             "Sentiment Analysis",
             "Translation"
           ],
+          "images": ["AWS_FanMailHackathon_ArchitecturePipeline.png"],
           "links": []
         },
         {
@@ -252,18 +304,26 @@
             "Assessment Tools",
             "Cloud Migration"
           ],
+          "images": ["AWS_LZAProject_ArchitecturePipeline.png"],
           "links": []
         },
         {
           "title": "ZeroToOne - AR/VR Circuit Design Simulator, ICL ICHack",
           "description": "Aim of the idea was to create a demo for an AR circuit studio, developed in Unity with Vuforia and C#. We used both a Phone compatible headset and the direct phone screen for user interfaces. The android application was presenting a step by step guide for building a specific circuit. This project was aimed for professors to give out remote guidance to students during their hardware laboratories. All models of the circuit components were designed by the team.",
           "technologies": ["AR/VR", "Unity", "C#", "Circuit Design"],
+          "images": [
+            "ICHack_AR_demo1.jpg",
+            "ICHack_AR_demo2.jpg",
+            "ICHack_AR_glasses_view.jpeg",
+            "ICHack_live_demo_photo.jpeg"
+          ],
           "links": []
         },
         {
           "title": "Team projects at Hack-her-thon, ICL WSET",
           "description": "<strong>C-case (2022):</strong><br>An only-girls team project aimed to provide a centralised platform where aid and offers of support to the Ukrainian refugees can be coordinated. The application could connect individuals in need of help with those who able and willing to provide it. It also provided an easy way of accessing donation sites and getting involved as volunteers.<br><br><strong>Solar car (2021):</strong><br>An only-girls team project aimed to teach children the importance of solar energy for the technological development through a web-game quiz with a hardware joystick and solar panel. I held the position of team leader, analysed members' skills and assigned team roles respectively. I improved my understanding of IoT programming hosting an HTML website by the Arduino.",
           "technologies": ["Hackathon", "Women in Tech"],
+          "images": ["WSET_hackherthon_logo.png"],
           "links": [
             {
               "text": "C-Case on GitHub",
@@ -306,6 +366,7 @@
             "Competition",
             "Team Collaboration"
           ],
+          "images": ["UKSDC_logo.png"],
           "links": [
             {
               "text": "View UKSDC Finals 2019 Programme",
@@ -317,6 +378,7 @@
           "title": "Team projects at Coolest Projects International",
           "description": "<strong>2018 - Second World:</strong><br>I was awarded Runner Up prize, Category Games & Web games for the project \"Second World\", a modded Minecraft server aiming to teach children the value of money through a currency ranking system. Developed the various game logistics and mods in Java.<br><br><strong>2017 - Smart house:</strong><br>I completed the project \"Smart house\", aiming to improve homes with self-closing curtains, sound-driven lights and magnetic-based safety door locks and control the equipment on an application. Developed the hardware-software interconnectivity with Arduino, thus integrating IoT ideologies into the implementation of our team's ideas.<br><br><strong>2016 - Warehouse 2.0:</strong><br>I was awarded Enterprise and Evolution awards for the project \"Warehouse 2.0\", a smart hardware solution for storing objects securely, in an organised manner with an application for maintaining the status of the inventory and for warning against theft with specific inventory and location details. Developed the warehouse's hardware system in Arduino. Shaped my first perspective of human-machine interaction and helped shape my fundamental project management and programming skills.",
           "technologies": ["Young Developers"],
+          "images": ["CoolestProjects_CoderDojo_logo.png"],
           "links": []
         }
       ]

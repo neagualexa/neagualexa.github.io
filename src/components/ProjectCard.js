@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import ImageGallery from "./ImageGallery";
 
 const ProjectCard = ({ project }) => {
   return (
@@ -15,6 +15,15 @@ const ProjectCard = ({ project }) => {
             </span>
           ))}
         </div>
+      )}
+
+      {((project.images && project.images.length > 0) ||
+        (project.videos && project.videos.length > 0)) && (
+        <ImageGallery
+          images={project.images}
+          videos={project.videos}
+          projectTitle={project.title}
+        />
       )}
 
       {project.links && project.links.length > 0 && (
@@ -41,6 +50,8 @@ ProjectCard.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     technologies: PropTypes.arrayOf(PropTypes.string),
+    images: PropTypes.arrayOf(PropTypes.string),
+    videos: PropTypes.arrayOf(PropTypes.string),
     links: PropTypes.arrayOf(
       PropTypes.shape({
         text: PropTypes.string.isRequired,

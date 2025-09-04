@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
-import profilePhoto from "../data/images/profile_photo.jpg";
+import profilePhoto from "../data/misc/profile_photo.jpg";
 
 const IntroSection = ({ introduction, callToAction }) => {
   return (

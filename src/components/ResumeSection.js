@@ -5,7 +5,7 @@ const ResumeSection = ({ section }) => {
   const getLogoPath = (logoFileName) => {
     if (!logoFileName) return null;
     try {
-      return require(`../data/images/resume/${logoFileName}`);
+      return require(`../data/misc/resume/${logoFileName}`);
     } catch (error) {
       console.warn(`Logo not found: ${logoFileName}`);
       return null;
