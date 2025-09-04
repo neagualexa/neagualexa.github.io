@@ -1,17 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.65ba918d.css",
-    "main.js": "/static/js/main.76dcb13b.js",
+    "main.js": "/static/js/main.56e2fbea.js",
     "static/media/Synthesiser_demo_video.mp4": "/static/media/Synthesiser_demo_video.99582d2d456b18f85f13.mp4",
     "static/media/Medusa_IO_presentation_video.mp4": "/static/media/Medusa_IO_presentation_video.9df9959aae716e291807.mp4",
     "static/media/Synthesiser_songs_video.mp4": "/static/media/Synthesiser_songs_video.7013802cbea49aac81ce.mp4",
     "static/media/Spot_presentation_video.mp4": "/static/media/Spot_presentation_video.476ebaa2d7cfe1edf55f.mp4",
+    "static/media/Instability_report.pdf": "/static/media/Instability_report.9d9497cffa92e2f5bb5e.pdf",
     "static/media/Localising_robot_arena_demo.mp4": "/static/media/Localising_robot_arena_demo.63cf53c9e5e3b7a8caff.mp4",
+    "static/media/AI_Assisted_Learning_report.pdf": "/static/media/AI_Assisted_Learning_report.8f173a87e340ac5f9826.pdf",
+    "static/media/SpotVRTelepresence_report.pdf": "/static/media/SpotVRTelepresence_report.2889da4f8ca2cca20b69.pdf",
     "static/media/Localising_robot_profile.jpg": "/static/media/Localising_robot_profile.ce01ab1be5c65b7a290b.jpg",
     "static/media/Synthesiser_clarinet_wave.jpg": "/static/media/Synthesiser_clarinet_wave.9f27e8659d4a9d4642ac.jpg",
+    "static/media/CircuitSImulator_report.pdf": "/static/media/CircuitSImulator_report.e5d94e697eff6204efa0.pdf",
     "static/media/CharIOT_product_photo.png": "/static/media/CharIOT_product_photo.de6ab7e6d3928d78ba30.png",
     "static/media/ICHack_AR_glasses_view.jpeg": "/static/media/ICHack_AR_glasses_view.802ae783647a20c3ef4b.jpeg",
     "static/media/Synthesiser_octaves.jpg": "/static/media/Synthesiser_octaves.8af2e2a141069e4c0a71.jpg",
+    "static/media/MedusaIO_report.pdf": "/static/media/MedusaIO_report.1ed1cb6dfb9af440704a.pdf",
     "static/media/Nonogram_AIAssistant_ArchitecturePipeline.png": "/static/media/Nonogram_AIAssistant_ArchitecturePipeline.24e3ca125a6081cb9cf2.png",
     "static/media/Instability_website_map.png": "/static/media/Instability_website_map.6d88079d1c3911b7f1b2.png",
     "static/media/Spot_robot_photo.jpeg": "/static/media/Spot_robot_photo.4bfd6377299874e339f6.jpeg",
@@ -47,10 +52,10 @@
     "static/media/UKSDC_logo.png": "/static/media/UKSDC_logo.aa34788da2f34f7ada97.png",
     "index.html": "/index.html",
     "main.65ba918d.css.map": "/static/css/main.65ba918d.css.map",
-    "main.76dcb13b.js.map": "/static/js/main.76dcb13b.js.map"
+    "main.56e2fbea.js.map": "/static/js/main.56e2fbea.js.map"
   },
   "entrypoints": [
     "static/css/main.65ba918d.css",
-    "static/js/main.76dcb13b.js"
+    "static/js/main.56e2fbea.js"
   ]
 }
