@@ -307,6 +307,33 @@ p {
   border-bottom: 1px solid #eee;
 }
 
+/* Resume item header with logo */
+.resume-item-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.institution-logo {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.institution-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.resume-item-content {
+  flex: 1;
+}
+
 .resume-item:last-child {
   border-bottom: none;
   margin-bottom: 0;
@@ -330,6 +357,50 @@ p {
 .resume-item ul {
   margin-left: 1.5rem;
   margin-top: 0.5rem;
+}
+
+/* Certifications Grid */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certification-logo {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certification-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.certification-name {
+  flex: 1;
+  font-weight: 500;
+  color: #2c3e50;
 }
 
 .skills-grid {
@@ -401,6 +472,29 @@ p {
 
   .profile-image img {
     height: 200px;
+  }
+
+  /* Resume responsive adjustments */
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certification-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .resume-item-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .institution-logo {
+    width: 40px;
+    height: 40px;
   }
 
   section {

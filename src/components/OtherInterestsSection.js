@@ -2,17 +2,42 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const OtherInterestsSection = ({ interests }) => {
+  const getLogoPath = (logoFileName) => {
+    if (!logoFileName) return null;
+    try {
+      return require(`../data/images/resume/${logoFileName}`);
+    } catch (error) {
+      console.warn(`Logo not found: ${logoFileName}`);
+      return null;
+    }
+  };
+
   return (
     <div className="resume-section" style={{ marginTop: "3rem" }}>
       <h3>{interests.title}</h3>
       <div className="resume-grid">
         {interests.items.map((item, index) => (
           <div key={index} className="resume-item">
-            <div className="date">{item.period}</div>
-            <h4>{item.title}</h4>
-            {item.institution && (
-              <div className="institution">{item.institution}</div>
-            )}
+            <div className="resume-item-header">
+              {item.logo && (
+                <div className="institution-logo">
+                  <img
+                    src={getLogoPath(item.logo)}
+                    alt={`${item.institution || item.title} logo`}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                    }}
+                  />
+                </div>
+              )}
+              <div className="resume-item-content">
+                <div className="date">{item.period}</div>
+                <h4>{item.title}</h4>
+                {item.institution && (
+                  <div className="institution">{item.institution}</div>
+                )}
+              </div>
+            </div>
             <ul>
               {item.details.map((detail, detailIndex) => (
                 <li key={detailIndex}>

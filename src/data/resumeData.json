@@ -5,8 +5,9 @@
       "items": [
         {
           "period": "2024 - 2028",
-          "title": "PhD Automated Dialogic Feedback using AI in Education",
+          "title": "PhD LLMs as Dialogic Feedback Tools in STEM Education",
           "institution": "Imperial College London",
+          "logo": "ImperialCollegeLondon_logo_new.png",
           "details": [
             "Supervised by Dr Peter Johnson, leader of Lambda Feedback",
             "\"To what extent can we utilise existing GenAI tools to provide effective dialogic feedback, whilst aligning with educational values and ensuring domain-specific technical accuracy?\""
@@ -19,6 +20,7 @@
           "period": "2020 - 2024",
           "title": "MEng Electronic and Information Engineering",
           "institution": "Imperial College London",
+          "logo": "ImperialCollegeLondon_logo_new.png",
           "details": [
             "First Class Honours",
             "Awarded the Undergraduate President's Scholarship"
@@ -62,6 +64,7 @@
           "period": "2018 - 2020",
           "title": "IB Diploma Programme",
           "institution": "Sevenoaks School, Kent",
+          "logo": "SevenoaksSchool_logo.png",
           "details": [
             "Higher Level Subjects: Mathematics (7), Physics (7), Geography (6)",
             "Standard Level Subjects: English Literature (5), German B (5), Mandarin B (6)",
@@ -77,6 +80,7 @@
           "period": "Apr-Sept 2023",
           "title": "Professional Services Intern",
           "institution": "Amazon Web Services, London",
+          "logo": "AWS_logo.png",
           "details": ["6 months industrial placement"],
           "projects": [
             "Project 1: Setting up the Monitoring and Alarming System for the largely scalable EC2 Instance Fleet of the Managed Environments for Outside Work, a fully managed virtual desktop service",
@@ -87,6 +91,7 @@
           "period": "Jul-Sept 2022",
           "title": "Professional Services Intern",
           "institution": "Amazon Web Services, London",
+          "logo": "AWS_logo.png",
           "details": [
             "3 months summer internship",
             "Transferred the Landing Zone Assessment Offering onto the AWS Assessment Tool and created a demo web assessment with AWS Amplify"
@@ -108,7 +113,7 @@
       "categories": [
         {
           "name": "Full Stack - Front End Dev",
-          "skills": "JavaScript, TypeScript, React, CSS"
+          "skills": "TypeScript, JavaScript, React, CSS"
         },
         {
           "name": "Back End Dev",
@@ -139,10 +144,22 @@
     {
       "title": "Certifications",
       "items": [
-        "AWS Certified Machine Learning Specialty",
-        "AWS Certified Solutions Architect Associate",
-        "AWS Certified Cloud Practitioner",
-        "HashiCorp Certified: Terraform Associate (003)"
+        {
+          "name": "AWS Certified Machine Learning Specialty",
+          "logo": "AWS_MachineLearningCert.png"
+        },
+        {
+          "name": "AWS Certified Solutions Architect Associate",
+          "logo": "AWS_SolutionsArchitectCert.png"
+        },
+        {
+          "name": "AWS Certified Cloud Practitioner",
+          "logo": "AWS_CloudPractitionerCert.png"
+        },
+        {
+          "name": "HashiCorp Certified: Terraform Associate (003)",
+          "logo": "Terraform_AssociateCert.png"
+        }
       ]
     },
     {
@@ -152,6 +169,7 @@
           "period": "2025 - currently",
           "title": "Imperial Outreach Leader",
           "institution": "Imperial College London",
+          "logo": "ImperialCollegeLondon_logo_new.png",
           "details": [
             "Engaging students into STEM subjects through hands-on activities and workshops hosted by Imperial College London Wohl Reach Out Lab"
           ],
@@ -164,6 +182,7 @@
           "period": "2025 - currently",
           "title": "Postgraduate Teaching Assistant",
           "institution": "Imperial College London",
+          "logo": "ImperialCollegeLondon_logo_new.png",
           "details": [
             "Assisting with labs and tutorials for various modules in different departments: Machine Learning and Data Science (MSci ESE), Machine Reasoning (3rd year EE), Robotics (3rd year DoC), Maths Methods 2 (1st year ESE)"
           ]
@@ -172,6 +191,7 @@
           "period": "2023 - 2024",
           "title": "Undergraduate Teaching Assistant",
           "institution": "Imperial College London, Electrical Engineering Department",
+          "logo": "ImperialCollegeLondon_logo_new.png",
           "details": [
             "Assisting with labs and tutorials for various modules: Machine Reasoning"
           ]
@@ -180,6 +200,7 @@
           "period": "2021 - 2023",
           "title": "Vice President Industry, EESoc",
           "institution": "Imperial College London",
+          "logo": "eesoc_logo.png",
           "details": [
             "In charge of organising industry talks, webinars, and the Careers' Fair; gaining sponsorship for the society",
             "Contacting companies and sustaining a good relationship with the society",
@@ -190,6 +211,7 @@
           "period": "2020 - 2021",
           "title": "Chairperson, Tizard Hall",
           "institution": "Imperial College London",
+          "logo": "ImperialCollegeLondon_logo_new.png",
           "details": [
             "Overseeing organisation of social events and management of the hall budget",
             "Chaired meetings for discussions on planning and promoting events, receiving residents' feedbacks, and designating event-related team roles",
@@ -200,6 +222,7 @@
           "period": "2018 - 2019",
           "title": "Volunteer teacher in Rajasthan, India",
           "institution": "Sevenoaks School",
+          "logo": "SevenoaksSchool_logo.png",
           "details": [
             "Gathered funds for 7 months by selling self-made pastries and organising charitable events in Sevenoaks",
             "Aim to provide funds collected throughout the academic year for the disabled children at SKSN School",
@@ -210,6 +233,7 @@
           "period": "2016 - 2017",
           "title": "Mentor for Arduino Coding Club",
           "institution": "CoderDojo Bucharest",
+          "logo": "CoderDojo_Original_logo.png",
           "details": [
             "Taught Arduino programming and created small projects alongside 8 – 15-year-old children",
             "Demonstrated patience and good social observation skills by identifying students in need of help throughout the projects, improved my skills of listening and explaining"
@@ -218,6 +242,7 @@
         {
           "period": "past - future",
           "title": "Travelling",
+          "logo": "world_globe_png.png",
           "details": [
             "Visited multiple countries throughout the Globe, inside Europe, China, Costa Rica, India, Japan, Madagascar, Tanzania, Peru, Egypt, USA, ...",
             "Encountered many different cultures and assimilated learned traditions and history"
