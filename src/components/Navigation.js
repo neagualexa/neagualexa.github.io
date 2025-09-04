@@ -20,18 +20,18 @@ const Navigation = () => {
         </li>
         <li>
           <Link
-            to="/projects"
-            className={`nav-link ${isActive("/projects") ? "active" : ""}`}
-          >
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link
             to="/resume"
             className={`nav-link ${isActive("/resume") ? "active" : ""}`}
           >
             Resume
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/projects"
+            className={`nav-link ${isActive("/projects") ? "active" : ""}`}
+          >
+            Projects
           </Link>
         </li>
       </ul>

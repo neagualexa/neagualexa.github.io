@@ -1,22 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
+import profilePhoto from "../data/images/profile_photo.jpg";
 
 const IntroSection = ({ introduction, callToAction }) => {
   return (
-    <div className="intro-text">
-      <h1>{introduction.greeting}</h1>
-      <h3>{introduction.subtitle}</h3>
-      {introduction.description.map((paragraph, index) => (
-        <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }}></p>
-      ))}
+    <div className="intro-section">
+      <div className="intro-content">
+        <div className="profile-image">
+          <img src={profilePhoto} alt="Alexandra Neagu" />
+        </div>
+        <div className="intro-text">
+          <h1>{introduction.greeting}</h1>
+          <h3>{introduction.subtitle}</h3>
+          {introduction.description.map((paragraph, index) => (
+            <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }}></p>
+          ))}
 
-      <div className="cta-buttons">
-        {callToAction.map((cta, index) => (
-          <Button key={index} to={cta.link} variant={cta.type}>
-            {cta.text}
-          </Button>
-        ))}
+          <div className="cta-buttons">
+            {callToAction.map((cta, index) => (
+              <Button key={index} to={cta.link} variant={cta.type}>
+                {cta.text}
+              </Button>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
