@@ -18,7 +18,7 @@
           ],
           "conference": "UK and Ireland Engineering Education Research Network Annual Symposium",
           "year": "2025",
-          "location": "Manchester, UK",
+          "location": "Manchester University, Manchester, UK",
           "pages": "432-440",
           "doi": "10.71535/f5dfe8de-1b80-4192-8573-54d934996dec",
           "abstract": "Self-study often leads to impasses – getting stuck. Impasses can be a valuable learning opportunity if supported by timely feedback, especially dialogic feedback. LLM-based chatbots can provide timely, dialogic feedback for all students in a large cohort, however their use requires careful consideration. Two key challenges of LLM chatbots are aligning with educational values and ensuring technical accuracy. \n\nThis paper examines how providing chatbots with contextual information affects their educational value. Using a framework of impasse-driven learning, we introduce concepts of objective context (e.g. course materials) and subjective context (e.g. student's thought process). We theoretically analyse the risks and benefits of context-awareness in chatbots when supporting a student during an impasse. \n\nTo gain empirical insight, we deployed chatbots to students on a self-study learning platform (Lambda Feedback) that can provide objective context to the chatbot. Qualitative analysis of conversations from 23 students show that students frequently reference objective context in their queries, allowing the dialogue to focus on their impasse and reducing cognitive load. \n\nEvidence provided here shows the benefits of contextual awareness for chatbots. We also discuss the potential risks, namely removing student agency and ‘productive struggle’. We conclude that, on balance, chatbots are likely to be most educationally beneficial if context is available, but that chatbots should be configured to manage the risks. We outline future work on managing the risks.",
@@ -45,7 +45,30 @@
     {
       "id": "preprints",
       "title": "Preprints",
-      "publications": []
+      "publications": [
+        {
+          "id": "2025-learnlab-politeness",
+          "title": "Teaching Apprentice Learner Politeness in Foreign Language Learning",
+          "authors": [
+            "Alexandra Neagu",
+            "Cong Xu",
+            "Dr. Erik Harpstead",
+            "Dr. Ken Koedinger",
+            "Dr. Daniel Weitekamp"
+          ],
+          "conference": "LearnLab Summer School",
+          "year": "2025",
+          "location": "Carnegie Mellon, Pittsburgh, PA, USA",
+          "abstract": "Intelligent Tutoring Systems (ITS) for language learning may neglect social and cultural contexts, such as politeness. To address this, we investigate if an Apprentice Learner (AL) can learn politeness strategies. We trained a simulated student using the Knowledge-Learning-Instruction (KLI) framework to learn politeness as knowledge components by interacting with an ITS tutor in a Chinese-learning exercise. This study focuses on the AL's 'when-learning' process throughout its training through examples. Preliminary findings suggest the AL can successfully learn and apply politeness strategies, advancing the development of both ITS and ALs.",
+          "keywords": [
+            "Apprentice Learner",
+            "Simulated Student",
+            "KLI Framework",
+            "Knowledge Components",
+            "Foreign Language Learning"
+          ]
+        }
+      ]
     }
   ]
 }
