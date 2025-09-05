@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.220baefc.css",
-    "main.js": "/static/js/main.6cf19aaf.js",
+    "main.js": "/static/js/main.14f374c8.js",
     "static/media/Synthesiser_demo_video.mp4": "/static/media/Synthesiser_demo_video.99582d2d456b18f85f13.mp4",
     "static/media/Medusa_IO_presentation_video.mp4": "/static/media/Medusa_IO_presentation_video.9df9959aae716e291807.mp4",
     "static/media/Synthesiser_songs_video.mp4": "/static/media/Synthesiser_songs_video.7013802cbea49aac81ce.mp4",
@@ -52,10 +52,10 @@
     "static/media/UKSDC_logo.png": "/static/media/UKSDC_logo.aa34788da2f34f7ada97.png",
     "index.html": "/index.html",
     "main.220baefc.css.map": "/static/css/main.220baefc.css.map",
-    "main.6cf19aaf.js.map": "/static/js/main.6cf19aaf.js.map"
+    "main.14f374c8.js.map": "/static/js/main.14f374c8.js.map"
   },
   "entrypoints": [
     "static/css/main.220baefc.css",
-    "static/js/main.6cf19aaf.js"
+    "static/js/main.14f374c8.js"
   ]
 }
