@@ -23,8 +23,8 @@
             "Educational AI"
           ],
           "images": [
-            "Nonogram_AIAssistant_ArchitecturePipeline.png",
-            "Nonogram_AIAssistant_LogicPipeline.png"
+            "Nonogram_AIAssistant_ArchitecturePipeline.jpg",
+            "Nonogram_AIAssistant_LogicPipeline.jpg"
           ],
           "links": [
             {
@@ -114,7 +114,7 @@
           ],
           "images": [
             "CharIOT_ArchitecturePipeline.png",
-            "CharIOT_product_photo.png"
+            "CharIOT_product_photo.jpg"
           ],
           "links": [
             {
@@ -167,7 +167,7 @@
           "images": [
             "Instability_rover_profile.png",
             "Instability_ArchitecturePipeline.png",
-            "Instability_website_map.png"
+            "Instability_website_map.jpg"
           ],
           "links": [
             {
@@ -347,7 +347,7 @@
           "title": "Team projects at Hack-her-thon, ICL WSET",
           "description": "<strong>C-case (2022):</strong><br>An only-girls team project aimed to provide a centralised platform where aid and offers of support to the Ukrainian refugees can be coordinated. The application could connect individuals in need of help with those who able and willing to provide it. It also provided an easy way of accessing donation sites and getting involved as volunteers.<br><br><strong>Solar car (2021):</strong><br>An only-girls team project aimed to teach children the importance of solar energy for the technological development through a web-game quiz with a hardware joystick and solar panel. I held the position of team leader, analysed members' skills and assigned team roles respectively. I improved my understanding of IoT programming hosting an HTML website by the Arduino.",
           "technologies": ["Hackathon", "Women in Tech"],
-          "images": ["WSET_hackherthon_logo.png"],
+          "images": ["WSET_hackherthon_logo.jpg"],
           "links": [
             {
               "text": "C-Case on GitHub",

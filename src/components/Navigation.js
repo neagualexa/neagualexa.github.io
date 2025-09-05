@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const location = useLocation();
@@ -56,44 +57,49 @@ const Navigation = () => {
 
   return (
     <nav className={`${isVisible ? "nav-visible" : "nav-hidden"}`}>
-      <ul>
-        <li>
-          <Link
-            to="/"
-            className={`nav-link ${isActive("/") ? "active" : ""}`}
-            onClick={handleNavClick}
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/resume"
-            className={`nav-link ${isActive("/resume") ? "active" : ""}`}
-            onClick={handleNavClick}
-          >
-            Resume
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/projects"
-            className={`nav-link ${isActive("/projects") ? "active" : ""}`}
-            onClick={handleNavClick}
-          >
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/publications"
-            className={`nav-link ${isActive("/publications") ? "active" : ""}`}
-            onClick={handleNavClick}
-          >
-            Publications
-          </Link>
-        </li>
-      </ul>
+      <div className="nav-container">
+        <ul>
+          <li>
+            <Link
+              to="/"
+              className={`nav-link ${isActive("/") ? "active" : ""}`}
+              onClick={handleNavClick}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/resume"
+              className={`nav-link ${isActive("/resume") ? "active" : ""}`}
+              onClick={handleNavClick}
+            >
+              Resume
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/projects"
+              className={`nav-link ${isActive("/projects") ? "active" : ""}`}
+              onClick={handleNavClick}
+            >
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/publications"
+              className={`nav-link ${
+                isActive("/publications") ? "active" : ""
+              }`}
+              onClick={handleNavClick}
+            >
+              Publications
+            </Link>
+          </li>
+        </ul>
+        <ThemeToggle />
+      </div>
     </nav>
   );
 };
