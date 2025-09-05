@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.220baefc.css",
-    "main.js": "/static/js/main.14f374c8.js",
+    "main.css": "/static/css/main.8450e7c5.css",
+    "main.js": "/static/js/main.5e4e9142.js",
     "static/media/Synthesiser_demo_video.mp4": "/static/media/Synthesiser_demo_video.99582d2d456b18f85f13.mp4",
     "static/media/Medusa_IO_presentation_video.mp4": "/static/media/Medusa_IO_presentation_video.9df9959aae716e291807.mp4",
     "static/media/Synthesiser_songs_video.mp4": "/static/media/Synthesiser_songs_video.7013802cbea49aac81ce.mp4",
@@ -13,12 +13,12 @@
     "static/media/Localising_robot_profile.jpg": "/static/media/Localising_robot_profile.ce01ab1be5c65b7a290b.jpg",
     "static/media/Synthesiser_clarinet_wave.jpg": "/static/media/Synthesiser_clarinet_wave.9f27e8659d4a9d4642ac.jpg",
     "static/media/CircuitSImulator_report.pdf": "/static/media/CircuitSImulator_report.e5d94e697eff6204efa0.pdf",
-    "static/media/CharIOT_product_photo.png": "/static/media/CharIOT_product_photo.de6ab7e6d3928d78ba30.png",
+    "static/media/CharIOT_product_photo.jpg": "/static/media/CharIOT_product_photo.de6ab7e6d3928d78ba30.jpg",
     "static/media/ICHack_AR_glasses_view.jpeg": "/static/media/ICHack_AR_glasses_view.802ae783647a20c3ef4b.jpeg",
     "static/media/Synthesiser_octaves.jpg": "/static/media/Synthesiser_octaves.8af2e2a141069e4c0a71.jpg",
     "static/media/MedusaIO_report.pdf": "/static/media/MedusaIO_report.1ed1cb6dfb9af440704a.pdf",
-    "static/media/Nonogram_AIAssistant_ArchitecturePipeline.png": "/static/media/Nonogram_AIAssistant_ArchitecturePipeline.24e3ca125a6081cb9cf2.png",
-    "static/media/Instability_website_map.png": "/static/media/Instability_website_map.6d88079d1c3911b7f1b2.png",
+    "static/media/Nonogram_AIAssistant_ArchitecturePipeline.jpg": "/static/media/Nonogram_AIAssistant_ArchitecturePipeline.24e3ca125a6081cb9cf2.jpg",
+    "static/media/Instability_website_map.jpg": "/static/media/Instability_website_map.6d88079d1c3911b7f1b2.jpg",
     "static/media/Spot_robot_photo.jpeg": "/static/media/Spot_robot_photo.4bfd6377299874e339f6.jpeg",
     "static/media/CPU_MIPS_datapath.jpg": "/static/media/CPU_MIPS_datapath.7e6e36af551ba9b6268b.jpg",
     "static/media/ICHack_AR_demo2.jpg": "/static/media/ICHack_AR_demo2.af94b323cec602420ecf.jpg",
@@ -26,7 +26,7 @@
     "static/media/2025_EERN_Paper_Proceedings_Extracted.pdf": "/static/media/2025_EERN_Paper_Proceedings_Extracted.f52b87ae7dd99c5c1153.pdf",
     "static/media/ICHack_AR_demo1.jpg": "/static/media/ICHack_AR_demo1.d94cb1b78127f00feb40.jpg",
     "static/media/CoolestProjects_CoderDojo_logo.png": "/static/media/CoolestProjects_CoderDojo_logo.d0ce0e61df0b67884453.png",
-    "static/media/Nonogram_AIAssistant_LogicPipeline.png": "/static/media/Nonogram_AIAssistant_LogicPipeline.06a3b767627401c68b32.png",
+    "static/media/Nonogram_AIAssistant_LogicPipeline.jpg": "/static/media/Nonogram_AIAssistant_LogicPipeline.06a3b767627401c68b32.jpg",
     "static/media/Instability_rover_profile.png": "/static/media/Instability_rover_profile.25beba5d8d70fa05c59c.png",
     "static/media/Medusa_IO_photo.jpg": "/static/media/Medusa_IO_photo.42de1c2854577d4fd816.jpg",
     "static/media/AWS_Polly_PlacementProject_WebApp.png": "/static/media/AWS_Polly_PlacementProject_WebApp.31eace2ba279809b8670.png",
@@ -38,7 +38,7 @@
     "static/media/AWS_Polly_PlacementProject_ArchitecturePipeline.jpg": "/static/media/AWS_Polly_PlacementProject_ArchitecturePipeline.b282804be6c4eb4955f4.jpg",
     "static/media/AWS_LZAProject_ArchitecturePipeline.png": "/static/media/AWS_LZAProject_ArchitecturePipeline.1e1a8a7cc607e6c2e127.png",
     "static/media/world_globe_png.png": "/static/media/world_globe_png.e73fc51984ae1f0e535f.png",
-    "static/media/WSET_hackherthon_logo.png": "/static/media/WSET_hackherthon_logo.c2e68757701927a56319.png",
+    "static/media/WSET_hackherthon_logo.jpg": "/static/media/WSET_hackherthon_logo.c2e68757701927a56319.jpg",
     "static/media/profile_photo.jpg": "/static/media/profile_photo.840804aa0d5266b86415.jpg",
     "static/media/AWS_logo.png": "/static/media/AWS_logo.1d12dac553d9b80656ec.png",
     "static/media/AWS_SolutionsArchitectCert.png": "/static/media/AWS_SolutionsArchitectCert.1798be647124e4c98fad.png",
@@ -51,11 +51,11 @@
     "static/media/ImperialCollegeLondon_logo_new.png": "/static/media/ImperialCollegeLondon_logo_new.2c1301d3314a4b3c6f7e.png",
     "static/media/UKSDC_logo.png": "/static/media/UKSDC_logo.aa34788da2f34f7ada97.png",
     "index.html": "/index.html",
-    "main.220baefc.css.map": "/static/css/main.220baefc.css.map",
-    "main.14f374c8.js.map": "/static/js/main.14f374c8.js.map"
+    "main.8450e7c5.css.map": "/static/css/main.8450e7c5.css.map",
+    "main.5e4e9142.js.map": "/static/js/main.5e4e9142.js.map"
   },
   "entrypoints": [
-    "static/css/main.220baefc.css",
-    "static/js/main.14f374c8.js"
+    "static/css/main.8450e7c5.css",
+    "static/js/main.5e4e9142.js"
   ]
 }
