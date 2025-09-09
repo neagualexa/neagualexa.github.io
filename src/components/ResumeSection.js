@@ -16,30 +16,88 @@ const ResumeSection = ({ section }) => {
     }
   };
 
+  const renderItemHeader = (item) => (
+    <div className="resume-item-header">
+      {item.logo && (
+        <div className="institution-logo">
+          <img
+            src={getLogoPath(item.logo)}
+            alt={`${item.institution} logo`}
+            onError={(e) => {
+              e.target.style.display = "none";
+            }}
+          />
+        </div>
+      )}
+      <div className="resume-item-content">
+        <div className="date">{item.period}</div>
+        <h4>{item.title}</h4>
+        <div className="institution">{item.institution}</div>
+      </div>
+    </div>
+  );
+
+  const renderProject = (project, projectIndex) => {
+    const colonIndex = project.indexOf(":");
+    if (colonIndex !== -1) {
+      const title = project.substring(0, colonIndex);
+      const description = project.substring(colonIndex + 1);
+      return (
+        <div key={projectIndex}>
+          <strong>{title}:</strong>
+          {description}
+        </div>
+      );
+    } else {
+      return (
+        <div key={projectIndex}>
+          <strong>Project {projectIndex + 1}:</strong> {project}
+        </div>
+      );
+    }
+  };
+
+  const renderPublication = (pub, pubIndex) => (
+    <li key={pubIndex}>
+      {typeof pub === "string" ? (
+        pub
+      ) : (
+        <div className="publication-item">
+          <span className="publication-text">{pub.citation}</span>
+          <Button
+            variant="secondary"
+            onClick={() => navigate(`/publications#${pub.id}`)}
+            title="View full publication details"
+          >
+            View Details
+          </Button>
+        </div>
+      )}
+    </li>
+  );
+
+  const renderYearBreakdown = (yearBreakdown) => (
+    <div>
+      {Object.entries(yearBreakdown).map(([year, subjects]) => (
+        <div key={year}>
+          <strong>{year}:</strong>
+          <ul>
+            {subjects.map((subject, subjectIndex) => (
+              <li key={subjectIndex}>{subject}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <div className="resume-section">
       <h3>{section.title}</h3>
 
       {section.items.map((item, index) => (
         <div key={index} className="resume-item">
-          <div className="resume-item-header">
-            {item.logo && (
-              <div className="institution-logo">
-                <img
-                  src={getLogoPath(item.logo)}
-                  alt={`${item.institution} logo`}
-                  onError={(e) => {
-                    e.target.style.display = "none";
-                  }}
-                />
-              </div>
-            )}
-            <div className="resume-item-content">
-              <div className="date">{item.period}</div>
-              <h4>{item.title}</h4>
-              <div className="institution">{item.institution}</div>
-            </div>
-          </div>
+          {renderItemHeader(item)}
 
           {item.details && (
             <ul>
@@ -53,24 +111,9 @@ const ResumeSection = ({ section }) => {
             <div>
               <strong>Publications:</strong>
               <ul>
-                {item.publications.map((pub, pubIndex) => (
-                  <li key={pubIndex}>
-                    {typeof pub === "string" ? (
-                      pub
-                    ) : (
-                      <div className="publication-item">
-                        <span className="publication-text">{pub.citation}</span>
-                        <Button
-                          variant="secondary"
-                          onClick={() => navigate(`/publications#${pub.id}`)}
-                          title="View full publication details"
-                        >
-                          View Details
-                        </Button>
-                      </div>
-                    )}
-                  </li>
-                ))}
+                {item.publications.map((pub, pubIndex) =>
+                  renderPublication(pub, pubIndex)
+                )}
               </ul>
             </div>
           )}
@@ -82,30 +125,15 @@ const ResumeSection = ({ section }) => {
             </div>
           )}
 
-          {item.yearBreakdown && (
-            <div>
-              {Object.entries(item.yearBreakdown).map(([year, subjects]) => (
-                <div key={year}>
-                  <strong>{year}:</strong>
-                  <ul>
-                    {subjects.map((subject, subjectIndex) => (
-                      <li key={subjectIndex}>{subject}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
+          {item.yearBreakdown && renderYearBreakdown(item.yearBreakdown)}
 
           {item.languages && <div>{item.languages}</div>}
 
           {item.projects && (
             <div>
-              {item.projects.map((project, projectIndex) => (
-                <div key={projectIndex}>
-                  <strong>Project {projectIndex + 1}:</strong> {project}
-                </div>
-              ))}
+              {item.projects.map((project, projectIndex) =>
+                renderProject(project, projectIndex)
+              )}
             </div>
           )}
         </div>

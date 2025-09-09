@@ -98,7 +98,19 @@ const Navigation = () => {
             </Link>
           </li>
         </ul>
-        <ThemeToggle />
+        <div className="nav-controls">
+          <a
+            href="/Alexandra Neagu Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cv-download-btn"
+            title="Download CV (PDF)"
+            aria-label="Download CV PDF"
+          >
+            View my CV
+          </a>
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   );
