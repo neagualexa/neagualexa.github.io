@@ -1,5 +1,6 @@
 {
   "navigation": [
+    { "id": "personal-projects", "label": "Personal Projects" },
     { "id": "fourth-year", "label": "4th Year University Projects" },
     { "id": "third-year", "label": "3rd Year University Projects" },
     { "id": "second-year", "label": "2nd Year University Projects" },
@@ -9,8 +10,34 @@
   ],
   "sections": [
     {
+      "id": "personal-projects",
+      "title": "Personal Projects",
+      "projects": [
+        {
+          "title": "PDF Narrator Webapp",
+          "year": "2025-ongoing",
+          "description": "I developed a text-to-speech web application for personal use that narrates PDFs using locally hosted neural TTS models. I was inspired by products like <a href='https://speechify.com/' >Speechify</a> and was motivated to work on this project due to the restrictive free tier usage limit and functionality in commercial alternatives and the poor quality of system TTS voices within my laptop.<br><br>The app fetches sentences from the PDF for narration and features a built-in PDF viewer. It utilizes two TTS engines (Pyttsx3 and Piper neural models) providing customizable voice options with different accents and speeds.<br><br>This project was my first fun exploration of vibe coding with LLM agents, where I realised the challenges and rewards of such high dependance on GenAI during coding. I realised that most my effort and time went into breaking down complex features into smaller manageable components for the LLM agent to iteratively develop. I also seem to have become a human-in-the-loop for code quality analysis, because the current LLMs seem to neglect coding best practices when editing existing codebases (e.g. LLMs prefer to write a new function as a wrapper for a functionality change instead of editing the current existent function).",
+          "technologies": [
+            "Vibe Coding with LLM Agents",
+            "Text-to-Speech (TTS)",
+            "Local TTS Models",
+            "Web Development"
+          ],
+          "images": ["PDF_Narrator_interface.jpg"],
+          "links": [
+            {
+              "text": "View on GitHub",
+              "url": "https://github.com/neagualexa/pdf_narrator",
+              "type": "github"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "fourth-year",
       "title": "4th Year University Projects",
+      "year": "2023-2024",
       "projects": [
         {
           "title": "Individual Project: Enhancing Puzzle-Solving with User-Tailored AI Assistance: A Study on Nonogram Learning Outcomes",
@@ -76,6 +103,7 @@
     {
       "id": "third-year",
       "title": "3rd Year University Projects",
+      "year": "2022-2023",
       "projects": [
         {
           "title": "CharKey - Synthesizer Project",
@@ -153,6 +181,7 @@
     {
       "id": "second-year",
       "title": "2nd Year University Projects",
+      "year": "2021-2022",
       "projects": [
         {
           "title": "Instability Rover",
@@ -237,6 +266,7 @@
     {
       "id": "first-year",
       "title": "1st Year University Projects",
+      "year": "2020-2021",
       "projects": [
         {
           "title": "AVS Sim - a SPICE-based Circuit Simulator",
@@ -268,7 +298,8 @@
       "title": "Internships & Hackathons Projects",
       "projects": [
         {
-          "title": "Lazy Browsing Chrome Extension for Agentic-based personalised shopping",
+          "title": "Lazy Browsing Chrome Extension for Agentic-based personalised shopping, ICL ICHack",
+          "year": "2025",
           "description": "An AI assistant that helps you centralise your search for multiple products of same characteristics online. Using <a href='https://github.com/browser-use/browser-use' target='_blank' rel='noopener noreferrer'>browser use</a> for agents that control a chromium tab to interact with and complete the task.",
           "technologies": [
             "Chrome Extension",
@@ -286,6 +317,7 @@
         },
         {
           "title": "Monitoring and Alarming System of global EC2 Instance Fleet, AWS",
+          "year": "2023",
           "description": "I set up a Monitoring and Alarming System for the largely scalable EC2 Instance Fleet of the <strong>Managed Environments for Outside Work</strong>, a fully managed virtual desktop service.<br><br>I built a cloud infrastructure for fetching, preparing, and visualising device metrics including:<br><ul><li>CPU Utilisation</li><li>RAM Usage</li><li>Network Performance</li><li>Disk Utilisation</li></ul><br>The system is easily deployed through <strong>AWS CDK</strong>, an Infrastructure as Code toolkit, that allows for easy resource provisioning for cloud solutions. The architecture diagram presented is the final infrastructure of the Monitoring and Alarming System.",
           "technologies": ["AWS", "EC2", "Monitoring", "Cloud Infrastructure"],
           "images": ["AWS_MEOW_PlacementProject_ArchitecturePipeline.jpg"],
@@ -293,6 +325,7 @@
         },
         {
           "title": "Serverless Infrastructure for a Text to Speech Conversion, AWS",
+          "year": "2023",
           "description": "I built a serverless infrastructure for a text to speech conversion and generation system of natural voices using AWS Polly. The backend infrastructure was built using Terraform, an Infrastructure-as-Code tool, that allows for easy resource provisioning for cloud solutions. I set up a web interface using React Typescript to allow users to access the backend functionalities without accessing the AWS console. The architecture diagram presented is the final infrastructure of the backend infrastrucutre. And the Screenshot here is the form webapp for accessing the system.",
           "technologies": [
             "AWS Polly",
@@ -308,6 +341,7 @@
         },
         {
           "title": "Fan Mail Digitalization, AWS Interns Hackathon",
+          "year": "2023",
           "description": "My team built a serverless infrastructure for digitalizing fan letters. The uploaded photos and tweets would be translated and filtered considering the comprehended sentiment (blocking negative ones). This way we can centrally display messages in concert venues without the risk of encountering spam or hate speech. The architecture diagram presented is the MVP's infrastructure of the system.",
           "technologies": [
             "AWS",
@@ -321,6 +355,7 @@
         },
         {
           "title": "Online Landing Zone Assessment, AWS",
+          "year": "2022",
           "description": "I transferred the Landing Zone Assessment Offering onto the AWS Assessment Tool (A2T tool) and created my own WebApp Demo for the Assessment with AWS Amplify and other services. The architecture diagram presented is the final infrastructure of my WebApp interpretation.",
           "technologies": [
             "AWS",
@@ -333,6 +368,7 @@
         },
         {
           "title": "ZeroToOne - AR/VR Circuit Design Simulator, ICL ICHack",
+          "year": "2022",
           "description": "Aim of the idea was to create a demo for an AR circuit studio, developed in Unity with Vuforia and C#. We used both a Phone compatible headset and the direct phone screen for user interfaces. The android application was presenting a step by step guide for building a specific circuit. This project was aimed for professors to give out remote guidance to students during their hardware laboratories. All models of the circuit components were designed by the team.",
           "technologies": ["AR/VR", "Unity", "C#", "Circuit Design"],
           "images": [
@@ -345,6 +381,7 @@
         },
         {
           "title": "Team projects at Hack-her-thon, ICL WSET",
+          "year": "2021-2022",
           "description": "<strong>C-case (2022):</strong><br>An only-girls team project aimed to provide a centralised platform where aid and offers of support to the Ukrainian refugees can be coordinated. The application could connect individuals in need of help with those who able and willing to provide it. It also provided an easy way of accessing donation sites and getting involved as volunteers.<br><br><strong>Solar car (2021):</strong><br>An only-girls team project aimed to teach children the importance of solar energy for the technological development through a web-game quiz with a hardware joystick and solar panel. I held the position of team leader, analysed members' skills and assigned team roles respectively. I improved my understanding of IoT programming hosting an HTML website by the Arduino.",
           "technologies": ["Hackathon", "Women in Tech"],
           "images": ["WSET_hackherthon_logo.jpg"],
@@ -369,6 +406,7 @@
       "projects": [
         {
           "title": "\"QuestZone\" Social Entrepreneurship Personal Project",
+          "year": "2019",
           "description": "QuestZone is an online platform which provides refugees and homeless people in the UK with the opportunity of getting temporarily employed for completing simple tasks that do not require a high degree of education. I developed new coding skills in React Native, learned the stages of starting and maintaining a social entrepreneurship idea.<br><br>See pitch <a href='https://youtu.be/qsXfJahGp8w' target='_blank' rel='noopener noreferrer'>here</a>.",
           "technologies": [
             "Social Entrepreneurship",
@@ -386,6 +424,7 @@
         },
         {
           "title": "UK Space Design Competition, Regional & National Stages",
+          "year": "2019",
           "description": "Participated in the UK Space Design Competition, advancing through regional to national stages. The project aims were:<br><br><strong>Regional stage:</strong> designing a solution to house 4000 people under the ice of Jupiter's moon, Europa, in the year 2118.<br><br><strong>National stage:</strong> designing an economic and touristic port orbiting the Moon.<br><br>I was the team leader for the Automation Team who oversaw the setting up, usage and maintenance of the building robots, the networking system, and the security & cybersecurity on the base. I was chosen as Reserve to represent the UK at the International Space Settlement Design Competition <a href='https://uksdc.org/2019/03/team-selected-from-the-winning-competition-to-represent-the-uk-at-the-issdc/' target='_blank' rel='noopener noreferrer'>(link)</a>.",
           "technologies": [
             "Space Engineering",
@@ -403,6 +442,7 @@
         },
         {
           "title": "Team projects at Coolest Projects International",
+          "year": "2016-2018",
           "description": "<strong>2018 - Second World:</strong><br>I was awarded Runner Up prize, Category Games & Web games for the project \"Second World\", a modded Minecraft server aiming to teach children the value of money through a currency ranking system. Developed the various game logistics and mods in Java.<br><br><strong>2017 - Smart house:</strong><br>I completed the project \"Smart house\", aiming to improve homes with self-closing curtains, sound-driven lights and magnetic-based safety door locks and control the equipment on an application. Developed the hardware-software interconnectivity with Arduino, thus integrating IoT ideologies into the implementation of our team's ideas.<br><br><strong>2016 - Warehouse 2.0:</strong><br>I was awarded Enterprise and Evolution awards for the project \"Warehouse 2.0\", a smart hardware solution for storing objects securely, in an organised manner with an application for maintaining the status of the inventory and for warning against theft with specific inventory and location details. Developed the warehouse's hardware system in Arduino. Shaped my first perspective of human-machine interaction and helped shape my fundamental project management and programming skills.",
           "technologies": ["Young Developers"],
           "images": ["CoolestProjects_CoderDojo_logo.png"],

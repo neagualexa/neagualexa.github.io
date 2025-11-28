@@ -19,7 +19,10 @@ const projectPDFs = importAll(
 const ProjectCard = ({ project }) => {
   return (
     <div className="project-card">
-      <h4>{project.title}</h4>
+      <div className="project-card-header">
+        <h4>{project.title}</h4>
+        {project.year && <h5>({project.year})</h5>}
+      </div>
       <p dangerouslySetInnerHTML={{ __html: project.description }}></p>
 
       {project.technologies && project.technologies.length > 0 && (

@@ -464,6 +464,13 @@ p {
   margin-bottom: 2rem;
 }
 
+.year-section .section-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -492,6 +499,13 @@ p {
 .project-card p {
   margin-bottom: 1rem;
   color: var(--text-primary);
+}
+
+.project-card .project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
 }
 
 .project-technologies {

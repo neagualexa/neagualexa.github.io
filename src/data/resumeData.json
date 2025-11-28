@@ -85,10 +85,11 @@
           "institution": "Lambda Feedback, Imperial College London",
           "logo": "LambdaFeedback_logo.png",
           "details": [
-            "Contributing to the development of Lambda Feedback, an EdTech self-study platform that provides automated formative feedback to students using distributed evaluation microservices",
-            "Working with a team of researchers and developers to improve the platform and add new features to assist my PhD research"
+            "As part of my PhD, I am contributing to the development of Lambda Feedback, an EdTech self-study platform that provides automated formative feedback to students using distributed evaluation microservices",
+            "I am working with a team of researchers and developers to improve the platform and add new features to assist my PhD research"
           ],
           "projects": [
+            "Educational Chatbots: Developed multiple LLM-driven chatbot APIs and their user and monitoring interfaces in Lambda Feedback. These chatbots are aware of the student's submitted work and learning context within Lambda Feedback. Research revolves around prompting the chatbots to have various personalities when conversing with students and analysing the student-chatbot interactions.",
             "CI/CD Pipeline for Chatbot Microservices: Adapted the current CI/CD pipeline of the evaluation microservices for chatbot inferences. Used GitHub Actions to automate the build, testing, and deployment of containerised chatbot functions (Docker and AWS infrastructure using Pulumi (IaC))",
             "Active Session Analysis: Implemented a feature to provide educators with live visual insights into student activity.  Developed in Python with SQL queries to the database for real-time data aggregation",
             "Draft Response Functionality: Integrated a new functionality allowing students to save draft responses for later submission. Developed using TypeScript, SQL migrations, GraphQL and Python"
