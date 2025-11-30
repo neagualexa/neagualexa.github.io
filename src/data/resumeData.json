@@ -86,7 +86,8 @@
           "logo": "LambdaFeedback_logo.png",
           "details": [
             "As part of my PhD, I am contributing to the development of Lambda Feedback, an EdTech self-study platform that provides automated formative feedback to students using distributed evaluation microservices",
-            "I am working with a team of researchers and developers to improve the platform and add new features to assist my PhD research"
+            "I am working with a team of researchers and developers to improve the platform and add new features to assist my PhD research",
+	    "More details in Projects"
           ],
           "projects": [
             "Educational Chatbots: Developed multiple LLM-driven chatbot APIs and their user and monitoring interfaces in Lambda Feedback. These chatbots are aware of the student's submitted work and learning context within Lambda Feedback. Research revolves around prompting the chatbots to have various personalities when conversing with students and analysing the student-chatbot interactions.",
@@ -100,7 +101,10 @@
           "title": "Professional Services Intern",
           "institution": "Amazon Web Services, London",
           "logo": "AWS_logo.png",
-          "details": ["6 months industrial placement"],
+          "details": [
+	    "6 months industrial placement",
+	    "More details in Projects"
+	  ],
           "projects": [
             "Project 1: Setting up the Monitoring and Alarming System for the largely scalable EC2 Instance Fleet of the Managed Environments for Outside Work, a fully managed virtual desktop service",
             "Project 2: Building a Serverless Infrastructure for a text to speech converter and generation of natural voices using AWS Polly; also set up a web interface using AWS Amplify"
@@ -113,7 +117,8 @@
           "logo": "AWS_logo.png",
           "details": [
             "3 months summer internship",
-            "Transferred the Landing Zone Assessment Offering onto the AWS Assessment Tool and created a demo web assessment with AWS Amplify"
+            "Transferred the Landing Zone Assessment Offering onto the AWS Assessment Tool and created a demo web assessment with AWS Amplify",
+	    "More details in Projects"
           ]
         },
         {
