@@ -14,6 +14,23 @@
       "title": "Personal Projects",
       "projects": [
         {
+          "title": "Chatbots for Self-Study",
+          "year": "2024-ongoing",
+          "description": "To assist my PhD research, I am developing features for a self study platform, Lambda Feedback. The platform’s goal is to provide students with automatic feedback for their formative (non-assesment) tasks, such as problem sheets. Lambda Feedback is actively being used by 7 departments in Imperial College London and has had over 4.5k active students since 2021.<br><br>Until I joined the team, the platform was only providing transactional feedback through deterministic approaches on student responses to exercises. My work introduced the afforance of students being able to discuss that feedback through dialogue with LLM-driven chatbots.<br><br>Within the production stack, I integrated a chat functionality which allows students to converse with various chatbots regarding the exercises they are working on. The chatbots are provided the context of the learning task including its description, expected answer or worked solutions, the teacher’s guidance, and also the student’s progress (previous attempts, feedback received, time spent etc). <br><br>The goal of my work is to explore the opportunities and risks of this new interaction between students and the learning materials and aim to develop frameworks for educational chatbots that match both the student’s but also the teacher’s learning approaches.<br>In order to explore the student-chatnot interactions, I also had to develop monitoring processes of the chatbot usage within the platform.<br><br>Interface Setup: I worked together with the software developers on the team to understand the production codebase and best practices for deployment through the CICD. The chatbots are wrapped as APIs with a publicly available containerised boilerplate. The chat functionality was integrated in the Lambda Feedback stack.",
+          "technologies": [
+            "Large Language Models",
+            "Assist Self-Study",
+            "Full stack development"
+          ],
+          "images": [],
+          "links": [
+            {
+              "text": "View Lambda Feedback User Documentation",
+              "url": "https://lambda-feedback.github.io/user-documentation/advanced/chat_functions/info/"
+            }
+          ]
+        },
+        {
           "title": "PDF Narrator Webapp",
           "year": "2025-ongoing",
           "description": "I developed a text-to-speech web application for personal use that narrates PDFs using locally hosted neural TTS models. I was inspired by products like <a href='https://speechify.com/' >Speechify</a> and was motivated to work on this project due to the restrictive free tier usage limit and functionality in commercial alternatives and the poor quality of system TTS voices within my laptop.<br><br>The app fetches sentences from the PDF for narration and features a built-in PDF viewer. It utilizes two TTS engines (Pyttsx3 and Piper neural models) providing customizable voice options with different accents and speeds.<br><br>This project was my first fun exploration of vibe coding with LLM agents, where I realised the challenges and rewards of such high dependance on GenAI during coding. I realised that most my effort and time went into breaking down complex features into smaller manageable components for the LLM agent to iteratively develop. I also seem to have become a human-in-the-loop for code quality analysis, because the current LLMs seem to neglect coding best practices when editing existing codebases (e.g. LLMs prefer to write a new function as a wrapper for a functionality change instead of editing the current existent function).",
