@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f5848d63.css",
-    "main.js": "/static/js/main.a8a152b9.js",
+    "main.css": "/static/css/main.726d4341.css",
+    "main.js": "/static/js/main.21913d77.js",
     "static/media/Synthesiser_demo_video.mp4": "/static/media/Synthesiser_demo_video.99582d2d456b18f85f13.mp4",
     "static/media/Medusa_IO_presentation_video.mp4": "/static/media/Medusa_IO_presentation_video.9df9959aae716e291807.mp4",
     "static/media/Synthesiser_songs_video.mp4": "/static/media/Synthesiser_songs_video.7013802cbea49aac81ce.mp4",
@@ -19,7 +19,9 @@
     "static/media/PDF_Narrator_interface.jpg": "/static/media/PDF_Narrator_interface.85bf6aae2e9e35dc8a88.jpg",
     "static/media/MedusaIO_report.pdf": "/static/media/MedusaIO_report.1ed1cb6dfb9af440704a.pdf",
     "static/media/Nonogram_AIAssistant_ArchitecturePipeline.jpg": "/static/media/Nonogram_AIAssistant_ArchitecturePipeline.24e3ca125a6081cb9cf2.jpg",
+    "static/media/LambdaFeedback_ongoingChat.jpg": "/static/media/LambdaFeedback_ongoingChat.38d09784dda0267fe92a.jpg",
     "static/media/Instability_website_map.jpg": "/static/media/Instability_website_map.6d88079d1c3911b7f1b2.jpg",
+    "static/media/LambdaFeedback_newChat.jpg": "/static/media/LambdaFeedback_newChat.9dc935280c6dd6f84c35.jpg",
     "static/media/Spot_robot_photo.jpeg": "/static/media/Spot_robot_photo.4bfd6377299874e339f6.jpeg",
     "static/media/CPU_MIPS_datapath.jpg": "/static/media/CPU_MIPS_datapath.7e6e36af551ba9b6268b.jpg",
     "static/media/ICHack_AR_demo2.jpg": "/static/media/ICHack_AR_demo2.af94b323cec602420ecf.jpg",
@@ -32,6 +34,7 @@
     "static/media/Medusa_IO_photo.jpg": "/static/media/Medusa_IO_photo.42de1c2854577d4fd816.jpg",
     "static/media/AWS_Polly_PlacementProject_WebApp.png": "/static/media/AWS_Polly_PlacementProject_WebApp.31eace2ba279809b8670.png",
     "static/media/AWS_MEOW_PlacementProject_ArchitecturePipeline.jpg": "/static/media/AWS_MEOW_PlacementProject_ArchitecturePipeline.1c368e69a4f8a3364d57.jpg",
+    "static/media/LambdaFeedback_chatbots.jpg": "/static/media/LambdaFeedback_chatbots.2ea932ff7377eb7c9ee5.jpg",
     "static/media/ICHack_live_demo_photo.jpeg": "/static/media/ICHack_live_demo_photo.0aceac7278564734eda0.jpeg",
     "static/media/eesoc_logo.png": "/static/media/eesoc_logo.c285f6005b370856f38a.png",
     "static/media/Instability_ArchitecturePipeline.png": "/static/media/Instability_ArchitecturePipeline.9498c28249c6f669b2a0.png",
@@ -53,11 +56,11 @@
     "static/media/UKSDC_logo.png": "/static/media/UKSDC_logo.aa34788da2f34f7ada97.png",
     "static/media/LambdaFeedback_logo.png": "/static/media/LambdaFeedback_logo.5a7448eba0d3ac39ddcf.png",
     "index.html": "/index.html",
-    "main.f5848d63.css.map": "/static/css/main.f5848d63.css.map",
-    "main.a8a152b9.js.map": "/static/js/main.a8a152b9.js.map"
+    "main.726d4341.css.map": "/static/css/main.726d4341.css.map",
+    "main.21913d77.js.map": "/static/js/main.21913d77.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5848d63.css",
-    "static/js/main.a8a152b9.js"
+    "static/css/main.726d4341.css",
+    "static/js/main.21913d77.js"
   ]
 }
