@@ -11,7 +11,9 @@ const ProjectSection = ({ section }) => {
       </div>
       <div className="projects-grid">
         {section.projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <div key={index} id={project.id} className="project-card-wrapper">
+            <ProjectCard project={project} />
+          </div>
         ))}
       </div>
     </div>

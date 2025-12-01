@@ -6,6 +6,25 @@ const ProjectsPage = () => {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
+    // Handle initial scroll to hash section if present in URL
+    const scrollToHashSection = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+          const target = document.querySelector(hash);
+          if (target) {
+            // Calculate offset to position element with some padding from top
+            const offset = target.offsetTop - 120; // 120px padding from top
+            window.scrollTo({
+              top: offset,
+              behavior: "smooth",
+            });
+          }
+        }, 100);
+      }
+    };
+
     // Active navigation highlighting for project sections
     const handleScroll = () => {
       const sections = document.querySelectorAll(".year-section");
@@ -26,6 +45,9 @@ const ProjectsPage = () => {
     // Initial scroll position check
     handleScroll();
 
+    // Handle initial hash navigation
+    scrollToHashSection();
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -35,9 +57,10 @@ const ProjectsPage = () => {
     e.preventDefault();
     const target = document.querySelector(e.target.getAttribute("href"));
     if (target) {
-      target.scrollIntoView({
+      const offset = target.offsetTop - 120; // 120px padding from top
+      window.scrollTo({
+        top: offset,
         behavior: "smooth",
-        block: "start",
       });
     }
   };

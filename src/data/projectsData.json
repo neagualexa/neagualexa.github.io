@@ -14,7 +14,8 @@
       "title": "Personal Projects",
       "projects": [
         {
-          "title": "Chatbots for Self-Study",
+          "id": "lambdafeedback-chatbots-self-study",
+          "title": "Chatbots for Self-Study on Lambda Feedback",
           "year": "2024-ongoing",
           "description": "To assist my PhD research, I am developing features for a self study platform, Lambda Feedback. The platform’s goal is to provide students with automatic feedback for their formative (non-assesment) tasks, such as problem sheets. Lambda Feedback is actively being used by 7 departments in Imperial College London and has had over 4.5k active students since 2021.<br><br>Until I joined the team, the platform was only providing transactional feedback through deterministic approaches on student responses to exercises. My work introduced the afforance of students being able to discuss that feedback through dialogue with LLM-driven chatbots.<br><br>Within the production stack, I integrated a chat functionality which allows students to converse with various chatbots regarding the exercises they are working on. The chatbots are provided the context of the learning task including its description, expected answer or worked solutions, the teacher’s guidance, and also the student’s progress (previous attempts, feedback received, time spent etc). <br><br>The goal of my work is to explore the opportunities and risks of this new interaction between students and the learning materials and aim to develop frameworks for educational chatbots that match both the student’s but also the teacher’s learning approaches.<br>In order to explore the student-chatnot interactions, I also had to develop monitoring processes of the chatbot usage within the platform.<br><br>Interface Setup: I worked together with the software developers on the team to understand the production codebase and best practices for deployment through the CICD. The chatbots are wrapped as APIs with a publicly available containerised boilerplate. The chat functionality was integrated in the Lambda Feedback stack.",
           "technologies": [
@@ -337,7 +338,8 @@
           ]
         },
         {
-          "title": "Monitoring and Alarming System of global EC2 Instance Fleet, AWS",
+          "id": "aws-monitoring-alarming",
+          "title": "Monitoring and Alarming System of global EC2 Instance Fleet, AWS Internship",
           "year": "2023",
           "description": "I set up a Monitoring and Alarming System for the largely scalable EC2 Instance Fleet of the <strong>Managed Environments for Outside Work</strong>, a fully managed virtual desktop service.<br><br>I built a cloud infrastructure for fetching, preparing, and visualising device metrics including:<br><ul><li>CPU Utilisation</li><li>RAM Usage</li><li>Network Performance</li><li>Disk Utilisation</li></ul><br>The system is easily deployed through <strong>AWS CDK</strong>, an Infrastructure as Code toolkit, that allows for easy resource provisioning for cloud solutions. The architecture diagram presented is the final infrastructure of the Monitoring and Alarming System.",
           "technologies": ["AWS", "EC2", "Monitoring", "Cloud Infrastructure"],
@@ -345,7 +347,8 @@
           "links": []
         },
         {
-          "title": "Serverless Infrastructure for a Text to Speech Conversion, AWS",
+          "id": "aws-serverless-tts",
+          "title": "Serverless Infrastructure for a Text to Speech Conversion, AWS Internship",
           "year": "2023",
           "description": "I built a serverless infrastructure for a text to speech conversion and generation system of natural voices using AWS Polly. The backend infrastructure was built using Terraform, an Infrastructure-as-Code tool, that allows for easy resource provisioning for cloud solutions. I set up a web interface using React Typescript to allow users to access the backend functionalities without accessing the AWS console. The architecture diagram presented is the final infrastructure of the backend infrastrucutre. And the Screenshot here is the form webapp for accessing the system.",
           "technologies": [
@@ -375,7 +378,8 @@
           "links": []
         },
         {
-          "title": "Online Landing Zone Assessment, AWS",
+          "id": "aws-landing-zone-assessment",
+          "title": "Online Landing Zone Assessment, AWS Internship",
           "year": "2022",
           "description": "I transferred the Landing Zone Assessment Offering onto the AWS Assessment Tool (A2T tool) and created my own WebApp Demo for the Assessment with AWS Amplify and other services. The architecture diagram presented is the final infrastructure of my WebApp interpretation.",
           "technologies": [

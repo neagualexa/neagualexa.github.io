@@ -859,6 +859,21 @@ p {
   transition: color var(--theme-transition);
 }
 
+/* Resume item link */
+.resume-item-link {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.resume-item-link .btn,
+.resume-item-link button {
+  border-radius: 3px !important;
+  border-width: 1px !important;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+}
+
 /* Certifications Grid */
 .certifications-grid {
   display: grid;

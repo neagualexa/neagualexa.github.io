@@ -136,6 +136,21 @@ const ResumeSection = ({ section }) => {
               )}
             </div>
           )}
+
+          {item.link && item.link.projectSectionId && (
+            <div className="resume-item-link">
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  const targetUrl = `${item.link.url}#${item.link.projectSectionId}`;
+                  navigate(targetUrl);
+                }}
+                title={item.link.text}
+              >
+                {item.link.text}
+              </Button>
+            </div>
+          )}
         </div>
       ))}
     </div>

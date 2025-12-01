@@ -20,7 +20,9 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="project-card">
       <div className="project-card-header">
-        <h4>{project.title}</h4>
+        <h4 id={project.id ? `${project.id}-title` : undefined}>
+          {project.title}
+        </h4>
         {project.year && <h5>({project.year})</h5>}
       </div>
       <p dangerouslySetInnerHTML={{ __html: project.description }}></p>
