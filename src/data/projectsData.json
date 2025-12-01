@@ -22,7 +22,11 @@
             "Assist Self-Study",
             "Full stack development"
           ],
-          "images": [],
+          "images": [
+            "LambdaFeedback_newChat.jpg",
+            "LambdaFeedback_ongoingChat.jpg",
+            "LambdaFeedback_chatbots.jpg"
+          ],
           "links": [
             {
               "text": "View Lambda Feedback User Documentation",
