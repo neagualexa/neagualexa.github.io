@@ -1,6 +1,6 @@
 {
   "navigation": [
-    { "id": "personal-projects", "label": "Personal Projects" },
+    { "id": "phd-projects", "label": "PhD Projects" },
     { "id": "fourth-year", "label": "4th Year University Projects" },
     { "id": "third-year", "label": "3rd Year University Projects" },
     { "id": "second-year", "label": "2nd Year University Projects" },
@@ -10,8 +10,8 @@
   ],
   "sections": [
     {
-      "id": "personal-projects",
-      "title": "Personal Projects",
+      "id": "phd-projects",
+      "title": "PhD Projects",
       "projects": [
         {
           "id": "lambdafeedback-chatbots-self-study",
@@ -36,6 +36,20 @@
           ]
         },
         {
+          "id": "2025-learnlab-politeness",
+          "title": "Teaching Apprentice Learner Politeness in Foreign Language Learning",
+          "year": "2025",
+          "description": "Intelligent Tutoring Systems (ITS) for language learning may neglect social and cultural contexts, such as politeness. To address this, we investigate if an Apprentice Learner (AL) can learn politeness strategies. We trained a simulated student using the Knowledge-Learning-Instruction (KLI) framework to learn politeness as knowledge components by interacting with an ITS tutor in a Chinese-learning exercise. This study focuses on the AL's 'when-learning' process throughout its training through examples. Preliminary findings suggest the AL can successfully learn and apply politeness strategies, advancing the development of both ITS and ALs.<br><br>Project part of the LearnLab Summer School, a 1-week research training program for early-career researchers in the field of learning sciences at Carnegie Mellon, Pittsburgh, PA, USA. The project was supervised by Dr. Erik Harpstead, Dr. Ken Koedinger and Dr. Daniel Weitekamp.",
+          "technologies": [
+            "Intelligent Tutoring Systems (ITS)",
+            "Simulated Students",
+            "Apprentice Learner (AL)",
+            "Knowledge Learning Instruction (KLI) Framework"
+          ],
+          "images": ["CMU_poster_photo.jpg"]
+        },
+        {
+          "id": "pdf-narrator",
           "title": "PDF Narrator Webapp",
           "year": "2025-ongoing",
           "description": "I developed a text-to-speech web application for personal use that narrates PDFs using locally hosted neural TTS models. I was inspired by products like <a href='https://speechify.com/' >Speechify</a> and was motivated to work on this project due to the restrictive free tier usage limit and functionality in commercial alternatives and the poor quality of system TTS voices within my laptop.<br><br>The app fetches sentences from the PDF for narration and features a built-in PDF viewer. It utilizes two TTS engines (Pyttsx3 and Piper neural models) providing customizable voice options with different accents and speeds.<br><br>This project was my first fun exploration of vibe coding with LLM agents, where I realised the challenges and rewards of such high dependance on GenAI during coding. I realised that most my effort and time went into breaking down complex features into smaller manageable components for the LLM agent to iteratively develop. I also seem to have become a human-in-the-loop for code quality analysis, because the current LLMs seem to neglect coding best practices when editing existing codebases (e.g. LLMs prefer to write a new function as a wrapper for a functionality change instead of editing the current existent function).",
