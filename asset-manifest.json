@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.726d4341.css",
-    "main.js": "/static/js/main.21913d77.js",
+    "main.js": "/static/js/main.d30e1899.js",
     "static/media/Synthesiser_demo_video.mp4": "/static/media/Synthesiser_demo_video.99582d2d456b18f85f13.mp4",
     "static/media/Medusa_IO_presentation_video.mp4": "/static/media/Medusa_IO_presentation_video.9df9959aae716e291807.mp4",
     "static/media/Synthesiser_songs_video.mp4": "/static/media/Synthesiser_songs_video.7013802cbea49aac81ce.mp4",
@@ -10,6 +10,7 @@
     "static/media/Localising_robot_arena_demo.mp4": "/static/media/Localising_robot_arena_demo.63cf53c9e5e3b7a8caff.mp4",
     "static/media/AI_Assisted_Learning_report.pdf": "/static/media/AI_Assisted_Learning_report.8f173a87e340ac5f9826.pdf",
     "static/media/SpotVRTelepresence_report.pdf": "/static/media/SpotVRTelepresence_report.2889da4f8ca2cca20b69.pdf",
+    "static/media/CMU_poster_photo.jpg": "/static/media/CMU_poster_photo.252b88c09738bbb24017.jpg",
     "static/media/Localising_robot_profile.jpg": "/static/media/Localising_robot_profile.ce01ab1be5c65b7a290b.jpg",
     "static/media/Synthesiser_clarinet_wave.jpg": "/static/media/Synthesiser_clarinet_wave.9f27e8659d4a9d4642ac.jpg",
     "static/media/CircuitSImulator_report.pdf": "/static/media/CircuitSImulator_report.e5d94e697eff6204efa0.pdf",
@@ -57,10 +58,10 @@
     "static/media/LambdaFeedback_logo.png": "/static/media/LambdaFeedback_logo.5a7448eba0d3ac39ddcf.png",
     "index.html": "/index.html",
     "main.726d4341.css.map": "/static/css/main.726d4341.css.map",
-    "main.21913d77.js.map": "/static/js/main.21913d77.js.map"
+    "main.d30e1899.js.map": "/static/js/main.d30e1899.js.map"
   },
   "entrypoints": [
     "static/css/main.726d4341.css",
-    "static/js/main.21913d77.js"
+    "static/js/main.d30e1899.js"
   ]
 }
