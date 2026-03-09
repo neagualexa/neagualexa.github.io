@@ -24,9 +24,9 @@ const NavLinks = ({ navigation, onNavClick, activeSection, onClickExtra }) =>
     </a>
   ));
 
-// Static variant: always visible under the title, no toggle behaviour
+// Static variant: always visible under the page title, no toggle behaviour
 const StaticNav = ({ navigation, onNavClick, activeSection }) => (
-  <div className="projects-nav projects-nav--static">
+  <div className="section-nav section-nav--static">
     <NavLinks navigation={navigation} onNavClick={onNavClick} activeSection={activeSection} />
   </div>
 );
@@ -41,10 +41,10 @@ const StickyNav = ({ navigation, onNavClick, activeSection, visible }) => {
 
   return (
     <div
-      className={`projects-nav projects-nav--sticky${visible ? " visible" : ""}${showAll ? "" : " collapsed"}`}
+      className={`section-nav section-nav--sticky${visible ? " visible" : ""}${showAll ? "" : " collapsed"}`}
     >
       <button
-        className="projects-nav-toggle"
+        className="section-nav-toggle"
         onClick={() => setIsExpanded(!isExpanded)}
         aria-label={isExpanded ? "Squish navigation" : "Expand navigation"}
       >

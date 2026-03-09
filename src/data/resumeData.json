@@ -1,4 +1,11 @@
 {
+  "navigation": [
+    { "id": "resume-education", "label": "Education" },
+    { "id": "resume-experience", "label": "Experience" },
+    { "id": "resume-skills", "label": "Skills" },
+    { "id": "resume-certifications", "label": "Certifications" },
+    { "id": "resume-interests", "label": "Interests" }
+  ],
   "sections": [
     {
       "title": "Education",

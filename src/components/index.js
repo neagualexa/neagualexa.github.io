@@ -13,7 +13,7 @@ export { default as IntroSection } from "./IntroSection";
 export { default as ContactSection } from "./ContactSection";
 
 // Projects Components
-export { StaticNav, StickyNav } from "./ProjectsNavigation";
+export { StaticNav, StickyNav } from "./SectionNavigation";
 export { default as ProjectSection } from "./ProjectSection";
 
 // Publications Components

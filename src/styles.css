@@ -440,15 +440,15 @@ p {
   padding: 2rem 4rem;
 }
 
-/* Shared button styles for both nav variants */
-.projects-nav {
+/* Shared button styles for static and sticky section navs */
+.section-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
 }
 
-.projects-nav a {
+.section-nav a {
   padding: 0.5rem 1rem;
   background: var(--bg-secondary);
   color: var(--text-primary);
@@ -460,25 +460,25 @@ p {
   box-shadow: 0 2px 8px var(--shadow-medium);
 }
 
-.projects-nav a:hover,
-.projects-nav a.active {
+.section-nav a:hover,
+.section-nav a.active {
   background: var(--accent-primary);
   color: var(--text-inverse);
   box-shadow: 0 4px 10px var(--shadow-medium);
 }
 
-/* Static nav: normal flow under the title */
-.projects-nav--static {
+/* Static nav: normal flow under the page title */
+.section-nav--static {
   margin-bottom: 2rem;
 }
 
 /* Sticky nav: fixed at bottom-left, hidden by default, appears on scroll */
-.projects-nav--sticky {
+.section-nav--sticky {
   position: fixed;
   bottom: 2rem;
   left: 2rem;
-  right: auto;
   top: auto;
+  right: auto;
   z-index: 1100;
   padding: 0.6rem;
   width: fit-content;
@@ -486,16 +486,15 @@ p {
   justify-content: flex-start;
   opacity: 0;
   pointer-events: none;
-  /* no transition when hiding — instant disappear to avoid ghost */
 }
 
-.projects-nav--sticky.visible {
+.section-nav--sticky.visible {
   opacity: 1;
   pointer-events: auto;
   transition: opacity 0.2s ease;
 }
 
-.projects-nav-toggle {
+.section-nav-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -510,21 +509,21 @@ p {
   box-shadow: 0 2px 8px var(--shadow-medium);
 }
 
-.projects-nav-toggle:hover {
+.section-nav-toggle:hover {
   background: var(--accent-primary);
   color: var(--text-inverse);
 }
 
 @media (max-width: 900px) {
-  #projects {
+  #projects, #resume {
     padding: 2rem;
   }
 
-  .projects-nav--sticky {
+  .section-nav--sticky {
     padding: 0.6rem 1rem;
   }
 
-  .projects-nav-toggle {
+  .section-nav-toggle {
     display: none;
   }
 }
@@ -854,6 +853,10 @@ p {
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   margin-top: 2rem;
+}
+
+.resume-nav-section + .resume-nav-section {
+  margin-top: 3rem;
 }
 
 .resume-section {
