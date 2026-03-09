@@ -1323,12 +1323,19 @@ p {
   box-shadow: 0 10px 25px var(--shadow-medium);
 }
 
+.publication-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 .publication-citation {
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 1rem;
   color: var(--text-primary);
   transition: color var(--theme-transition);
+  flex: 1;
 }
 
 .publication-citation strong {
@@ -1390,8 +1397,9 @@ p {
 
 .publication-links {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .publication-link {
@@ -1453,10 +1461,6 @@ p {
 
   .publication-card {
     padding: 1.5rem;
-  }
-
-  .publication-links {
-    flex-direction: column;
   }
 
   .publication-link {

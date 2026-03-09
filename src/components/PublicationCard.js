@@ -25,44 +25,53 @@ const PublicationCard = ({ publication }) => {
 
   const formatCitation = () => {
     const authors = formatAuthors(publication.authors);
+    const title = <strong>"{publication.title}."</strong>;
 
     if (publication.journal) {
-      // Journal paper format
-      return `${authors}. "${publication.title}." ${publication.journal}${
-        publication.volume ? ` ${publication.volume}` : ""
-      }${publication.issue ? `.${publication.issue}` : ""}${
-        publication.pages
-          ? ` (${publication.year}): ${publication.pages}`
-          : ` (${publication.year})`
-      }.`;
+      return <>{authors}. {title} {publication.journal}{publication.volume ? ` ${publication.volume}` : ""}{publication.issue ? `.${publication.issue}` : ""}{publication.pages ? ` (${publication.year}): ${publication.pages}` : ` (${publication.year})`}.</>;
     } else if (publication.conference) {
-      // Conference paper format
-      return `${authors}. "${publication.title}." ${publication.conference}${
-        publication.location ? `, ${publication.location}` : ""
-      }. ${publication.year}${
-        publication.pages ? `: ${publication.pages}` : ""
-      }.`;
+      return <>{authors}. {title} {publication.conference}{publication.location ? `, ${publication.location}` : ""}. {publication.year}{publication.pages ? `: ${publication.pages}` : ""}.</>;
     } else if (publication.type) {
-      // Thesis format
-      return `${authors}. "${publication.title}." ${publication.type}, ${
-        publication.institution
-      }${publication.department ? `, ${publication.department}` : ""}. ${
-        publication.year
-      }.`;
+      return <>{authors}. {title} {publication.type}, {publication.institution}{publication.department ? `, ${publication.department}` : ""}. {publication.year}.</>;
     }
 
-    return `${authors}. "${publication.title}." ${publication.year}.`;
+    return <>{authors}. {title} {publication.year}.</>;
   };
 
   return (
     <div className="publication-card" id={publication.id}>
-      <div className="publication-citation">{formatCitation()}</div>
+      <div className="publication-header">
+        <div className="publication-citation">{formatCitation()}</div>
 
-      {publication.doi && (
-        <div className="publication-doi">
-          <strong>DOI:</strong> {publication.doi}
-        </div>
-      )}
+        {publication.links && publication.links.length > 0 && (
+          <div className="publication-links">
+            {publication.links.map((link, index) => {
+              let href = link.url;
+
+              // If it's a PDF link and we have a filename, use the imported PDF
+              if (
+                link.type === "PDF" &&
+                link.filename &&
+                publicationPDFs[link.filename]
+              ) {
+                href = publicationPDFs[link.filename];
+              }
+
+              return (
+                <a
+                  key={index}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="publication-link"
+                >
+                  {link.type}
+                </a>
+              );
+            })}
+          </div>
+        )}
+      </div>
 
       {publication.supervisor && (
         <div className="publication-supervisor">
@@ -94,34 +103,6 @@ const PublicationCard = ({ publication }) => {
         </div>
       )}
 
-      {publication.links && publication.links.length > 0 && (
-        <div className="publication-links">
-          {publication.links.map((link, index) => {
-            let href = link.url;
-
-            // If it's a PDF link and we have a filename, use the imported PDF
-            if (
-              link.type === "PDF" &&
-              link.filename &&
-              publicationPDFs[link.filename]
-            ) {
-              href = publicationPDFs[link.filename];
-            }
-
-            return (
-              <a
-                key={index}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="publication-link"
-              >
-                {link.type}
-              </a>
-            );
-          })}
-        </div>
-      )}
     </div>
   );
 };
