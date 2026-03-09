@@ -434,11 +434,6 @@ p {
   color: var(--text-inverse);
 }
 
-/* Projects Section */
-#projects {
-  max-width: 100vw;
-  padding: 2rem 4rem;
-}
 
 /* Shared button styles for static and sticky section navs */
 .section-nav {
