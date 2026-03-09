@@ -473,11 +473,19 @@ p {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(10, 1fr);
   gap: 2rem;
 }
 
+@media (max-width: 900px) {
+  .project-card-wrapper {
+    grid-column: 1 / -1 !important;
+  }
+}
+
 .project-card {
+  height: 100%;
+  box-sizing: border-box;
   background: var(--bg-primary);
   border-radius: 10px;
   padding: 1.5rem;

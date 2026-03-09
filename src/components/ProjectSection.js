@@ -11,7 +11,12 @@ const ProjectSection = ({ section }) => {
       </div>
       <div className="projects-grid">
         {section.projects.map((project, index) => (
-          <div key={index} id={project.id} className="project-card-wrapper">
+          <div
+            key={index}
+            id={project.id}
+            className="project-card-wrapper"
+            style={{ gridColumn: `span ${project.cols || 10}` }}
+          >
             <ProjectCard project={project} />
           </div>
         ))}
