@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 // Import all PDFs from the publications docs folder
@@ -14,6 +15,8 @@ const publicationPDFs = importAll(
 );
 
 const PublicationCard = ({ publication }) => {
+  const [expanded, setExpanded] = useState(false);
+
   const formatAuthors = (authors) => {
     if (!authors || authors.length === 0) return "";
     if (authors.length === 1) return authors[0];
@@ -48,13 +51,12 @@ const PublicationCard = ({ publication }) => {
             {publication.links.map((link, index) => {
               let href = link.url;
 
-              // If it's a PDF link and we have a filename, use the imported PDF
-              if (
-                link.type === "PDF" &&
-                link.filename &&
-                publicationPDFs[link.filename]
-              ) {
-                href = publicationPDFs[link.filename];
+              if (link.type === "PDF" && link.filename) {
+                if (publicationPDFs[link.filename]) {
+                  href = publicationPDFs[link.filename];
+                } else if (link.filename.startsWith("http")) {
+                  href = link.filename;
+                }
               }
 
               return (
@@ -73,36 +75,26 @@ const PublicationCard = ({ publication }) => {
         )}
       </div>
 
-      {publication.supervisor && (
-        <div className="publication-supervisor">
-          <strong>Supervisor:</strong> {publication.supervisor}
-        </div>
-      )}
-
       {publication.abstract && (
-        <div className="publication-abstract">
-          <strong>Abstract:</strong>{" "}
-          <span
-            dangerouslySetInnerHTML={{
-              __html: publication.abstract.replace(/\n/g, "<br>"),
-            }}
-          />
-        </div>
-      )}
+        <>
+          <button
+            className="abstract-toggle"
+            onClick={() => setExpanded((v) => !v)}
+          >
+            {expanded ? "Hide abstract" : "Read abstract"}
+          </button>
 
-      {publication.keywords && publication.keywords.length > 0 && (
-        <div className="publication-keywords">
-          <strong>Keywords:</strong>
-          <div className="keywords-list">
-            {publication.keywords.map((keyword, index) => (
-              <span key={index} className="keyword-tag">
-                {keyword}
-              </span>
-            ))}
-          </div>
-        </div>
+          {expanded && (
+            <div className="publication-abstract">
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: publication.abstract.replace(/\n/g, "<br>"),
+                }}
+              />
+            </div>
+          )}
+        </>
       )}
-
     </div>
   );
 };
@@ -122,9 +114,7 @@ PublicationCard.propTypes = {
     issue: PropTypes.string,
     pages: PropTypes.string,
     location: PropTypes.string,
-    doi: PropTypes.string,
     abstract: PropTypes.string,
-    keywords: PropTypes.arrayOf(PropTypes.string),
     links: PropTypes.arrayOf(
       PropTypes.shape({
         type: PropTypes.string.isRequired,

@@ -1,75 +1,62 @@
 {
-  "navigation": [
-    { "id": "conference-papers", "label": "Conference Papers" },
-    { "id": "preprints", "label": "Preprints" }
-  ],
-  "sections": [
+  "publications": [
     {
-      "id": "conference-papers",
-      "title": "Conference Papers",
-      "publications": [
+      "id": "2026-student-questions-procedural",
+      "title": "\"How Do I ...?\": Procedural Questions Predominate Student-LLM Chatbot Conversations",
+      "authors": [
+        "Alexandra Neagu",
+        "Marcus Messer",
+        "Dr. Peter B. Johnson",
+        "Dr. Rhodri Nelson"
+      ],
+      "conference": "arXiv Preprint",
+      "year": "2026",
+      "abstract": "Providing scaffolding through educational chatbots built on Large Language Models (LLM) has potential risks and benefits that remain an open area of research. When students navigate impasses, they ask for help by formulating impasse-driven questions. Within interactions with LLM chatbots, such questions shape the user prompts and drive the pedagogical effectiveness of the chatbot's response. This paper focuses on such student questions from two datasets of distinct learning contexts: formative self-study, and summative assessed coursework. We analysed 6,113 messages from both learning contexts, using 11 different LLMs and three human raters to classify student questions using four existing schemas. On the feasibility of using LLMs as raters, results showed moderate-to-good inter-rater reliability, with higher consistency than human raters. The data showed that 'procedural' questions predominated in both learning contexts, but more so when students prepare for summative assessment. These results provide a basis on which to use LLMs for classification of student questions. However, we identify clear limitations in both the ability to classify with schemas and the value of doing so: schemas are limited and thus struggle to accommodate the semantic richness of composite prompts, offering only partial understanding the wider risks and benefits of chatbot integration. In the future, we recommend an analysis approach that captures the nuanced, multi-turn nature of conversation, for example, by applying methods from conversation analysis in discursive psychology.",
+      "keywords": [
+        "Educational LLM Chatbots",
+        "Student-LLM Chatbot Interactions",
+        "Student Questions",
+        "LLM and Human-based Classification"
+      ],
+      "links": [
         {
-          "id": "2025-eern-chatbots-context",
-          "title": "Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information",
-          "authors": [
-            "Alexandra Neagu",
-            "Dr. Peter B. Johnson",
-            "Dr. Rhodri Nelson"
-          ],
-          "conference": "UK and Ireland Engineering Education Research Network Annual Symposium",
-          "year": "2025",
-          "location": "Manchester University, Manchester, UK",
-          "pages": "432-440",
-          "doi": "10.71535/f5dfe8de-1b80-4192-8573-54d934996dec",
-          "abstract": "Self-study often leads to impasses – getting stuck. Impasses can be a valuable learning opportunity if supported by timely feedback, especially dialogic feedback. LLM-based chatbots can provide timely, dialogic feedback for all students in a large cohort, however their use requires careful consideration. Two key challenges of LLM chatbots are aligning with educational values and ensuring technical accuracy. \n\nThis paper examines how providing chatbots with contextual information affects their educational value. Using a framework of impasse-driven learning, we introduce concepts of objective context (e.g. course materials) and subjective context (e.g. student's thought process). We theoretically analyse the risks and benefits of context-awareness in chatbots when supporting a student during an impasse. \n\nTo gain empirical insight, we deployed chatbots to students on a self-study learning platform (Lambda Feedback) that can provide objective context to the chatbot. Qualitative analysis of conversations from 23 students show that students frequently reference objective context in their queries, allowing the dialogue to focus on their impasse and reducing cognitive load. \n\nEvidence provided here shows the benefits of contextual awareness for chatbots. We also discuss the potential risks, namely removing student agency and ‘productive struggle’. We conclude that, on balance, chatbots are likely to be most educationally beneficial if context is available, but that chatbots should be configured to manage the risks. We outline future work on managing the risks.",
-          "keywords": [
-            "Chatbot",
-            "Large Language Model",
-            "Dialogic Feedback",
-            "Self-Study",
-            "Impasse-Driven Learning"
-          ],
-          "links": [
-            {
-              "type": "DOI",
-              "url": "https://doi.org/10.71535/f5dfe8de-1b80-4192-8573-54d934996dec"
-            },
-            {
-              "type": "PDF",
-              "filename": "2025_EERN_Paper_Proceedings_Extracted.pdf"
-            }
-          ]
+          "type": "DOI",
+          "url": "https://doi.org/10.48550/arXiv.2602.18372"
+        },
+        {
+          "type": "PDF",
+          "filename": "https://arxiv.org/pdf/2602.18372"
         }
       ]
     },
     {
-      "id": "preprints",
-      "title": "Preprints",
-      "publications": [
+      "id": "2025-eern-chatbots-context",
+      "title": "Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information",
+      "authors": [
+        "Alexandra Neagu",
+        "Dr. Peter B. Johnson",
+        "Dr. Rhodri Nelson"
+      ],
+      "conference": "UK and Ireland Engineering Education Research Network Annual Symposium",
+      "year": "2025",
+      "location": "Manchester University, Manchester, UK",
+      "pages": "432-440",
+      "abstract": "Self-study often leads to impasses – getting stuck. Impasses can be a valuable learning opportunity if supported by timely feedback, especially dialogic feedback. LLM-based chatbots can provide timely, dialogic feedback for all students in a large cohort, however their use requires careful consideration. Two key challenges of LLM chatbots are aligning with educational values and ensuring technical accuracy. \n\nThis paper examines how providing chatbots with contextual information affects their educational value. Using a framework of impasse-driven learning, we introduce concepts of objective context (e.g. course materials) and subjective context (e.g. student's thought process). We theoretically analyse the risks and benefits of context-awareness in chatbots when supporting a student during an impasse. \n\nTo gain empirical insight, we deployed chatbots to students on a self-study learning platform (Lambda Feedback) that can provide objective context to the chatbot. Qualitative analysis of conversations from 23 students show that students frequently reference objective context in their queries, allowing the dialogue to focus on their impasse and reducing cognitive load. \n\nEvidence provided here shows the benefits of contextual awareness for chatbots. We also discuss the potential risks, namely removing student agency and 'productive struggle'. We conclude that, on balance, chatbots are likely to be most educationally beneficial if context is available, but that chatbots should be configured to manage the risks. We outline future work on managing the risks.",
+      "keywords": [
+        "Chatbot",
+        "Large Language Model",
+        "Dialogic Feedback",
+        "Self-Study",
+        "Impasse-Driven Learning"
+      ],
+      "links": [
         {
-          "id": "2026-student-questions-procedural",
-          "title": "\"How Do I ...?\": Procedural Questions Predominate Student-LLM Chatbot Conversations",
-          "authors": [
-            "Alexandra Neagu",
-            "Marcus Messer",
-            "Dr. Peter B. Johnson",
-            "Dr. Rhodri Nelson"
-          ],
-          "conference": "arXiv Preprint",
-          "year": "2026",
-          "abstract": "Providing scaffolding through educational chatbots built on Large Language Models (LLM) has potential risks and benefits that remain an open area of research. When students navigate impasses, they ask for help by formulating impasse-driven questions. Within interactions with LLM chatbots, such questions shape the user prompts and drive the pedagogical effectiveness of the chatbot's response. This paper focuses on such student questions from two datasets of distinct learning contexts: formative self-study, and summative assessed coursework. We analysed 6,113 messages from both learning contexts, using 11 different LLMs and three human raters to classify student questions using four existing schemas. On the feasibility of using LLMs as raters, results showed moderate-to-good inter-rater reliability, with higher consistency than human raters. The data showed that 'procedural' questions predominated in both learning contexts, but more so when students prepare for summative assessment. These results provide a basis on which to use LLMs for classification of student questions. However, we identify clear limitations in both the ability to classify with schemas and the value of doing so: schemas are limited and thus struggle to accommodate the semantic richness of composite prompts, offering only partial understanding the wider risks and benefits of chatbot integration. In the future, we recommend an analysis approach that captures the nuanced, multi-turn nature of conversation, for example, by applying methods from conversation analysis in discursive psychology.",
-          "keywords": [
-            "Educational LLM Chatbots",
-            "Student-LLM Chatbot Interactions",
-            "Student Questions",
-            "LLM and Human-based Classification"
-          ],
-          "links": [
-            {
-              "type": "DOI",
-              "url": "https://doi.org/10.48550/arXiv.2602.18372"
-            }
-          ]
+          "type": "DOI",
+          "url": "https://doi.org/10.71535/f5dfe8de-1b80-4192-8573-54d934996dec"
+        },
+        {
+          "type": "PDF",
+          "filename": "2025_EERN_Paper_Proceedings_Extracted.pdf"
         }
       ]
     }
