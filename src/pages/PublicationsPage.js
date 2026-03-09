@@ -15,9 +15,9 @@ const PublicationsPage = () => {
           lineHeight: "1.6",
         }}
       >
-        Below is a collection of my research publications. My research focuses
-        on uses of Large Language Models in STEM education, AI-assisted
-        learning, and educational technology.
+        Below is a collection of my research publications. <br />
+        My research focuses on Human-AI Interaction,AI-Assisted Learning, and
+        Educational Technology.
       </p>
 
       <div className="publications-container">
@@ -25,8 +25,8 @@ const PublicationsPage = () => {
           {[...publicationsData.publications]
             .sort((a, b) => Number(b.year) - Number(a.year))
             .map((publication) => (
-            <PublicationCard key={publication.id} publication={publication} />
-          ))}
+              <PublicationCard key={publication.id} publication={publication} />
+            ))}
         </div>
       </div>
     </section>

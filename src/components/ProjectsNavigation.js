@@ -9,10 +9,7 @@ const ProjectsNavigation = ({ navigation, onNavClick, activeSection }) => {
           key={navItem.id}
           href={`#${navItem.id}`}
           onClick={onNavClick}
-          style={{
-            background: activeSection === navItem.id ? "#007acc" : "#f8f9fa",
-            color: activeSection === navItem.id ? "white" : "#333",
-          }}
+          className={activeSection === navItem.id ? "active" : ""}
         >
           {navItem.label}
         </a>

@@ -388,7 +388,6 @@ p {
 }
 
 .profile-image img:hover {
-  transform: scale(1.05);
 }
 
 .intro-text {
@@ -453,9 +452,12 @@ p {
   transition: all var(--theme-transition);
 }
 
-.projects-nav a:hover {
+.projects-nav a:hover,
+.projects-nav a.active {
   background: var(--accent-primary);
   color: var(--text-inverse);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px var(--shadow-medium);
 }
 
 .year-section {
@@ -499,8 +501,6 @@ p {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px var(--shadow-medium);
 }
 
 .project-card h4 {
@@ -908,8 +908,6 @@ p {
 }
 
 .certification-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .certification-logo {
@@ -1325,8 +1323,6 @@ p {
 }
 
 .publication-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px var(--shadow-medium);
 }
 
 .publication-header {
