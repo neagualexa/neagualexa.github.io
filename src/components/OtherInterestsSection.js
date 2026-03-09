@@ -39,25 +39,41 @@ const OtherInterestsSection = ({ interests }) => {
               </div>
             </div>
             <ul>
-              {item.details.map((detail, detailIndex) => (
-                <li key={detailIndex}>
-                  {item.link && detail.includes(item.link.text) ? (
-                    <>
-                      {detail.split(item.link.text)[0]}
-                      <a
-                        href={item.link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {item.link.text}
-                      </a>
-                      {detail.split(item.link.text)[1]}
-                    </>
-                  ) : (
-                    detail
-                  )}
-                </li>
-              ))}
+              {item.details.map((detail, detailIndex) => {
+                if (typeof detail !== "string") {
+                  return (
+                    <li key={detailIndex}>
+                      {detail.text}
+                      {detail.subpoints && (
+                        <ul>
+                          {detail.subpoints.map((sub, subIndex) => (
+                            <li key={subIndex}>{sub}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  );
+                }
+                return (
+                  <li key={detailIndex}>
+                    {item.link && detail.includes(item.link.text) ? (
+                      <>
+                        {detail.split(item.link.text)[0]}
+                        <a
+                          href={item.link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.link.text}
+                        </a>
+                        {detail.split(item.link.text)[1]}
+                      </>
+                    ) : (
+                      detail
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         ))}

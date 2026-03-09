@@ -218,11 +218,26 @@
         },
         {
           "period": "2024 - currently",
-          "title": "Postgraduate Teaching Assistant",
+          "title": "Graduate Teaching Assistant",
           "institution": "Imperial College London",
           "logo": "ImperialCollegeLondon_logo_new.png",
           "details": [
-            "Assisting with labs and tutorials for various modules in different departments: Machine Learning and Data Science (MSci ESE), Machine Reasoning (3rd year EE), Self-Organising Multi-Agent Systems (4th year EE), Robotics (3rd year DoC), Maths Methods 2 (1st year ESE)"
+            {
+              "text": "Assisting with labs and tutorials for various modules across departments:",
+              "subpoints": [
+                "Electrical and Electronic Engineering: Machine Reasoning (3rd year), Self-Organising Multi-Agent Systems (4th year)",
+                "Earth Science Engineering: Machine Learning and Data Science (MSci), Maths Methods 2 (1st year), Modern Programming Methods (MSci)",
+                "Computing: Robotics (3rd year)"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "past - future",
+          "title": "Travelling",
+          "logo": "world_globe_png.png",
+          "details": [
+            "I love travelling and experiencing the multicultural traditions and history of our world and its geographical wonders. I have been around most of Europe, and have gone further to China, Costa Rica, India, Japan, Madagascar, Tanzania, Peru, Egypt, USA, ..."
           ]
         },
         {
@@ -231,7 +246,7 @@
           "institution": "Imperial College London, Electrical Engineering Department",
           "logo": "ImperialCollegeLondon_logo_new.png",
           "details": [
-            "Assisting with labs and tutorials for various modules: Machine Reasoning"
+            "Assisting with labs and tutorials for various modules: Machine Reasoning (3rd year EE)"
           ]
         },
         {
@@ -276,40 +291,6 @@
             "Taught Arduino programming and created small projects alongside 8 – 15-year-old children",
             "Demonstrated patience and good social observation skills by identifying students in need of help throughout the projects, improved my skills of listening and explaining"
           ]
-        },
-        {
-          "period": "past - future",
-          "title": "Travelling",
-          "logo": "world_globe_png.png",
-          "details": [
-            "Visited multiple countries throughout the Globe, inside Europe, China, Costa Rica, India, Japan, Madagascar, Tanzania, Peru, Egypt, USA, ...",
-            "Encountered many different cultures and assimilated learned traditions and history"
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Achievements & Awards",
-      "items": [
-        {
-          "title": "ICHack24 Hackathon Winner",
-          "description": "1st place overall for NonoAI project",
-          "year": "2024"
-        },
-        {
-          "title": "Undergraduate President's Scholarship",
-          "description": "Imperial College London",
-          "year": "2020-2024"
-        },
-        {
-          "title": "UK Space Design Competition Reserve",
-          "description": "Selected as Reserve to represent the UK at the International Space Settlement Design Competition",
-          "year": "2019"
-        },
-        {
-          "title": "Coolest Projects International Awards",
-          "description": "Multiple awards including Runner Up (2018), Enterprise and Evolution awards (2016)",
-          "year": "2016-2018"
         }
       ]
     }

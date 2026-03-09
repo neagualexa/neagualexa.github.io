@@ -101,9 +101,22 @@ const ResumeSection = ({ section }) => {
 
           {item.details && (
             <ul>
-              {item.details.map((detail, detailIndex) => (
-                <li key={detailIndex}>{detail}</li>
-              ))}
+              {item.details.map((detail, detailIndex) =>
+                typeof detail === "string" ? (
+                  <li key={detailIndex}>{detail}</li>
+                ) : (
+                  <li key={detailIndex}>
+                    {detail.text}
+                    {detail.subpoints && (
+                      <ul>
+                        {detail.subpoints.map((sub, subIndex) => (
+                          <li key={subIndex}>{sub}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                )
+              )}
             </ul>
           )}
 
