@@ -1,67 +1,60 @@
-import React, { useEffect, useState } from "react";
-import { ProjectsNavigation, ProjectSection } from "../components";
+import React, { useEffect, useState, useRef } from "react";
+import { StaticNav, StickyNav, ProjectSection } from "../components";
 import projectsData from "../data/projectsData.json";
+
+const SCROLL_OFFSET = 120;
 
 const ProjectsPage = () => {
   const [activeSection, setActiveSection] = useState("");
+  const [showStickyNav, setShowStickyNav] = useState(false);
+  const staticNavRef = useRef(null);
 
   useEffect(() => {
-    // Handle initial scroll to hash section if present in URL
     const scrollToHashSection = () => {
       const hash = window.location.hash;
       if (hash) {
-        // Small delay to ensure DOM is ready
         setTimeout(() => {
           const target = document.querySelector(hash);
           if (target) {
-            // Calculate offset to position element with some padding from top
-            const offset = target.offsetTop - 120; // 120px padding from top
-            window.scrollTo({
-              top: offset,
-              behavior: "smooth",
-            });
+            window.scrollTo({ top: target.offsetTop - SCROLL_OFFSET, behavior: "smooth" });
           }
         }, 100);
       }
     };
 
-    // Active navigation highlighting for project sections
     const handleScroll = () => {
       const sections = document.querySelectorAll(".year-section");
       let current = "";
-
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 200) {
+        if (window.scrollY >= section.offsetTop - 200) {
           current = section.getAttribute("id");
         }
       });
-
       setActiveSection(current);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Initial scroll position check
     handleScroll();
-
-    // Handle initial hash navigation
     scrollToHashSection();
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowStickyNav(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    const el = staticNavRef.current;
+    if (el) observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   const handleNavClick = (e) => {
     e.preventDefault();
     const target = document.querySelector(e.target.getAttribute("href"));
     if (target) {
-      const offset = target.offsetTop - 120; // 120px padding from top
-      window.scrollTo({
-        top: offset,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: target.offsetTop - SCROLL_OFFSET, behavior: "smooth" });
     }
   };
 
@@ -71,17 +64,29 @@ const ProjectsPage = () => {
       <p
         style={{
           textAlign: "center",
-          marginBottom: "3rem",
+          marginBottom: "2rem",
           fontSize: "1.1rem",
         }}
       >
-        Click on one of the sections below or scroll down by yourself.
+        This is a collection of projects I have worked on throughout the years
+        (and academic phases). <br />I have included details about each project,
+        the technologies used, and links to the code repositories or demos where
+        applicable.
       </p>
 
-      <ProjectsNavigation
+      <div ref={staticNavRef}>
+        <StaticNav
+          navigation={projectsData.navigation}
+          onNavClick={handleNavClick}
+          activeSection={activeSection}
+        />
+      </div>
+
+      <StickyNav
         navigation={projectsData.navigation}
         onNavClick={handleNavClick}
         activeSection={activeSection}
+        visible={showStickyNav}
       />
 
       {projectsData.sections.map((section) => (

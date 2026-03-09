@@ -1,24 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const ProjectsNavigation = ({ navigation, onNavClick, activeSection }) => {
-  return (
-    <div className="projects-nav">
-      {navigation.map((navItem) => (
-        <a
-          key={navItem.id}
-          href={`#${navItem.id}`}
-          onClick={onNavClick}
-          className={activeSection === navItem.id ? "active" : ""}
-        >
-          {navItem.label}
-        </a>
-      ))}
-    </div>
-  );
-};
-
-ProjectsNavigation.propTypes = {
+const navShape = {
   navigation: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -29,4 +12,62 @@ ProjectsNavigation.propTypes = {
   activeSection: PropTypes.string,
 };
 
-export default ProjectsNavigation;
+const NavLinks = ({ navigation, onNavClick, activeSection, onClickExtra }) =>
+  navigation.map((navItem) => (
+    <a
+      key={navItem.id}
+      href={`#${navItem.id}`}
+      onClick={(e) => { onNavClick(e); onClickExtra?.(); }}
+      className={activeSection === navItem.id ? "active" : ""}
+    >
+      {navItem.label}
+    </a>
+  ));
+
+// Static variant: always visible under the title, no toggle behaviour
+const StaticNav = ({ navigation, onNavClick, activeSection }) => (
+  <div className="projects-nav projects-nav--static">
+    <NavLinks navigation={navigation} onNavClick={onNavClick} activeSection={activeSection} />
+  </div>
+);
+StaticNav.propTypes = navShape;
+
+// Sticky variant: fixed at bottom-left, appears when static nav scrolls out of view
+const StickyNav = ({ navigation, onNavClick, activeSection, visible }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const showAll = isExpanded || !activeSection;
+  const activeItem = showAll ? null : navigation.find((item) => item.id === activeSection);
+
+  return (
+    <div
+      className={`projects-nav projects-nav--sticky${visible ? " visible" : ""}${showAll ? "" : " collapsed"}`}
+    >
+      <button
+        className="projects-nav-toggle"
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-label={isExpanded ? "Squish navigation" : "Expand navigation"}
+      >
+        {isExpanded ? "▼" : "▲"}
+      </button>
+
+      {showAll ? (
+        <NavLinks
+          navigation={navigation}
+          onNavClick={onNavClick}
+          activeSection={activeSection}
+          onClickExtra={() => setIsExpanded(false)}
+        />
+      ) : (
+        activeItem && (
+          <a href={`#${activeItem.id}`} onClick={onNavClick} className="active">
+            {activeItem.label}
+          </a>
+        )
+      )}
+    </div>
+  );
+};
+StickyNav.propTypes = { ...navShape, visible: PropTypes.bool };
+
+export { StaticNav, StickyNav };

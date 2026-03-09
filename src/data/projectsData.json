@@ -2,31 +2,31 @@
   "navigation": [
     {
       "id": "phd-projects",
-      "label": "PhD Projects"
+      "label": "PhD"
     },
     {
       "id": "fourth-year",
-      "label": "4th Year University Projects"
+      "label": "4th Year University"
     },
     {
       "id": "third-year",
-      "label": "3rd Year University Projects"
+      "label": "3rd Year University"
     },
     {
       "id": "second-year",
-      "label": "2nd Year University Projects"
+      "label": "2nd Year University"
     },
     {
       "id": "first-year",
-      "label": "1st Year University Projects"
+      "label": "1st Year University"
     },
     {
       "id": "internships",
-      "label": "Internships & Hackathons Projects"
+      "label": "Internships & Hackathons"
     },
     {
       "id": "pre-university",
-      "label": "Pre-University Projects"
+      "label": "Pre-University"
     }
   ],
   "sections": [

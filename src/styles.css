@@ -435,12 +435,17 @@ p {
 }
 
 /* Projects Section */
+#projects {
+  max-width: 100vw;
+  padding: 2rem 4rem;
+}
+
+/* Shared button styles for both nav variants */
 .projects-nav {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .projects-nav a {
@@ -450,14 +455,78 @@ p {
   text-decoration: none;
   border-radius: var(--button-border-radius);
   transition: all var(--theme-transition);
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px var(--shadow-medium);
 }
 
 .projects-nav a:hover,
 .projects-nav a.active {
   background: var(--accent-primary);
   color: var(--text-inverse);
-  transform: translateY(-2px);
   box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+/* Static nav: normal flow under the title */
+.projects-nav--static {
+  margin-bottom: 2rem;
+}
+
+/* Sticky nav: fixed at bottom-left, hidden by default, appears on scroll */
+.projects-nav--sticky {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  right: auto;
+  top: auto;
+  z-index: 1100;
+  padding: 0.6rem;
+  width: fit-content;
+  max-width: calc(100vw - 4rem);
+  justify-content: flex-start;
+  opacity: 0;
+  pointer-events: none;
+  /* no transition when hiding — instant disappear to avoid ghost */
+}
+
+.projects-nav--sticky.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.2s ease;
+}
+
+.projects-nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--button-border-radius);
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  transition: all var(--theme-transition);
+  box-shadow: 0 2px 8px var(--shadow-medium);
+}
+
+.projects-nav-toggle:hover {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+@media (max-width: 900px) {
+  #projects {
+    padding: 2rem;
+  }
+
+  .projects-nav--sticky {
+    padding: 0.6rem 1rem;
+  }
+
+  .projects-nav-toggle {
+    display: none;
+  }
 }
 
 .year-section {
