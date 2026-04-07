@@ -756,7 +756,13 @@ p {
   transition: opacity 0.2s ease;
 }
 
-.section-nav-toggle {
+.section-nav-controls {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.section-nav-toggle,
+.section-nav-hide {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -771,9 +777,83 @@ p {
   box-shadow: 0 2px 8px var(--shadow-medium);
 }
 
-.section-nav-toggle:hover {
+.section-nav-toggle:hover,
+.section-nav-hide:hover {
   background: var(--accent-primary);
   color: var(--text-inverse);
+}
+
+/* Restore button shown when nav is hidden */
+.section-nav-restore {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--button-border-radius);
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.6rem 0.9rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px var(--shadow-medium);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--theme-transition);
+}
+
+.section-nav-restore.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.section-nav-restore:hover {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+/* Mobile scroll-to-top button */
+.section-nav-mobile-top {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 999;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--shadow-medium);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--theme-transition);
+  max-width: 180px;
+}
+
+.section-nav-mobile-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.section-nav-mobile-top:hover {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+  border-color: var(--accent-primary);
+}
+
+.section-nav-mobile-arrow {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.section-nav-mobile-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media (max-width: 900px) {
@@ -781,12 +861,12 @@ p {
     padding: 2rem;
   }
 
-  .section-nav--sticky {
-    padding: 0.6rem 1rem;
+  .section-nav--desktop-only {
+    display: none !important;
   }
 
-  .section-nav-toggle {
-    display: none;
+  .section-nav-mobile-top {
+    display: flex;
   }
 }
 
@@ -1365,12 +1445,27 @@ p {
 
   #home {
     flex-direction: column;
+  }
+
+  .home-hero {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 1.5rem;
   }
 
   /* Reduce section padding on mobile for better space usage */
   section {
-    padding: 1.5rem;
+    padding: 1rem;
+  }
+
+  /* Keep timeline left-aligned on mobile */
+  .news-timeline-section {
+    text-align: left;
+  }
+
+  .news-timeline {
+    max-width: 100%;
   }
 }
 
@@ -1414,15 +1509,79 @@ p {
 
   /* Intro Section Mobile adjustments */
   .intro-content {
-    gap: 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .intro-section {
+    padding: 1rem 0;
   }
 
   .profile-image {
-    flex: 0 0 200px;
+    flex: 0 0 120px;
   }
 
   .profile-image img {
-    height: 200px;
+    height: 120px;
+  }
+
+  .intro-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .intro-text h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .intro-text p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-buttons {
+    margin-top: 0.75rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .cta-buttons .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Contact info compact on mobile */
+  .contact-info {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-info p {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .news-timeline-heading {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .timeline-event-title {
+    font-size: 0.85rem;
+  }
+
+  .timeline-event-desc {
+    font-size: 0.78rem;
+  }
+
+  .timeline-date {
+    font-size: 0.72rem;
   }
 
   /* Resume responsive adjustments */
