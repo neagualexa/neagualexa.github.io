@@ -11,6 +11,7 @@ export { default as ImageGallery } from "./ImageGallery";
 // Home Components
 export { default as IntroSection } from "./IntroSection";
 export { default as ContactSection } from "./ContactSection";
+export { default as NewsTimeline } from "./NewsTimeline";
 
 // Projects Components
 export { StaticNav, StickyNav } from "./SectionNavigation";

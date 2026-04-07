@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 // Import all PDFs from the publications docs folder
@@ -16,6 +16,19 @@ const publicationPDFs = importAll(
 
 const PublicationCard = ({ publication }) => {
   const [expanded, setExpanded] = useState(false);
+  const [highlighted, setHighlighted] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    if (window.location.hash === `#${publication.id}`) {
+      setExpanded(true);
+      setTimeout(() => {
+        cardRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+        setHighlighted(true);
+        setTimeout(() => setHighlighted(false), 2000);
+      }, 100);
+    }
+  }, [publication.id]);
 
   const formatAuthors = (authors) => {
     if (!authors || authors.length === 0) return "";
@@ -42,7 +55,11 @@ const PublicationCard = ({ publication }) => {
   };
 
   return (
-    <div className="publication-card" id={publication.id}>
+    <div
+      ref={cardRef}
+      className={`publication-card${highlighted ? " publication-card--highlighted" : ""}`}
+      id={publication.id}
+    >
       <div className="publication-header">
         <div className="publication-citation">{formatCitation()}</div>
 

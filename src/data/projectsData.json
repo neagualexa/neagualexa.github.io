@@ -68,6 +68,12 @@
             "Apprentice Learner (AL)",
             "Knowledge Learning Instruction (KLI) Framework"
           ],
+          "links": [
+            {
+              "text": "LearnLab Summer School Website",
+              "url": "https://learnlab.org/learnlab-summer-school/"
+            }
+          ],
           "images": ["CMU_poster_photo.jpg"],
           "cols": 5
         },

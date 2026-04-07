@@ -349,6 +349,12 @@ p {
 /* Home Section */
 #home {
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.home-hero {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
@@ -359,7 +365,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  padding: 3rem 0;
 }
 
 .intro-content {
@@ -434,6 +440,267 @@ p {
   color: var(--text-inverse);
 }
 
+
+/* ── News / Research Activity Timeline ──────────────────────── */
+
+.news-timeline-section {
+  margin-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+.news-timeline-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: var(--text-heading);
+  letter-spacing: 0.02em;
+  transition: color var(--theme-transition);
+}
+
+.news-timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Year block */
+.timeline-year-block {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-year-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--theme-transition);
+}
+
+.timeline-future .timeline-year-label {
+  color: var(--text-muted);
+}
+
+.timeline-future-icon {
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+/* Event rows */
+.timeline-events {
+  border-left: 2px solid var(--border-color);
+  margin-left: 0.5rem;
+  padding-left: 0;
+  transition: border-color var(--theme-transition);
+}
+
+.timeline-future .timeline-events {
+  border-left-style: dashed;
+}
+
+.timeline-event {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0.75rem 0 0.75rem 1.25rem;
+  position: relative;
+  transition: background var(--theme-transition);
+}
+
+.timeline-event:hover {
+  background: var(--accent-light);
+  border-radius: 6px;
+}
+
+/* Dot */
+.timeline-dot-column {
+  position: absolute;
+  left: -0.45rem;
+  top: 1.1rem;
+}
+
+.timeline-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  border: 2px solid var(--bg-primary);
+  transition:
+    background var(--theme-transition),
+    border-color var(--theme-transition),
+    transform 0.2s ease;
+}
+
+.timeline-future .timeline-dot {
+  background: transparent;
+  border-color: var(--text-muted);
+}
+
+.timeline-event:hover .timeline-dot {
+  transform: scale(1.4);
+}
+
+/* Event body */
+.timeline-event-body {
+  flex: 1;
+}
+
+.timeline-event-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.timeline-date {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  transition: color var(--theme-transition);
+}
+
+/* Type tags */
+.timeline-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.timeline-tag--conference {
+  color: #0077aa;
+  border-color: #0077aa40;
+  background: #0077aa12;
+}
+.timeline-tag--presentation {
+  color: #9b5de5;
+  border-color: #9b5de540;
+  background: #9b5de512;
+}
+.timeline-tag--workshop {
+  color: #f15bb5;
+  border-color: #f15bb540;
+  background: #f15bb512;
+}
+.timeline-tag--collaboration {
+  color: #00bbf9;
+  border-color: #00bbf940;
+  background: #00bbf912;
+}
+.timeline-tag--grant {
+  color: #00f5d4;
+  border-color: #00f5d440;
+  background: #00f5d412;
+}
+.timeline-tag--milestone {
+  color: #fe6d73;
+  border-color: #fe6d7340;
+  background: #fe6d7312;
+}
+
+.dark-theme .timeline-tag--conference  { color: #4fb8e0; }
+.dark-theme .timeline-tag--presentation { color: #c084fc; }
+.dark-theme .timeline-tag--workshop    { color: #f9a8d4; }
+.dark-theme .timeline-tag--collaboration{ color: #67e8f9; }
+.dark-theme .timeline-tag--grant       { color: #6ee7b7; }
+.dark-theme .timeline-tag--milestone   { color: #fca5a5; }
+
+.timeline-event-title {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-heading);
+  line-height: 1.4;
+  transition: color var(--theme-transition);
+}
+
+.timeline-event-title a {
+  color: var(--text-heading);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+  transition:
+    color var(--theme-transition),
+    border-color var(--theme-transition);
+}
+
+.timeline-event-title a:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.timeline-event-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  line-height: 1.4;
+  transition: color var(--theme-transition);
+}
+
+.timeline-event-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.timeline-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--theme-transition);
+}
+
+.timeline-link:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+}
+
+/* Expand / Collapse button */
+.timeline-expand-btn {
+  display: block;
+  margin: 0 auto 1.5rem;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--button-border-radius);
+  padding: 0.4rem 1.2rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--theme-transition);
+}
+
+.timeline-expand-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--accent-light);
+}
+
+.timeline-collapse-btn {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .timeline-event-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+}
+
+/* ── End News Timeline ──────────────────────────────────────── */
 
 /* Shared button styles for static and sticky section navs */
 .section-nav {
@@ -1390,6 +1657,17 @@ p {
 }
 
 .publication-card:hover {
+}
+
+@keyframes publication-highlight {
+  0%   { box-shadow: 0 0 0 0 var(--accent-primary); background: var(--bg-primary); }
+  20%  { box-shadow: 0 0 0 6px var(--accent-light); background: var(--accent-light); }
+  80%  { box-shadow: 0 0 0 6px var(--accent-light); background: var(--accent-light); }
+  100% { box-shadow: 0 0 0 0 transparent; background: var(--bg-primary); }
+}
+
+.publication-card--highlighted {
+  animation: publication-highlight 2s ease forwards;
 }
 
 .publication-header {
