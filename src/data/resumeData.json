@@ -12,12 +12,13 @@
       "items": [
         {
           "period": "2024 - 2028",
-          "title": "PhD LLMs as Dialogic Feedback Tools in STEM Education",
+          "title": "PhD in Applied AI in Education",
           "institution": "Imperial College London",
           "logo": "ImperialCollegeLondon_logo_new.png",
           "details": [
             "Supervised by Dr Peter B. Johnson and Dr Rhodri Nelson",
-            "\"To what extent can we utilise existing GenAI tools to provide effective dialogic feedback, whilst aligning with educational values and ensuring domain-specific technical accuracy?\""
+            "\"To what extent can we utilise existing GenAI tools to provide effective dialogic feedback, whilst aligning with educational values and ensuring domain-specific technical accuracy?\"",
+            "\"How do students use LLMs during their self-study in STEM education?\""
           ],
           "publications": [
             {
