@@ -228,12 +228,12 @@
           }
         },
         {
-          "period": "Feb 2025",
+          "period": "Feb 2026",
           "title": "Mentor Volunteer for ICHack 2026",
           "institution": "Imperial College London",
           "logo": "ichacklogo.svg",
           "details": [
-            "Mentoring students during one of the biggest student-run hackathons in the UK, ICHack 2026"
+            "Mentoring students during one of the biggest student-run hackathons in the UK, ICHack"
           ],
           "link": {
             "text": "ICHack",
