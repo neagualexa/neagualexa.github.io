@@ -16,13 +16,17 @@
           "institution": "Imperial College London",
           "logo": "ImperialCollegeLondon_logo_new.png",
           "details": [
-            "Supervised by Dr Peter Johnson, leader of Lambda Feedback",
+            "Supervised by Dr Peter B. Johnson and Dr Rhodri Nelson",
             "\"To what extent can we utilise existing GenAI tools to provide effective dialogic feedback, whilst aligning with educational values and ensuring domain-specific technical accuracy?\""
           ],
           "publications": [
             {
               "id": "2026-student-questions-procedural",
               "citation": "Neagu, A., Messer, M., Johnson, P., Nelson, R. (2026). \"How Do I ...?\": Procedural Questions Predominate Student-LLM Chatbot Conversations. arXiv Preprint."
+            },
+            {
+              "id": "2026-mued-api",
+              "citation": "Sölch, M., Neagu, A., Messer, M., Johnson, P., Kortemeyer, G., Ng, S. S. H., Lim, F. S., Krusche, S. (2026). μEd API: Towards a Shared API for Education Microservices. In Proceedings of the ACM Conference on Learning@Scale 2026 (L@S '26)."
             },
             {
               "id": "2025-eern-chatbots-context",
@@ -221,6 +225,19 @@
           "link": {
             "text": "Imperial College London Wohl Reach Out Lab",
             "url": "https://www.imperial.ac.uk/be-inspired/schools-outreach/wohl-reach-out-lab/"
+          }
+        },
+        {
+          "period": "Feb 2025",
+          "title": "Mentor Volunteer for ICHack 2026",
+          "institution": "Imperial College London",
+          "logo": "ichacklogo.svg",
+          "details": [
+            "Mentoring students during one of the biggest student-run hackathons in the UK, ICHack 2026"
+          ],
+          "link": {
+            "text": "ICHack",
+            "url": "https://ichack.org/"
           }
         },
         {

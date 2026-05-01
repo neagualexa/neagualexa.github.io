@@ -6,8 +6,8 @@
       "authors": [
         "Alexandra Neagu",
         "Marcus Messer",
-        "Dr. Peter B. Johnson",
-        "Dr. Rhodri Nelson"
+        "Peter B. Johnson",
+        "Rhodri Nelson"
       ],
       "conference": "arXiv Preprint",
       "year": "2026",
@@ -30,13 +30,110 @@
       ]
     },
     {
-      "id": "2025-eern-chatbots-context",
-      "title": "Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information",
+      "id": "2026-mued-api",
+      "title": "μEd API: Towards a Shared API for Education Microservices",
+      "authors": [
+        "Maximillan Sölch",
+        "Alexandra Neagu",
+        "Marcus Messer",
+        "Peter Johnson",
+        "Gerd Kortemeyer",
+        "Samuel S. H. Ng",
+        "Fun Siong Lim",
+        "Stephan Krusche"
+      ],
+      "conference": "ACM Conference on Learning@Scale 2026 (L@S '26)",
+      "year": "2026",
+      "location": "COEX Convention and Exhibition Center, Seoul, South Korea",
+      "abstract": "Learning at scale often requires domain-specific automation such as assessment and feedback. An organization locked in to a general learning platform without these specialist automations limits its pedagogical offering. An ecosystem of interoperable, platform-agnostic microservices for domain-specific automation would solve this problem. To develop an effective ecosystem, a standard interface (API) for education microservices is required. We propose an initial specification for a standard, platform-independent API for educational microservices, μEd. The API integrates functionality from existing systems in use at four institutions, which are adopting the new API. The API is initially specified for automation of feedback, assessment, and educational chatbots, with further service types planned. The API specification provided here enables the development of an ecosystem of education microservices that will facilitate automation in more domains, to more users, providing a richer learning experience in a wide range of disciplines.",
+      "keywords": [
+        "Education Microservices",
+        "Automated Feedback",
+        "Lambda Feedback",
+        "EdTech Interoperability",
+        "Learning at Scale"
+      ],
+      "links": [
+        {
+          "type": "DOI",
+          "url": "https://doi.org/10.48550/arXiv.2603.10014"
+        },
+        {
+          "type": "PDF",
+          "filename": "https://arxiv.org/pdf/2603.10014"
+        }
+      ]
+    },
+    {
+      "id": "2026-peaf-workshop-fol",
+      "role": "Organiser",
+      "title": "PEAF 2026: Pedagogical Evaluation of Automated Feedback Workshop",
+      "authors": [
+        "Marcus Messer",
+        "Peter B. Johnson",
+        "Alexandra Neagu",
+        "Camille Kandiko Howson",
+        "Jaromir Savelka",
+        "Simon Woodhead"
+      ],
+      "conference": "Festival of Learning 2026 (co-located with AIED, EDM, and Learning@Scale)",
+      "year": "2026",
+      "date": "28 June 2026",
+      "location": "COEX Convention and Exhibition Center, Seoul, South Korea",
+      "abstract": "Full-day workshop bringing together researchers and educators to assess the pedagogical quality of automated feedback systems beyond traditional accuracy metrics. The workshop shares practical applications of education theory across different learning contexts and establishes collaborative research directions on evaluating feedback effectiveness, with a focus on generative AI, formative assessment, and equity in learning at scale.",
+      "keywords": [
+        "Automated Feedback",
+        "Pedagogical Evaluation",
+        "Education Theory",
+        "Formative Assessment",
+        "Generative AI in Education",
+        "Learning at Scale",
+        "Educational Equity",
+        "Learning Sciences"
+      ],
+      "links": [
+        {
+          "type": "Website",
+          "url": "https://peaf-workshop.github.io/2026/"
+        }
+      ]
+    },
+    {
+      "id": "2026-fol-microservices-tutorial",
+      "role": "Organiser",
+      "title": "Build and Deploy Microservices for Automated Feedback (Tutorial)",
       "authors": [
         "Alexandra Neagu",
-        "Dr. Peter B. Johnson",
-        "Dr. Rhodri Nelson"
+        "Peter B. Johnson",
+        "Marcus Messer",
+        "Fun Siong Lim"
       ],
+      "conference": "Festival of Learning 2026 (co-located with AIED, EDM, and Learning@Scale)",
+      "year": "2026",
+      "date": "27 June 2026",
+      "location": "COEX Convention and Exhibition Center, Seoul, South Korea",
+      "abstract": "Half-day hands-on tutorial enabling participants to design, implement, and deploy education microservices that evaluate student submissions and provide automated feedback. The session introduces a microservice architecture in which discipline-specific feedback automation logic is delivered as modular, independently deployed services. Participants work in mixed-ability groups adopting specialised roles — Implementer, Task Designer, and Test Author — to build evaluation functions for Lambda Feedback and contribute to an open-source microservice ecosystem aligned with the μEd API specification.",
+      "keywords": [
+        "Microservices",
+        "Automated Feedback",
+        "Educational Technology",
+        "μEd API",
+        "Lambda Feedback",
+        "Evaluation Functions",
+        "Learning at Scale",
+        "Open-source Ecosystem"
+      ],
+      "links": [
+        {
+          "type": "Website",
+          "url": "https://docs.lambdafeedback.com/events/20260627_fol_kor_26/"
+        }
+      ]
+    },
+    {
+      "id": "2025-eern-chatbots-context",
+      "title": "Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information",
+      "authors": ["Alexandra Neagu", "Peter B. Johnson", "Rhodri Nelson"],
       "conference": "UK and Ireland Engineering Education Research Network Annual Symposium",
       "year": "2025",
       "location": "Manchester University, Manchester, UK",
