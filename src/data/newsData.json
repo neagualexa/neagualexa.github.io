@@ -1,253 +1,243 @@
 {
-  "years": [
+  "events": [
     {
-      "year": "2024",
-      "isFuture": false,
-      "events": [
+      "start": "2024-10-01",
+      "title": "PhD started with supervision from Dr. Peter B. Johnson and Dr. Rhodri Nelson, Imperial College London",
+      "description": null
+    },
+    {
+      "start": "2024-10-17",
+      "title": "Attendance at Cambridge GenAI in Education 2025 Conference",
+      "description": null,
+      "type": "conference",
+      "links": [
         {
-          "date": "1 Oct",
-          "title": "PhD started with supervision from Dr. Peter B. Johnson and Dr. Rhodri Nelson, Imperial College London",
-          "description": null
-        },
-        {
-          "date": "17 Oct",
-          "title": "Attendance at Cambridge GenAI in Education 2025 Conference",
-          "description": null,
-          "type": "conference",
-          "links": [
-            {
-              "url": "https://www.deficambridge.org/events/cambridge-generative-ai-in-education-2024/",
-              "label": "Event page"
-            }
-          ]
-        },
-        {
-          "date": "31 Oct – 1 Nov",
-          "title": "Attendance at EdTech Workshop between Imperial College London, King's College and TUMunich",
-          "type": "workshop"
-        },
-        {
-          "date": "13 Dec",
-          "title": "Attendance at JiscAI: AI in Higher Education Event",
-          "description": "Jisc AI Winter HE Community Event, University of London",
-          "type": "conference",
-          "links": [
-            {
-              "url": "https://www.jisc.ac.uk/events/jisc-ai-winter-he-community-event-innovation-in-teaching-and-learning",
-              "label": "Event page"
-            }
-          ]
+          "url": "https://www.deficambridge.org/events/cambridge-generative-ai-in-education-2024/",
+          "label": "Event page"
         }
       ]
     },
     {
-      "year": "2025",
-      "isFuture": false,
-      "events": [
+      "start": "2024-10-31",
+      "end": "2024-11-01",
+      "title": "Attendance at EdTech Workshop between Imperial College London, King's College and TUMunich",
+      "type": "workshop"
+    },
+    {
+      "start": "2024-12-13",
+      "title": "Attendance at JiscAI: AI in Higher Education Event",
+      "description": "Jisc AI Winter HE Community Event, University of London",
+      "type": "conference",
+      "links": [
         {
-          "date": "26 Mar",
-          "title": "Panelist at Imperial Festival of Learning and Teaching 2025",
-          "description": "Panel: \"Taking Imperial's temperature: Making use of data and analytics\"",
-          "type": "presentation",
-          "links": [
-            {
-              "url": "https://www.imperial.ac.uk/staff/educational-development/networks-and-events/festival-of-learning-and-teaching/festival-of-learning-and-teaching-2025/",
-              "label": "Event page"
-            }
-          ]
-        },
-        {
-          "date": "23–25 Apr",
-          "title": "Attendance at EDUCON'25 London",
-          "description": null,
-          "type": "conference",
-          "links": [
-            {
-              "url": "https://2025.ieee-educon.org/",
-              "label": "Conference page"
-            }
-          ]
-        },
-        {
-          "date": "20 May",
-          "title": "Attendance at New Scientist Emerging Technologies Summit 2025",
-          "description": "Invitation from Prof. Jeremy Pitt, Imperial College London",
-          "type": "conference",
-          "links": [
-            {
-              "url": "https://emergingtech.newscientist.com/",
-              "label": "Event page"
-            }
-          ]
-        },
-        {
-          "date": "1 Jul",
-          "title": "Panelist at APT2025, King's College London",
-          "description": "Panel: \"Sustainable Teaching, Learning, and Assessment in the Age of Generative AI in a STEMB university\" ",
-          "type": "presentation",
-          "links": [
-            {
-              "url": "https://www.kcl.ac.uk/academy/apt",
-              "label": "APT page"
-            }
-          ]
-        },
-        {
-          "date": "2–4 Jul",
-          "title": "Attendance and Presentation at EERN 2025 Symposium, University of Manchester",
-          "description": "Paper: \"Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information\"",
-          "type": "presentation",
-          "links": [
-            {
-              "url": "https://epc.ac.uk/event/uk-and-ireland-engineering-education-research-network-annual-symposium-2/",
-              "label": "Event page"
-            },
-            {
-              "url": "/publications#2025-eern-chatbots-context",
-              "label": "Paper",
-              "internal": true
-            }
-          ]
-        },
-        {
-          "date": "26 Jul – 3 Aug",
-          "title": "Attendance at LearnLab Summer Course 2025 at Carnegie Mellon University",
-          "description": "Attended lectures on Learning Science, Cognitive Task Analysis and Computational Models of Learning\nPresented work on \"Teaching Apprentice Learner Politeness in Foreign Language Learning\"",
-          "type": "workshop",
-          "links": [
-            {
-              "url": "https://learnlab.org/learnlab-summer-school/",
-              "label": "LearnLab page"
-            }
-          ]
-        },
-        {
-          "date": "13 Oct",
-          "title": "Attendance at Prof. Manu Kapur's panel on \"Productive Struggle\" at Imperial College London",
-          "description": "Hosted by Prof. Manu Kapur on his book \"Productive Struggle\"",
-          "type": "conference"
-        },
-        {
-          "date": "10 Dec",
-          "title": "Presentation at PGR Educational Research Symposium at Imperial College London",
-          "description": "Presented my research progress and future plans to the Educational Research community at Imperial College London",
-          "type": "presentation"
-        },
-        {
-          "date": "17 Dec",
-          "title": "Data Session on Student-LLM Chat Analysis at Loughborough University",
-          "description": "With Prof. Saul Albert and the Discourse and Rhetoric Group (DARG)",
-          "type": "collaboration",
-          "links": [
-            {
-              "url": "https://darg.lboro.ac.uk/",
-              "label": "DARG Group"
-            }
-          ]
+          "url": "https://www.jisc.ac.uk/events/jisc-ai-winter-he-community-event-innovation-in-teaching-and-learning",
+          "label": "Event page"
         }
       ]
     },
     {
-      "year": "2026",
-      "isFuture": false,
-      "events": [
+      "start": "2025-03-26",
+      "title": "Panelist at Imperial Festival of Learning and Teaching 2025",
+      "description": "Panel: \"Taking Imperial's temperature: Making use of data and analytics\"",
+      "type": "presentation",
+      "links": [
         {
-          "date": "27 Jan",
-          "title": "Presentation at CERC Seminar at King's College London",
-          "description": "Presented research work on the questions students ask LLM chatbots during self-study \nPaper: \"\"How Do I ...?\": Procedural Questions Predominate Student-LLM Chatbot Conversations.\"",
-          "type": "presentation",
-          "links": [
-            {
-              "url": "https://www.kcl.ac.uk/research/computing-education",
-              "label": "CERC page"
-            },
-            {
-              "url": "https://arxiv.org/abs/2602.18372",
-              "label": "arXiv preprint"
-            },
-            {
-              "url": "/publications#2026-student-questions-procedural",
-              "label": "Paper",
-              "internal": true
-            }
-          ]
-        },
-        {
-          "date": "27 Feb",
-          "title": "Imperial Global Connect Fund Accepted Application",
-          "description": "In collaboration with Nanyang Technological University, Singapore and ETH-Singapore to support the adoption of μEd API, a shared API for EdTech Microservices",
-          "type": "grant",
-          "links": [
-            {
-              "url": "https://www.imperial.ac.uk/about/global/imperial-global-connect-fund/",
-              "label": "Fund page"
-            },
-            {
-              "url": "https://arxiv.org/abs/2603.10014",
-              "label": "μEd API arXiv preprint"
-            }
-          ]
-        },
-        {
-          "date": "10 Mar",
-          "title": "Poster Presentation at Imperial Women's PhD Network Poster Session",
-          "description": "Paper: \"\"How Do I ...?\": Procedural Questions Predominate Student-LLM Chatbot Conversations.\"",
-          "type": "presentation",
-          "links": [
-            {
-              "url": "https://arxiv.org/abs/2602.18372",
-              "label": "arXiv preprint"
-            },
-            {
-              "url": "https://www.imperial.ac.uk/events/205715/call-for-posters-imperial-womens-phd-showcase/",
-              "label": "Event page"
-            },
-            {
-              "url": "/publications#2026-student-questions-procedural",
-              "label": "Paper",
-              "internal": true
-            }
-          ]
+          "url": "https://www.imperial.ac.uk/staff/educational-development/networks-and-events/festival-of-learning-and-teaching/festival-of-learning-and-teaching-2025/",
+          "label": "Event page"
         }
       ]
     },
     {
-      "year": "Upcoming",
-      "isFuture": true,
-      "events": [
+      "start": "2025-04-23",
+      "end": "2025-04-25",
+      "title": "Attendance at EDUCON'25 London",
+      "description": null,
+      "type": "conference",
+      "links": [
         {
-          "date": "21–25 Apr 2026",
-          "title": "Presentation at AI for Qualitative Physics Education Research",
-          "description": "Hosted by the Center for Computing in Science Education, University of Oslo in collaboration with Imperial College London",
-          "type": "presentation"
+          "url": "https://2025.ieee-educon.org/",
+          "label": "Conference page"
+        }
+      ]
+    },
+    {
+      "start": "2025-05-20",
+      "title": "Attendance at New Scientist Emerging Technologies Summit 2025",
+      "description": "Invitation from Prof. Jeremy Pitt, Imperial College London",
+      "type": "conference",
+      "links": [
+        {
+          "url": "https://emergingtech.newscientist.com/",
+          "label": "Event page"
+        }
+      ]
+    },
+    {
+      "start": "2025-07-01",
+      "title": "Panelist at APT2025, King's College London",
+      "description": "Panel: \"Sustainable Teaching, Learning, and Assessment in the Age of Generative AI in a STEMB university\" ",
+      "type": "presentation",
+      "links": [
+        {
+          "url": "https://www.kcl.ac.uk/academy/apt",
+          "label": "APT page"
+        }
+      ]
+    },
+    {
+      "start": "2025-07-02",
+      "end": "2025-07-04",
+      "title": "Attendance and Presentation at EERN 2025 Symposium, University of Manchester",
+      "description": "Paper: \"Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information\"",
+      "type": "presentation",
+      "links": [
+        {
+          "url": "https://epc.ac.uk/event/uk-and-ireland-engineering-education-research-network-annual-symposium-2/",
+          "label": "Event page"
         },
         {
-          "date": "19–22 May 2026",
-          "title": "Attendance at SEFI Summer School on Engineering Education Research",
-          "description": null,
-          "type": "workshop",
-          "links": [
-            {
-              "url": "https://www.ucpbl.net/research-and-publications/sefi-2026-summer-school-on-engineering-education-research",
-              "label": "Event page"
-            }
-          ]
+          "url": "/publications#2025-eern-chatbots-context",
+          "label": "Paper",
+          "internal": true
+        }
+      ]
+    },
+    {
+      "start": "2025-07-26",
+      "end": "2025-08-03",
+      "title": "Attendance at LearnLab Summer Course 2025 at Carnegie Mellon University",
+      "description": "Attended lectures on Learning Science, Cognitive Task Analysis and Computational Models of Learning\nPresented work on \"Teaching Apprentice Learner Politeness in Foreign Language Learning\"",
+      "type": "workshop",
+      "links": [
+        {
+          "url": "https://learnlab.org/learnlab-summer-school/",
+          "label": "LearnLab page"
+        }
+      ]
+    },
+    {
+      "start": "2025-10-13",
+      "title": "Attendance at Prof. Manu Kapur's panel on \"Productive Struggle\" at Imperial College London",
+      "description": "Hosted by Prof. Manu Kapur on his book \"Productive Struggle\"",
+      "type": "conference"
+    },
+    {
+      "start": "2025-12-10",
+      "title": "Presentation at PGR Educational Research Symposium at Imperial College London",
+      "description": "Presented my research progress and future plans to the Educational Research community at Imperial College London",
+      "type": "presentation"
+    },
+    {
+      "start": "2025-12-17",
+      "title": "Data Session on Student-LLM Chat Analysis at Loughborough University",
+      "description": "With Prof. Saul Albert and the Discourse and Rhetoric Group (DARG)",
+      "type": "collaboration",
+      "links": [
+        {
+          "url": "https://darg.lboro.ac.uk/",
+          "label": "DARG Group"
+        }
+      ]
+    },
+    {
+      "start": "2026-01-27",
+      "title": "Presentation at CERC Seminar at King's College London",
+      "description": "Presented research work on the questions students ask LLM chatbots during self-study \nPaper: \"\"How Do I ...?\": Procedural Questions Predominate Student-LLM Chatbot Conversations.\"",
+      "type": "presentation",
+      "links": [
+        {
+          "url": "https://www.kcl.ac.uk/research/computing-education",
+          "label": "CERC page"
         },
         {
-          "date": "27 Jun – 3 Jul 2026",
-          "title": "Attendance and Presentation at Festival of Learning (AIED, EDM, Learning@Scale)",
-          "description": "Accepted tutorial and workshop proposals",
-          "type": "conference",
-          "links": [
-            {
-              "url": "https://lambda-feedback.github.io/user-documentation/events/20260627_fol_kor_26/",
-              "label": "Tutorial"
-            },
-            {
-              "url": "https://peaf-workshop.github.io/2026",
-              "label": "Workshop"
-            }
-          ]
+          "url": "https://arxiv.org/abs/2602.18372",
+          "label": "arXiv preprint"
+        },
+        {
+          "url": "/publications#2026-student-questions-procedural",
+          "label": "Paper",
+          "internal": true
+        }
+      ]
+    },
+    {
+      "start": "2026-02-27",
+      "title": "Imperial Global Connect Fund Accepted Application",
+      "description": "In collaboration with Nanyang Technological University, Singapore and ETH-Singapore to support the adoption of μEd API, a shared API for EdTech Microservices",
+      "type": "grant",
+      "links": [
+        {
+          "url": "https://www.imperial.ac.uk/about/global/imperial-global-connect-fund/",
+          "label": "Fund page"
+        },
+        {
+          "url": "https://arxiv.org/abs/2603.10014",
+          "label": "μEd API arXiv preprint"
+        }
+      ]
+    },
+    {
+      "start": "2026-03-10",
+      "title": "Poster Presentation at Imperial Women's PhD Network Poster Session",
+      "description": "Paper: \"\"How Do I ...?\": Procedural Questions Predominate Student-LLM Chatbot Conversations.\"",
+      "type": "presentation",
+      "links": [
+        {
+          "url": "https://arxiv.org/abs/2602.18372",
+          "label": "arXiv preprint"
+        },
+        {
+          "url": "https://www.imperial.ac.uk/events/205715/call-for-posters-imperial-womens-phd-showcase/",
+          "label": "Event page"
+        },
+        {
+          "url": "/publications#2026-student-questions-procedural",
+          "label": "Paper",
+          "internal": true
+        }
+      ]
+    },
+    {
+      "start": "2026-04-21",
+      "end": "2026-04-25",
+      "title": "Presentation at AI for Qualitative Physics Education Research",
+      "description": "Hosted by the Center for Computing in Science Education, University of Oslo in collaboration with Imperial College London",
+      "type": "conference"
+    },
+    {
+      "start": "2026-05-19",
+      "end": "2026-05-22",
+      "title": "Attendance at SEFI Summer School on Engineering Education Research",
+      "description": null,
+      "type": "workshop",
+      "links": [
+        {
+          "url": "https://www.ucpbl.net/research-and-publications/sefi-2026-summer-school-on-engineering-education-research",
+          "label": "Event page"
+        }
+      ]
+    },
+    {
+      "start": "2026-06-22",
+      "end": "2026-06-25",
+      "title": "Workshop and Collaboration Meetings at Nanyang Technological University, Singapore",
+      "description": null,
+      "type": "workshop"
+    },
+    {
+      "start": "2026-06-27",
+      "end": "2026-07-03",
+      "title": "Attendance and Presentation at Festival of Learning (AIED, EDM, Learning@Scale)",
+      "description": "Accepted tutorial and workshop proposals; Accepted as Student Volunteer",
+      "type": "conference",
+      "links": [
+        {
+          "url": "https://lambda-feedback.github.io/user-documentation/events/20260627_fol_kor_26/",
+          "label": "Tutorial"
+        },
+        {
+          "url": "https://peaf-workshop.github.io/2026",
+          "label": "Workshop"
         }
       ]
     }

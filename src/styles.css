@@ -1658,9 +1658,15 @@ p {
 /* Social Links */
 .social-links {
   margin-top: 2rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
   gap: 1rem;
   justify-content: center;
+}
+
+.social-links .social-link:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
 }
 
 .social-link {
@@ -1752,8 +1758,8 @@ p {
 
 @media (max-width: 768px) {
   .social-links {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: minmax(0, max-content);
+    justify-items: center;
   }
 
   .skills-list {
