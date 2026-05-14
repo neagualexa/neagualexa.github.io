@@ -396,8 +396,8 @@
           "id": "aws-monitoring-alarming",
           "title": "Monitoring and Alarming System of global EC2 Instance Fleet, AWS Internship",
           "year": "2023",
-          "description": "I set up a Monitoring and Alarming System for the largely scalable EC2 Instance Fleet of the <strong>Managed Environments for Outside Work</strong>, a fully managed virtual desktop service.<br><br>I built a cloud infrastructure for fetching, preparing, and visualising device metrics including:<br><ul><li>CPU Utilisation</li><li>RAM Usage</li><li>Network Performance</li><li>Disk Utilisation</li></ul><br>The system is easily deployed through <strong>AWS CDK</strong>, an Infrastructure as Code toolkit, that allows for easy resource provisioning for cloud solutions. The architecture diagram presented is the final infrastructure of the Monitoring and Alarming System.",
-          "technologies": ["AWS", "EC2", "Monitoring", "Cloud Infrastructure"],
+          "description": "I built a <strong>Monitoring and Alarming System for the global EC2 fleet</strong> for AWS's virtual desktop service that lets consultants connect to customer VPNs while complying with AWS security policy.<br><br><strong>Outcomes & impact:</strong><ul><li>Gave the service team end-to-end visibility into fleet usage (deployments, active users, time-on-instance) to support right-sizing decisions.</li><li>Flagged unusual activity — CPU anomalies, off-hour usage, long-idle instances — enabling cost savings by terminating unused instances.</li><li>Delivered as Infrastructure-as-Code (AWS CDK) so the service team could redeploy and extend the system independently.</li></ul>The metrics pipeline covers CPU, RAM, Network, and Disk utilisation, with AWS QuickSight surfacing correlations across the fleet. The architecture diagram presented is the final infrastructure.",
+          "technologies": ["AWS", "EC2", "QuickSight", "AWS CDK", "Monitoring"],
           "images": ["AWS_MEOW_PlacementProject_ArchitecturePipeline.jpg"],
           "links": [],
           "cols": 7
@@ -406,7 +406,7 @@
           "id": "aws-serverless-tts",
           "title": "Serverless Infrastructure for a Text to Speech Conversion, AWS Internship",
           "year": "2023",
-          "description": "I built a serverless infrastructure for a text to speech conversion and generation system of natural voices using AWS Polly. The backend infrastructure was built using Terraform, an Infrastructure-as-Code tool, that allows for easy resource provisioning for cloud solutions. I set up a web interface using React Typescript to allow users to access the backend functionalities without accessing the AWS console. The architecture diagram presented is the final infrastructure of the backend infrastrucutre. And the Screenshot here is the form webapp for accessing the system.",
+          "description": "I designed and prototyped an end-to-end serverless Text-to-Speech pipeline on <strong>AWS Polly</strong> as a proposal for the customer, <strong>Emirates iXR</strong> — an immersive training programme using 3D avatars to enhance learning experiences for Emirates employees.<br><br><strong>Outcomes & impact:</strong><ul><li>Proposed a natural-voice audio pipeline that 3D avatars could draw on for the customer's training scenarios.</li><li>Designed the infrastructure around resiliency, security, and high availability, so it could safely sit in the customer's training delivery pipeline.</li><li>Packaged the backend with <strong>Terraform</strong> for reusability across future deployments, and built a React/TypeScript web interface so non-technical users could access the system without touching the AWS console.</li></ul>The architecture diagram presented is the proposed backend infrastructure; the screenshot is the form webapp for accessing the system.",
           "technologies": [
             "AWS Polly",
             "Serverless",
@@ -418,7 +418,7 @@
             "AWS_Polly_PlacementProject_WebApp.png"
           ],
           "links": [],
-          "cols": 4
+          "cols": 7
         },
         {
           "title": "Fan Mail Digitalization, AWS Interns Hackathon",
@@ -439,7 +439,7 @@
           "id": "aws-landing-zone-assessment",
           "title": "Online Landing Zone Assessment, AWS Internship",
           "year": "2022",
-          "description": "I transferred the Landing Zone Assessment Offering onto the AWS Assessment Tool (A2T tool) and created my own WebApp Demo for the Assessment with AWS Amplify and other services. The architecture diagram presented is the final infrastructure of my WebApp interpretation.",
+          "description": "I migrated AWS's internal Excel-based <strong>Landing Zone Assessment (LZA)</strong> offering onto the <strong>AWS Assessment Tool (A2T 2.0)</strong>, an online platform hosting close to 30 standalone assessment types. The LZA offering itself conducts a review of a customer's existing landing zone (multi-account AWS environment), generating recommendations aligned with AWS best practices to enhance security, governance, and operational use.<br><br><strong>Project outcomes:</strong><ul><li>Automates the question–answer–recommendation process associated with the Migration Readiness Assessment, <strong>increasing consultant time efficiency by ~20%</strong> on an ~80h workflow (most of which was spent writing the report) through automatic report generation.</li><li>Shifted the offering from <strong>internal-only to customer- and partner-facing</strong>, enabling broader adoption as a standard practice.</li></ul><strong>My impact on the migration:</strong><ul><li>Found a viable solution under the new tool's feature constraints.</li><li>Scoped and requested necessary platform features (e.g. weighted scoring in the score calculation) to fit the LZA.</li><li>Implemented custom formatting for UI components not natively supported.</li><li>Built my own WebApp demo for the assessment using AWS Amplify and other AWS services — the architecture diagram presented is the final infrastructure of my WebApp interpretation.</li></ul>",
           "technologies": [
             "AWS",
             "AWS Amplify",
@@ -448,7 +448,7 @@
           ],
           "images": ["AWS_LZAProject_ArchitecturePipeline.png"],
           "links": [],
-          "cols": 3
+          "cols": 10
         },
         {
           "title": "ZeroToOne - AR/VR Circuit Design Simulator, ICL ICHack",
