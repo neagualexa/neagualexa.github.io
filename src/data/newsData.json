@@ -227,7 +227,7 @@
     {
       "start": "2026-06-27",
       "end": "2026-07-03",
-      "title": "Attendance and Presentation at Festival of Learning (AIED, EDM, Learning@Scale)",
+      "title": "Attendance and Presentation at Festival of Learning 2026 (AIED, EDM, Learning@Scale), Seoul, South Korea",
       "description": "Accepted tutorial and workshop proposals; Accepted as Student Volunteer",
       "type": "conference",
       "links": [
@@ -238,6 +238,27 @@
         {
           "url": "https://peaf-workshop.github.io/2026",
           "label": "Workshop"
+        }
+      ]
+    },
+    {
+      "start": "2026-07-06",
+      "end": "2026-07-11",
+      "title": "Poster Presentation at Pluralistic Alignment Workshop ICML 2026, Seoul, South Korea",
+      "description": "Paper: \"Rethinking Scaffolding in LLM Tutors: The Interactional Mismatch Between Benchmarks and Real-World Deployments\"",
+      "type": "conference",
+      "links": [
+        {
+          "url": "https://icml.cc/virtual/2026/75645",
+          "label": "Paper & Poster on ICML"
+        },
+        {
+          "url": "https://openreview.net/forum?id=g1hSobyONT",
+          "label": "Paper on OpenReview"
+        },
+        {
+          "url": "https://icml.cc/virtual/2026/workshop/54064",
+          "label": "Workshop on ICML"
         }
       ]
     }
