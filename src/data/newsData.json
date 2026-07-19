@@ -184,7 +184,7 @@
       "links": [
         {
           "url": "https://arxiv.org/abs/2602.18372",
-          "label": "arXiv preprint"
+          "label": "arXiv paper preprint"
         },
         {
           "url": "https://www.imperial.ac.uk/events/205715/call-for-posters-imperial-womens-phd-showcase/",
@@ -200,52 +200,67 @@
     {
       "start": "2026-04-21",
       "end": "2026-04-25",
-      "title": "Presentation at AI for Qualitative Physics Education Research",
-      "description": "Hosted by the Center for Computing in Science Education, University of Oslo in collaboration with Imperial College London",
-      "type": "conference"
+      "title": "Presentation at AI for Qualitative Physics Education Research Conference, University of Oslo, Norway",
+      "description": "Hosted by the Center for Computing in Science Education; Presented paper: \"\"How Do I ...?\": Procedural Questions Predominate Student-LLM Chatbot Conversations.\"",
+      "type": "conference",
+      "links": [
+        {
+          "url": "https://arxiv.org/abs/2602.18372",
+          "label": "arXiv paper preprint"
+        },
+        {
+          "url": "/publications#2026-student-questions-procedural",
+          "label": "Paper",
+          "internal": true
+        }
+      ]
     },
     {
       "start": "2026-05-19",
       "end": "2026-05-22",
-      "title": "Attendance at SEFI Summer School on Engineering Education Research",
-      "description": null,
+      "title": "Attendance at SEFI Summer School on Engineering Education Research, Aalborg University, Denmark",
+      "description": "Course for PhD students working on Engineering Education Research, including workshops and hands-on activities supervised by mentors;",
       "type": "workshop",
       "links": [
         {
           "url": "https://www.ucpbl.net/research-and-publications/sefi-2026-summer-school-on-engineering-education-research",
-          "label": "Event page"
+          "label": "SEFI Summer School Event Page"
         }
       ]
     },
     {
       "start": "2026-06-22",
       "end": "2026-06-25",
-      "title": "Workshop and Collaboration Meetings at Nanyang Technological University, Singapore",
+      "title": "Hosted Workshop and Collaboration Meetings with the Institute of Pedagogical Innovation Research & Excellence (InsPIRE) at Nanyang Technological University, Singapore",
       "description": null,
       "type": "workshop"
     },
     {
       "start": "2026-06-27",
       "end": "2026-07-03",
-      "title": "Attendance and Presentation at Festival of Learning 2026 (AIED, EDM, Learning@Scale), Seoul, South Korea",
-      "description": "Accepted tutorial and workshop proposals; Accepted as Student Volunteer",
+      "title": "Presentation at Festival of Learning 2026 (AIED, EDM, Learning@Scale), Seoul, South Korea",
+      "description": "Presenting poster on <a href=\"https://mued.org\">µEd API</a> (an open source API for educational microservices, such as automated feedback); Organising a hands-on tutorial and a full-day interactive workshop on automated feedback; On-the-day assistance as Student Volunteer",
       "type": "conference",
       "links": [
         {
+          "url": "https://mued.org",
+          "label": "µEd API homepage"
+        },
+        {
           "url": "https://lambda-feedback.github.io/user-documentation/events/20260627_fol_kor_26/",
-          "label": "Tutorial"
+          "label": "\"Build and Deploy an Educational Microservice for Automated Feedback\" Tutorial"
         },
         {
           "url": "https://peaf-workshop.github.io/2026",
-          "label": "Workshop"
+          "label": "\"Pedagogical Evaluation of Automated Feedback (PEAF)\" Workshop"
         }
       ]
     },
     {
       "start": "2026-07-06",
       "end": "2026-07-11",
-      "title": "Poster Presentation at Pluralistic Alignment Workshop ICML 2026, Seoul, South Korea",
-      "description": "Paper: \"Rethinking Scaffolding in LLM Tutors: The Interactional Mismatch Between Benchmarks and Real-World Deployments\"",
+      "title": "Poster Presentation at the Pluralistic Alignment Workshop ICML 2026, Seoul, South Korea",
+      "description": "Paper: \"Rethinking Scaffolding in LLM Tutors: The Interactional Mismatch Between Benchmarks and Real-World Deployments\"; On-the-day assistance as Student Volunteer",
       "type": "conference",
       "links": [
         {
