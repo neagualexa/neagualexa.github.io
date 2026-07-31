@@ -16,7 +16,7 @@ const PublicationsPage = () => {
         }}
       >
         Below is a collection of my research publications. <br />
-        My research focuses on Human-AI Interaction,AI-Assisted Learning, and
+        My research focuses on Human-AI Interaction, AI-Assisted Learning, and
         Educational Technology.
       </p>
 

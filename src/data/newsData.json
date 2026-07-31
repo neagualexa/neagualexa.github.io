@@ -239,20 +239,32 @@
       "start": "2026-06-27",
       "end": "2026-07-03",
       "title": "Presentation at Festival of Learning 2026 (AIED, EDM, Learning@Scale), Seoul, South Korea",
-      "description": "Presenting poster on <a href=\"https://mued.org\">µEd API</a> (an open source API for educational microservices, such as automated feedback); Organising a hands-on tutorial and a full-day interactive workshop on automated feedback; On-the-day assistance as Student Volunteer",
+      "description": "Presenting poster on <a href=\"https://mued.org\">µEd API</a> (an open source API for educational microservices, such as automated feedback, developed in collaboration with TU Munich, Nanyang Technological University, and ETH Zurich); Organising a hands-on tutorial on developing automated feedback microservices and a full-day interactive workshop on automated feedback (PEAF); On-the-day assistance as Student Volunteer",
       "type": "conference",
       "links": [
+        {
+          "url": "https://doi.org/10.1145/3774398.3811592",
+          "label": "\"µEd API: Towards a Shared API for Education Microservices\" (ACM L@S '26)"
+        },
         {
           "url": "https://mued.org",
           "label": "µEd API homepage"
         },
         {
+          "url": "https://doi.org/10.1007/978-3-032-29794-5_13",
+          "label": "\"Build and Deploy Microservices for Automated Feedback\" Tutorial (AIED & L@S & EDM 2026)"
+        },
+        {
           "url": "https://lambda-feedback.github.io/user-documentation/events/20260627_fol_kor_26/",
-          "label": "\"Build and Deploy an Educational Microservice for Automated Feedback\" Tutorial"
+          "label": "Tutorial page"
+        },
+        {
+          "url": "https://doi.org/10.1007/978-3-032-29794-5_10",
+          "label": "\"Pedagogical Evaluation of Automated Feedback (PEAF 2026)\" Workshop (AIED & L@S & EDM 2026)"
         },
         {
           "url": "https://peaf-workshop.github.io/2026",
-          "label": "\"Pedagogical Evaluation of Automated Feedback (PEAF)\" Workshop"
+          "label": "PEAF Workshop page"
         }
       ]
     },
@@ -260,20 +272,32 @@
       "start": "2026-07-06",
       "end": "2026-07-11",
       "title": "Poster Presentation at the Pluralistic Alignment Workshop ICML 2026, Seoul, South Korea",
-      "description": "Paper: \"Rethinking Scaffolding in LLM Tutors: The Interactional Mismatch Between Benchmarks and Real-World Deployments\"; On-the-day assistance as Student Volunteer",
+      "description": "Presenting poster on my paper: \"Rethinking Scaffolding in LLM Tutors: The Interactional Mismatch Between Benchmarks and Real-World Deployments\"; Attendance of ICML conference; On-the-day assistance as Student Volunteer",
       "type": "conference",
       "links": [
+        {
+          "url": "https://arxiv.org/abs/2606.15766",
+          "label": "\"Rethinking Scaffolding in LLM Tutors: The Interactional Mismatch Between Benchmarks and Real-World Deployments\" (ArXiv)"
+        },
         {
           "url": "https://icml.cc/virtual/2026/75645",
           "label": "Paper & Poster on ICML"
         },
         {
-          "url": "https://openreview.net/forum?id=g1hSobyONT",
-          "label": "Paper on OpenReview"
-        },
-        {
           "url": "https://icml.cc/virtual/2026/workshop/54064",
           "label": "Workshop on ICML"
+        }
+      ]
+    },
+    {
+      "start": "2026-07-29",
+      "title": "Data Session on Student-LLM Chat Analysis at Loughborough University",
+      "description": "With Prof. Saul Albert and the Discourse and Rhetoric Group (DARG)",
+      "type": "collaboration",
+      "links": [
+        {
+          "url": "https://darg.lboro.ac.uk/",
+          "label": "DARG Group"
         }
       ]
     }

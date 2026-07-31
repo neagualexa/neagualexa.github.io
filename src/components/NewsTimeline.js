@@ -109,13 +109,12 @@ const EventRow = ({ event, includeYear }) => (
           </span>
         )}
       </div>
-      <div className="timeline-event-title">{event.title}</div>
+      <div className="timeline-event-title" dangerouslySetInnerHTML={{ __html: event.title }} />
       {event.description && (
-        <div className="timeline-event-desc">
-          {event.description.split("\n").map((line, i) => (
-            <span key={i}>{line}{i < event.description.split("\n").length - 1 && <br />}</span>
-          ))}
-        </div>
+        <div
+          className="timeline-event-desc"
+          dangerouslySetInnerHTML={{ __html: event.description.replace(/\n/g, "<br />") }}
+        />
       )}
       {event.links && event.links.length > 0 && (
         <div className="timeline-event-links">
