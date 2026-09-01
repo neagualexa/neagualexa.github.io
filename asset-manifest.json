@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0dd373d7.css",
-    "main.js": "/static/js/main.e9d63618.js",
+    "main.js": "/static/js/main.ae94702a.js",
     "static/media/Synthesiser_demo_video.mp4": "/static/media/Synthesiser_demo_video.99582d2d456b18f85f13.mp4",
     "static/media/Medusa_IO_presentation_video.mp4": "/static/media/Medusa_IO_presentation_video.9df9959aae716e291807.mp4",
     "static/media/Synthesiser_songs_video.mp4": "/static/media/Synthesiser_songs_video.7013802cbea49aac81ce.mp4",
@@ -16,8 +16,8 @@
     "static/media/CircuitSImulator_report.pdf": "/static/media/CircuitSImulator_report.e5d94e697eff6204efa0.pdf",
     "static/media/CharIOT_product_photo.jpg": "/static/media/CharIOT_product_photo.de6ab7e6d3928d78ba30.jpg",
     "static/media/ICHack_AR_glasses_view.jpeg": "/static/media/ICHack_AR_glasses_view.802ae783647a20c3ef4b.jpeg",
+    "static/media/PDF_Narrator_interface.jpg": "/static/media/PDF_Narrator_interface.23c727fcf4b4752b0c66.jpg",
     "static/media/Synthesiser_octaves.jpg": "/static/media/Synthesiser_octaves.8af2e2a141069e4c0a71.jpg",
-    "static/media/PDF_Narrator_interface.jpg": "/static/media/PDF_Narrator_interface.85bf6aae2e9e35dc8a88.jpg",
     "static/media/MedusaIO_report.pdf": "/static/media/MedusaIO_report.1ed1cb6dfb9af440704a.pdf",
     "static/media/Nonogram_AIAssistant_ArchitecturePipeline.jpg": "/static/media/Nonogram_AIAssistant_ArchitecturePipeline.24e3ca125a6081cb9cf2.jpg",
     "static/media/LambdaFeedback_ongoingChat.jpg": "/static/media/LambdaFeedback_ongoingChat.38d09784dda0267fe92a.jpg",
@@ -59,10 +59,10 @@
     "index.html": "/index.html",
     "static/media/ichacklogo.svg": "/static/media/ichacklogo.948ef05ae35fd7eaaa1e.svg",
     "main.0dd373d7.css.map": "/static/css/main.0dd373d7.css.map",
-    "main.e9d63618.js.map": "/static/js/main.e9d63618.js.map"
+    "main.ae94702a.js.map": "/static/js/main.ae94702a.js.map"
   },
   "entrypoints": [
     "static/css/main.0dd373d7.css",
-    "static/js/main.e9d63618.js"
+    "static/js/main.ae94702a.js"
   ]
 }
