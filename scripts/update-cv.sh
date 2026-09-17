@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Pull latest CV from Overleaf, compile main.tex, and copy the PDF into public/.
+# Pull latest CV from Overleaf, compile main.tex, and copy the PDF into public/
+# only if it actually differs from the one already published there.
 # Exits 0 on success (whether or not anything changed). Non-zero on failure.
 
 set -euo pipefail
@@ -8,7 +9,6 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SITE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 OVERLEAF_DIR="$(cd "$SITE_DIR/../overleaf_resumeCV" && pwd)"
 PUBLIC_PDF="$SITE_DIR/public/Alexandra Neagu Resume.pdf"
-DEPS_FILE="$SCRIPT_DIR/.cv-deps"
 BUILD_DIR="$(mktemp -d -t cv-build-XXXXXX)"
 
 trap 'rm -rf "$BUILD_DIR"' EXIT
@@ -25,41 +25,31 @@ if [ "${1:-}" = "--force" ] || [ "${1:-}" = "-f" ]; then
   FORCE=1
 fi
 
+# Readable text of a PDF (empty if poppler isn't installed), used to show what
+# changed between the published CV and the freshly built one.
+pdf_text() {
+  command -v pdftotext >/dev/null 2>&1 || return 0
+  pdftotext -layout "$1" - 2>/dev/null
+}
+
+# Raw PDF bytes minus the bits pdftex randomises per run (the trailer /ID) and
+# the build timestamps, so two builds of unchanged sources compare equal.
+# This catches layout-only changes that pdf_text cannot see.
+pdf_bytes() {
+  LC_ALL=C tr -d '\000' < "$1" \
+    | LC_ALL=C sed -E 's@/(CreationDate|ModDate) ?\([^)]*\)@@g; s@/ID ?\[[^]]*\]@@g'
+}
+
 log "Pulling Overleaf project..."
 cd "$OVERLEAF_DIR"
 PRE_HEAD="$(git rev-parse HEAD)"
 git pull --ff-only --quiet
 POST_HEAD="$(git rev-parse HEAD)"
 
-# Detect uncommitted local edits to tracked files (these wouldn't show up in git pull).
-LOCAL_DIRTY="$(git status --porcelain -- ':!:.cv-deps' 2>/dev/null || true)"
-
-if [ "$FORCE" -eq 1 ]; then
-  log "Force flag set; recompiling."
-elif [ -f "$PUBLIC_PDF" ] && [ -f "$DEPS_FILE" ]; then
-  if [ "$PRE_HEAD" = "$POST_HEAD" ] && [ -z "$LOCAL_DIRTY" ]; then
-    log "No upstream changes and no local edits; existing PDF kept."
-    exit 0
-  fi
-  if [ -n "$LOCAL_DIRTY" ]; then
-    log "Local edits detected; recompiling."
-  else
-    CHANGED_FILES="$(git diff --name-only "$PRE_HEAD" "$POST_HEAD")"
-    if [ -z "$CHANGED_FILES" ]; then
-      log "No file diffs between $PRE_HEAD and $POST_HEAD; existing PDF kept."
-      exit 0
-    fi
-    # Recompile only if a file used by main.tex changed.
-    if ! grep -Fxq -f "$DEPS_FILE" <(printf '%s\n' "$CHANGED_FILES"); then
-      log "Upstream changes don't touch main.tex dependencies; existing PDF kept."
-      log "Changed: $(printf '%s ' $CHANGED_FILES)"
-      exit 0
-    fi
-    log "main.tex dependencies changed; recompiling."
-  fi
-fi
-
 log "Compiling main.tex (output: $BUILD_DIR)..."
+# SOURCE_DATE_EPOCH/FORCE_SOURCE_DATE make pdftex's embedded timestamps
+# deterministic, so two builds of unchanged sources compare equal.
+SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 \
 latexmk -pdf -interaction=nonstopmode -halt-on-error \
   -outdir="$BUILD_DIR" main.tex >"$BUILD_DIR/latexmk.log" 2>&1 || {
     echo "[update-cv] ERROR: latexmk failed. Tail of log:" >&2
@@ -72,20 +62,34 @@ if [ ! -f "$BUILD_DIR/main.pdf" ]; then
   exit 1
 fi
 
-cp "$BUILD_DIR/main.pdf" "$PUBLIC_PDF"
+if [ "$FORCE" -eq 1 ]; then
+  log "Force flag set; publishing the freshly built PDF."
+elif [ ! -f "$PUBLIC_PDF" ]; then
+  log "No PDF in public/ yet; publishing the freshly built one."
+else
+  pdf_bytes "$PUBLIC_PDF"               > "$BUILD_DIR/published.bin"
+  pdf_bytes "$BUILD_DIR/main.pdf"        > "$BUILD_DIR/built.bin"
+  pdf_text  "$PUBLIC_PDF"               > "$BUILD_DIR/published.txt"
+  pdf_text  "$BUILD_DIR/main.pdf"        > "$BUILD_DIR/built.txt"
 
-# Capture the list of repo-relative source files latexmk actually pulled in,
-# so the next run can decide whether to recompile based on real dependencies.
-if [ -f "$BUILD_DIR/main.fls" ]; then
-  awk '/^INPUT / {
-    sub(/^INPUT /, "")
-    sub(/^\.\//, "")
-    # keep only repo-relative paths (skip absolute system paths)
-    if ($0 !~ /^\//) print
-  }' "$BUILD_DIR/main.fls" \
-    | grep -Ev '\.(aux|fls|log|out|fdb_latexmk|toc|bbl|blg|synctex\.gz|pdf)$' \
-    | sort -u > "$DEPS_FILE"
-  log "Wrote $(wc -l < "$DEPS_FILE" | tr -d ' ') dependency paths to $DEPS_FILE"
+  if cmp -s "$BUILD_DIR/published.bin" "$BUILD_DIR/built.bin"; then
+    log "Built CV is identical to $PUBLIC_PDF; nothing to do."
+    exit 0
+  fi
+
+  if cmp -s "$BUILD_DIR/published.txt" "$BUILD_DIR/built.txt"; then
+    log "Text is unchanged but the PDF differs (layout, fonts or metadata); publishing."
+  else
+    log "Content differs from the published CV:"
+    diff -u "$BUILD_DIR/published.txt" "$BUILD_DIR/built.txt" \
+      | sed -n '3,40p' | sed 's/^/[update-cv]   /' || true
+  fi
 fi
 
-log "Updated $PUBLIC_PDF (Overleaf $PRE_HEAD -> $POST_HEAD)"
+cp "$BUILD_DIR/main.pdf" "$PUBLIC_PDF"
+
+if [ "$PRE_HEAD" = "$POST_HEAD" ]; then
+  log "Updated $PUBLIC_PDF (Overleaf at $PRE_HEAD)"
+else
+  log "Updated $PUBLIC_PDF (Overleaf $PRE_HEAD -> $POST_HEAD)"
+fi
