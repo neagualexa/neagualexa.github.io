@@ -1134,7 +1134,15 @@ p {
   margin-top: 0.5rem;
 }
 
+/* Fixed-size button beside the citation; the citation takes the remaining width */
+.publication-item .btn {
+  flex-shrink: 0;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+
 .publication-text {
+  flex: 1;
   font-style: italic;
   color: var(--text-primary);
   line-height: 1.4;

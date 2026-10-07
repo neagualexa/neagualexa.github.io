@@ -22,16 +22,20 @@
           ],
           "publications": [
             {
+              "id": "2026-icml-rethinking-scaffolding",
+              "citation": "Neagu, A., Wong, J.T.H., Messer, M., Nelson, R., Johnson, P.B. (2026). Rethinking Scaffolding in LLM Tutors: The Interactional Mismatch Between Benchmarks and Real-World Deployments. Pluralistic Alignment Workshop at ICML 2026, arXiv."
+            },
+            {
               "id": "2026-student-questions-procedural",
-              "citation": "Neagu, A., Messer, M., Johnson, P., Nelson, R. (2026). \"How Do I ...?\": Procedural Questions Predominate Student-LLM Chatbot Conversations. arXiv Preprint."
+              "citation": "Neagu, A., Messer, M., Johnson, P.B., Nelson, R. (2026). \"How Do I ...?\": Procedural Questions Predominate Student-LLM Chatbot Conversations. arXiv Preprint."
             },
             {
               "id": "2026-mued-api",
-              "citation": "Sölch, M., Neagu, A., Messer, M., Johnson, P., Kortemeyer, G., Ng, S. S. H., Lim, F. S., Krusche, S. (2026). μEd API: Towards a Shared API for Education Microservices. In Proceedings of the ACM Conference on Learning@Scale 2026 (L@S '26)."
+              "citation": "Sölch, M., Neagu, A., Messer, M., Johnson, P.B., Kortemeyer, G., Ng, S. S. H., Lim, F. S., Krusche, S. (2026). μEd API: Towards a Shared API for Education Microservices. In Proceedings of the ACM Conference on Learning@Scale 2026 (L@S '26)."
             },
             {
               "id": "2025-eern-chatbots-context",
-              "citation": "Neagu, A., Johnson, P., Nelson, R. (2025). \"Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information\" In Proceedings of the UK and Ireland Engineering Education Research Network (EERN) Annual Symposium."
+              "citation": "Neagu, A., Johnson, P.B., Nelson, R. (2025). \"Chatbots for Dialogic Feedback during Self-Study: The Importance of Contextual Information\" In Proceedings of the UK and Ireland Engineering Education Research Network (EERN) Annual Symposium."
             }
           ]
         },
@@ -215,6 +219,19 @@
     {
       "title": "Other Interests and Experiences",
       "items": [
+        {
+          "period": "2026 - currently",
+          "title": "Imperial College Dance Club President",
+          "institution": "Imperial College London",
+          "logo": "DanceClub_logo.png",
+          "details": [
+            "Led a committee of 10+ to run weekly classes, workshops, competitions, and socials for 200+ active members"
+          ],
+          "link": {
+            "text": "Imperial College Union Dance Club",
+            "url": "https://www.imperialcollegeunion.org/activities/a-to-z/dance-club"
+          }
+        },
         {
           "period": "2025 - currently",
           "title": "Imperial Outreach Leader",
