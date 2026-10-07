@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0dd373d7.css",
-    "main.js": "/static/js/main.ae94702a.js",
+    "main.css": "/static/css/main.8b43e259.css",
+    "main.js": "/static/js/main.35f7af9b.js",
     "static/media/Synthesiser_demo_video.mp4": "/static/media/Synthesiser_demo_video.99582d2d456b18f85f13.mp4",
     "static/media/Medusa_IO_presentation_video.mp4": "/static/media/Medusa_IO_presentation_video.9df9959aae716e291807.mp4",
     "static/media/Synthesiser_songs_video.mp4": "/static/media/Synthesiser_songs_video.7013802cbea49aac81ce.mp4",
@@ -19,6 +19,7 @@
     "static/media/PDF_Narrator_interface.jpg": "/static/media/PDF_Narrator_interface.23c727fcf4b4752b0c66.jpg",
     "static/media/Synthesiser_octaves.jpg": "/static/media/Synthesiser_octaves.8af2e2a141069e4c0a71.jpg",
     "static/media/MedusaIO_report.pdf": "/static/media/MedusaIO_report.1ed1cb6dfb9af440704a.pdf",
+    "static/media/DanceClub_logo.png": "/static/media/DanceClub_logo.486d7a42ca8ca1c08f03.png",
     "static/media/Nonogram_AIAssistant_ArchitecturePipeline.jpg": "/static/media/Nonogram_AIAssistant_ArchitecturePipeline.24e3ca125a6081cb9cf2.jpg",
     "static/media/LambdaFeedback_ongoingChat.jpg": "/static/media/LambdaFeedback_ongoingChat.38d09784dda0267fe92a.jpg",
     "static/media/Instability_website_map.jpg": "/static/media/Instability_website_map.6d88079d1c3911b7f1b2.jpg",
@@ -58,11 +59,11 @@
     "static/media/LambdaFeedback_logo.png": "/static/media/LambdaFeedback_logo.5a7448eba0d3ac39ddcf.png",
     "index.html": "/index.html",
     "static/media/ichacklogo.svg": "/static/media/ichacklogo.948ef05ae35fd7eaaa1e.svg",
-    "main.0dd373d7.css.map": "/static/css/main.0dd373d7.css.map",
-    "main.ae94702a.js.map": "/static/js/main.ae94702a.js.map"
+    "main.8b43e259.css.map": "/static/css/main.8b43e259.css.map",
+    "main.35f7af9b.js.map": "/static/js/main.35f7af9b.js.map"
   },
   "entrypoints": [
-    "static/css/main.0dd373d7.css",
-    "static/js/main.ae94702a.js"
+    "static/css/main.8b43e259.css",
+    "static/js/main.35f7af9b.js"
   ]
 }
