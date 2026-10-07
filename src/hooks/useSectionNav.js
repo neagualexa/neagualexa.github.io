@@ -46,7 +46,7 @@ const useSectionNav = (sectionSelector) => {
 
   const handleNavClick = (e) => {
     e.preventDefault();
-    const target = document.querySelector(e.target.getAttribute("href"));
+    const target = document.querySelector(e.currentTarget.getAttribute("href"));
     if (target) {
       window.scrollTo({ top: target.offsetTop - SCROLL_OFFSET, behavior: "smooth" });
     }
