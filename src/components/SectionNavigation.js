@@ -35,8 +35,7 @@ const StickyNav = ({ navigation, onNavClick, activeSection, visible }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dockRef = useRef(null);
 
-  const activeIndex = navigation.findIndex((item) => item.id === activeSection);
-  const activeItem = navigation[activeIndex];
+  const activeItem = navigation.find((item) => item.id === activeSection);
 
   // Close the pane on outside click / Escape, or when the dock hides
   useEffect(() => {
@@ -81,7 +80,7 @@ const StickyNav = ({ navigation, onNavClick, activeSection, visible }) => {
       >
         <div className="section-dock-menu-header">Jump to section</div>
         <ul>
-          {navigation.map((navItem, i) => (
+          {navigation.map((navItem) => (
             <li key={navItem.id}>
               <a
                 href={`#${navItem.id}`}
@@ -93,7 +92,6 @@ const StickyNav = ({ navigation, onNavClick, activeSection, visible }) => {
                 aria-current={activeSection === navItem.id ? "location" : undefined}
                 tabIndex={isOpen ? 0 : -1}
               >
-                <span className="section-dock-menu-index">{i + 1}</span>
                 <span className="section-dock-menu-label">{navItem.label}</span>
               </a>
             </li>
@@ -134,11 +132,6 @@ const StickyNav = ({ navigation, onNavClick, activeSection, visible }) => {
           <span className="section-dock-current-text">
             {activeItem ? activeItem.label : "Sections"}
           </span>
-          {activeItem && (
-            <span className="section-dock-count">
-              {activeIndex + 1}/{navigation.length}
-            </span>
-          )}
           <svg
             className="section-dock-chevron"
             viewBox="0 0 24 24"

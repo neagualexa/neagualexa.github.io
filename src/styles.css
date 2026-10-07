@@ -625,13 +625,6 @@ p {
   white-space: nowrap;
 }
 
-.section-dock-count {
-  font-size: var(--font-size-xs);
-  opacity: 0.7;
-  font-variant-numeric: tabular-nums;
-  flex-shrink: 0;
-}
-
 .section-dock-chevron {
   flex-shrink: 0;
   transition: transform var(--transition-base);
@@ -643,7 +636,7 @@ p {
 
 /* Section menu pane (opens above the bar) */
 .section-dock-menu {
-  width: 260px;
+  width: 220px;
   max-height: min(60vh, 420px);
   overflow-y: auto;
   background: var(--bg-primary);
@@ -671,7 +664,7 @@ p {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-muted);
-  padding: 0.4rem 0.6rem 0.5rem;
+  padding: 0.3rem 0.6rem 0.35rem;
 }
 
 .section-dock-menu ul {
@@ -684,11 +677,17 @@ p {
   margin: 0;
 }
 
+.section-dock-menu li + li {
+  border-top: 1px solid var(--border-color);
+  margin-top: 0.125rem;
+  padding-top: 0.125rem;
+}
+
 .section-dock-menu a {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.55rem 0.6rem;
+  padding: 0.35rem 0.6rem;
   border-radius: var(--inner-border-radius);
   color: var(--text-primary);
   text-decoration: none;
@@ -704,24 +703,6 @@ p {
   background: var(--accent-light);
   color: var(--accent-primary);
   font-weight: 600;
-}
-
-.section-dock-menu-index {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  flex-shrink: 0;
-  border-radius: var(--round-border-radius);
-  font-size: var(--font-size-xs);
-  background: var(--bg-tertiary);
-  color: var(--text-muted);
-}
-
-.section-dock-menu a.active .section-dock-menu-index {
-  background: var(--accent-primary);
-  color: var(--text-inverse);
 }
 
 @media (max-width: 900px) {
