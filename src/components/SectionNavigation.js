@@ -20,7 +20,7 @@ const StaticNav = ({ navigation, onNavClick, activeSection }) => (
         key={navItem.id}
         href={`#${navItem.id}`}
         onClick={onNavClick}
-        className={activeSection === navItem.id ? "active" : ""}
+        className={`btn btn--soft${activeSection === navItem.id ? " active" : ""}`}
       >
         {navItem.label}
       </a>

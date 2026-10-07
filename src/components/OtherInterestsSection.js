@@ -13,7 +13,7 @@ const OtherInterestsSection = ({ interests }) => {
   };
 
   return (
-    <div className="resume-section" style={{ marginTop: "3rem" }}>
+    <div className="card resume-section">
       <h3>{interests.title}</h3>
       <div className="resume-grid">
         {interests.items.map((item, index) => (

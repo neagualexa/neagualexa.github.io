@@ -16,7 +16,8 @@ github.io/
 ├── src/
 │   ├── App.js            # Root component — sets up routing and ThemeProvider
 │   ├── index.js          # React entry point
-│   ├── styles.css        # Global CSS with theme variables (CSS custom properties)
+│   ├── theme.css         # Design tokens + shared primitives (.btn, .card, .tag)
+│   ├── styles.css        # Page/component layout CSS
 │   ├── components/       # Reusable UI components
 │   ├── contexts/         # React Context (theme state)
 │   ├── pages/            # Page-level components (one per route)
@@ -73,8 +74,6 @@ To update site content, edit the relevant JSON file — no component code change
 - `ImageGallery.js` — Image carousel used inside project cards
 
 **Publications Page:**
-- `PublicationsNavigation.js` — Tab navigation for publication types
-- `PublicationSection.js` — Section wrapper for publication lists
 - `PublicationCard.js` — Individual paper display
 
 **Resume Page:**
@@ -84,7 +83,7 @@ To update site content, edit the relevant JSON file — no component code change
 - `OtherInterestsSection.js` — Languages, hobbies, extracurriculars
 
 **Shared Utilities:**
-- `Button.js` — Reusable styled button
+- `Button.js` — Reusable button/link; `variant` and `size` props map to `.btn` classes
 - `components/index.js` — Barrel export for all components
 
 ---
@@ -93,8 +92,10 @@ To update site content, edit the relevant JSON file — no component code change
 
 - `src/contexts/ThemeContext.js` — React Context providing `theme` and `toggleTheme`
 - Defaults to system color scheme preference; persists to `localStorage`
-- `src/styles.css` defines CSS custom properties for both themes (`--bg-primary`, `--text-primary`, `--accent-primary`, etc.)
-- All components use these CSS variables — no hardcoded colors in components
+- `src/theme.css` holds all design tokens (colors, radii, shadows, motion, z-index, fonts) for light and `.dark-theme`, plus shared primitives:
+  - `.btn` + `btn--primary` / `--secondary` / `--neutral` / `--soft` / `--link`, sizes `btn--sm` / `btn--icon`
+  - `.card` (+ `card--muted`), `.tag` (+ `tag--accent`, `tag--outline`)
+- `src/styles.css` holds layout only and references tokens — no raw colors, radii or shadows there or in components
 
 ---
 
@@ -131,4 +132,4 @@ npm test          # Run tests
 - **Content changes** → edit JSON files in `src/data/`
 - **Layout/style changes** → edit components or `src/styles.css`
 - **New page** → add a page component in `src/pages/`, a route in `App.js`, and a new JSON file in `src/data/`
-- **Theme colors** → update CSS variables in `src/styles.css`, not component files
+- **Theme colors, radii, shadows, button styles** → edit `src/theme.css`

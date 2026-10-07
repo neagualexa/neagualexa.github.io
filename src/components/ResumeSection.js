@@ -66,6 +66,7 @@ const ResumeSection = ({ section }) => {
           <span className="publication-text">{pub.citation}</span>
           <Button
             variant="secondary"
+            size="sm"
             onClick={() => navigate(`/publications#${pub.id}`)}
             title="View full publication details"
           >
@@ -92,7 +93,7 @@ const ResumeSection = ({ section }) => {
   );
 
   return (
-    <div className="resume-section">
+    <div className="card resume-section">
       <h3>{section.title}</h3>
 
       {section.items.map((item, index) => (
@@ -154,6 +155,7 @@ const ResumeSection = ({ section }) => {
             <div className="resume-item-link">
               <Button
                 variant="secondary"
+                size="sm"
                 onClick={() => {
                   const targetUrl = `${item.link.url}#${item.link.projectSectionId}`;
                   navigate(targetUrl);

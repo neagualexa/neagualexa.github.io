@@ -7,12 +7,19 @@ const Button = ({
   href,
   onClick,
   variant = "primary",
+  size,
   className = "",
   ...props
 }) => {
-  const baseClasses = "btn";
-  const variantClasses = variant === "secondary" ? "btn-secondary" : "";
-  const fullClassName = `${baseClasses} ${variantClasses} ${className}`.trim();
+  // Variants and sizes map to the .btn primitives in theme.css
+  const fullClassName = [
+    "btn",
+    `btn--${variant}`,
+    size && `btn--${size}`,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   // External link
   if (href) {
@@ -52,7 +59,8 @@ Button.propTypes = {
   to: PropTypes.string,
   href: PropTypes.string,
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(["primary", "secondary"]),
+  variant: PropTypes.oneOf(["primary", "secondary", "neutral", "soft", "link"]),
+  size: PropTypes.oneOf(["sm", "icon"]),
   className: PropTypes.string,
 };
 

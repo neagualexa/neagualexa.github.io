@@ -33,13 +33,7 @@ const ResumePage = () => {
   return (
     <section id="resume">
       <h2>Resume</h2>
-      <p
-        style={{
-          textAlign: "center",
-          marginBottom: "2rem",
-          fontSize: "1.1rem",
-        }}
-      >
+      <p className="page-intro">
         I present here my educational background, work experience, technical
         skills, certifications, and other interests. <br />
         For full resume please check the PDF version above.

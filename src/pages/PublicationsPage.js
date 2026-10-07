@@ -6,15 +6,7 @@ const PublicationsPage = () => {
   return (
     <section id="publications">
       <h2>Publications</h2>
-      <p
-        style={{
-          textAlign: "center",
-          margin: "20px auto",
-          maxWidth: "800px",
-          fontSize: "16px",
-          lineHeight: "1.6",
-        }}
-      >
+      <p className="page-intro">
         Below is a collection of my research publications. <br />
         My research focuses on Human-AI Interaction, AI-Assisted Learning, and
         Educational Technology.

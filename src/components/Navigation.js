@@ -103,7 +103,7 @@ const Navigation = () => {
             href="/Alexandra Neagu Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="cv-download-btn"
+            className="btn btn--neutral btn--sm"
             title="Download CV (PDF)"
             aria-label="Download CV PDF"
           >

@@ -13,7 +13,7 @@ const CertificationsSection = ({ certifications }) => {
   };
 
   return (
-    <div className="resume-section" style={{ marginTop: "3rem" }}>
+    <div className="card resume-section">
       <h3>{certifications.title}</h3>
       <div className="certifications-grid">
         {certifications.items.map((cert, index) => (

@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import PublicationsPage from "./pages/PublicationsPage";
 import ResumePage from "./pages/ResumePage";
+import "./theme.css";
 import "./styles.css";
 
 function App() {

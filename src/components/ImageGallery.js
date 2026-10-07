@@ -163,15 +163,10 @@ const ImageGallery = ({ images = [], videos = [], projectTitle }) => {
             style={{ cursor: "pointer" }}
           />
           <div
-            className="video-overlay"
+            className={`video-overlay${isPlaying ? " is-playing" : ""}`}
             onClick={(e) => {
               e.stopPropagation();
               openModal(index);
-            }}
-            style={{
-              cursor: "pointer",
-              opacity: isPlaying ? 0 : 1,
-              transition: "opacity 0.3s ease",
             }}
           >
             <div className="play-button">▶</div>

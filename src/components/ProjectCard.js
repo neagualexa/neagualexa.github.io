@@ -18,7 +18,7 @@ const projectPDFs = importAll(
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="project-card">
+    <div className="card project-card">
       <div className="project-card-header">
         <h4 id={project.id ? `${project.id}-title` : undefined}>
           {project.title}
@@ -30,7 +30,7 @@ const ProjectCard = ({ project }) => {
       {project.technologies && project.technologies.length > 0 && (
         <div className="project-technologies">
           {project.technologies.map((tech, index) => (
-            <span key={index} className="tech-tag">
+            <span key={index} className="tag">
               {tech}
             </span>
           ))}
@@ -54,22 +54,9 @@ const ProjectCard = ({ project }) => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="project-link"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                marginRight: "1rem",
-                marginBottom: "0.5rem",
-              }}
+              className="btn btn--secondary btn--sm"
             >
-              {link.type === "github" && (
-                <img
-                  src={GithubIcon}
-                  alt="GitHub icon"
-                  style={{ width: "16px", height: "16px" }}
-                />
-              )}
+              {link.type === "github" && <img src={GithubIcon} alt="GitHub icon" />}
               {link.text}
             </a>
           ))}
@@ -79,7 +66,7 @@ const ProjectCard = ({ project }) => {
       {project.resources && project.resources.length > 0 && (
         <div className="project-resources">
           <strong>Resources:</strong>
-          <div style={{ marginTop: "0.5rem" }}>
+          <div className="project-resources-list">
             {project.resources.map((resource, index) => {
               let href = resource.url;
 
@@ -94,7 +81,7 @@ const ProjectCard = ({ project }) => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="publication-link"
+                  className="btn btn--primary btn--sm publication-link"
                 >
                   {resource.text}
                 </a>

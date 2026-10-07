@@ -6,7 +6,7 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className="theme-toggle"
+      className="btn btn--neutral btn--icon"
       onClick={toggleTheme}
       aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
       title={`Switch to ${isDarkMode ? "light" : "dark"} mode`}

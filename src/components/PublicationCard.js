@@ -57,7 +57,7 @@ const PublicationCard = ({ publication }) => {
   return (
     <div
       ref={cardRef}
-      className={`publication-card${highlighted ? " publication-card--highlighted" : ""}`}
+      className={`card publication-card${highlighted ? " publication-card--highlighted" : ""}`}
       id={publication.id}
     >
       <div className="publication-header">
@@ -82,7 +82,7 @@ const PublicationCard = ({ publication }) => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="publication-link"
+                  className="btn btn--primary btn--sm publication-link"
                 >
                   {link.type}
                 </a>
@@ -95,7 +95,7 @@ const PublicationCard = ({ publication }) => {
       {publication.abstract && (
         <>
           <button
-            className="abstract-toggle"
+            className="btn btn--link btn--sm abstract-toggle"
             onClick={() => setExpanded((v) => !v)}
           >
             {expanded ? "Hide abstract" : "Read abstract"}

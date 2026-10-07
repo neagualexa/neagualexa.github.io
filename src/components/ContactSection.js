@@ -4,7 +4,7 @@ import SocialLink from "./SocialLink";
 
 const ContactSection = ({ contact }) => {
   return (
-    <div className="contact-info">
+    <div className="card card--muted contact-info">
       <h3>Contact Information</h3>
       <p>
         Email: <a href={`mailto:${contact.email}`}>{contact.email}</a>

@@ -10,13 +10,7 @@ const ProjectsPage = () => {
   return (
     <section id="projects">
       <h2>Welcome to my projects</h2>
-      <p
-        style={{
-          textAlign: "center",
-          marginBottom: "2rem",
-          fontSize: "1.1rem",
-        }}
-      >
+      <p className="page-intro">
         This is a collection of projects I have worked on throughout the years
         (and academic phases). <br />I have included details about each project,
         the technologies used, and links to the code repositories or demos where

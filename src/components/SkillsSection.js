@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const SkillsSection = ({ skills }) => {
   return (
-    <div className="resume-section" style={{ marginTop: "3rem" }}>
+    <div className="card resume-section">
       <h3>{skills.title}</h3>
       <div className="skills-grid">
         {skills.categories.map((category, index) => (
