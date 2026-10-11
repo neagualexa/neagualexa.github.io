@@ -232,6 +232,32 @@
           "filename": "2025_EERN_Paper_Proceedings_Extracted.pdf"
         }
       ]
+    },
+    {
+      "id": "2025-imperial-folt-panel",
+      "role": "Panellist",
+      "title": "Taking Imperial's Temperature: Making Use of Data and Analytics",
+      "authors": [
+        "Camille Kandiko Howson",
+        "Gao Zhuangfei",
+        "Alexandra Neagu",
+        "Peter B. Johnson",
+        "Helen Walkey",
+        "Charlotte Whitaker",
+        "Hector Keun"
+      ],
+      "conference": "Imperial Festival of Learning and Teaching 2025",
+      "date": "2025-03-26",
+      "links": [
+        {
+          "type": "Website",
+          "url": "https://www.imperial.ac.uk/staff/educational-development/networks-and-events/festival-of-learning-and-teaching/festival-of-learning-and-teaching-2025/"
+        },
+        {
+          "type": "Video",
+          "url": "https://www.youtube.com/watch?v=KBvAi2zIFTc&list=PLXT0ciAgPO2ySZOGJLV6rogkIjX0VLXQY"
+        }
+      ]
     }
   ]
 }

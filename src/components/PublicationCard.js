@@ -77,7 +77,9 @@ const PublicationCard = ({ publication }) => {
       </div>
 
       <h3 className="publication-title">{publication.title}</h3>
-      <p className="publication-authors">{formatAuthors(publication.authors)}</p>
+      {publication.authors?.length > 0 && (
+        <p className="publication-authors">{formatAuthors(publication.authors)}</p>
+      )}
       {venue && <p className="publication-venue">{venue}</p>}
 
       {publication.abstract && (
@@ -126,7 +128,7 @@ PublicationCard.propTypes = {
   publication: PropTypes.shape({
     title: PropTypes.string.isRequired,
     role: PropTypes.string,
-    authors: PropTypes.arrayOf(PropTypes.string).isRequired,
+    authors: PropTypes.arrayOf(PropTypes.string),
     date: PropTypes.string.isRequired,
     journal: PropTypes.string,
     conference: PropTypes.string,
