@@ -47,6 +47,7 @@ Defined in `src/App.js`:
 | File | Used By | Contents |
 |------|---------|----------|
 | `personalInfo.json` | `HomePage.js` | Name, title, bio, contact links, social links |
+| `newsData.json` | `NewsTimeline.js` | News events: `start`/`end` ISO dates, `title`, `description`, `type` (lane/tag; omitted = milestone), `links` |
 | `projectsData.json` | `ProjectsPage.js` | Project categories, titles, descriptions, images, links, tags |
 | `publicationsData.json` | `PublicationsPage.js` | Papers, authors, venues, links, abstract summaries |
 | `resumeData.json` | `ResumePage.js` | Education, work experience, skills, certifications |
@@ -65,6 +66,10 @@ To update site content, edit the relevant JSON file — no component code change
 - `IntroSection.js` — Welcome hero section
 - `ContactSection.js` — Contact info and social links
 - `SocialLink.js` — Individual social media link with icon
+- `MagicField.js` — Interactive stardust canvas behind the hero (motes that form constellations around the cursor; the pet dragon eats them, and they reappear); colors from the `--magic-*` tokens, static under `prefers-reduced-motion`
+- `NewsTimeline.js` — News list from `newsData.json` (upcoming, then by year)
+- `PetDragon.js` — Pet dragon: lives on a corner of the contact card (moves between corners now and then), follows the cursor after you click it (click again to send it home), and flies down the news timeline line as you scroll, eating the dots (they grow back on the way up); also eats hero stardust it flies near (via `petMouth.js`); naps only on its corner, waking every 10–25s to fly a little figure-eight (∞) or move to another corner. Colors from the `--dragon-*` tokens
+- `drawDragon.js` — Canvas drawing of the top-down dragon (from the "Dragon Overhead" sketch) used by `PetDragon.js`
 
 **Projects Page:**
 - `ProjectsNavigation.js` — Tab navigation for project categories
@@ -95,7 +100,7 @@ To update site content, edit the relevant JSON file — no component code change
 
   | File | Purpose |
   |------|---------|
-  | `theme.css` | Design tokens (colors, radii, motion, z-index, fonts) for light and `.dark-theme`, plus shared primitives |
+  | `theme.css` | Design tokens (colors, radii, motion, z-index, fonts) for light and `.dark-theme`, plus shared primitives. Components use the single accent (`--accent-primary`); the `--opal-*` colors are only for the news tags |
   | `base.css` | Reset and plain HTML elements (headings, links, text, lists) |
   | `layout.css` | Site chrome on every page: top nav, `<section>` wrapper, page intro, section nav / floating section dock |
   | `home.css` | `/` — intro hero, news timeline, contact, social links |

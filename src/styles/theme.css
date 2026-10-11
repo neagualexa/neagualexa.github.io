@@ -19,35 +19,49 @@
 :root {
   /* Surfaces */
   --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #e9ecef;
+  --bg-secondary: #f5f6f8;
+  --bg-tertiary: #eceef2;
 
   /* Overlays over photos/videos — dark in both themes */
   --bg-overlay: rgba(0, 0, 0, 0.4);
   --bg-overlay-strong: rgba(0, 0, 0, 0.8);
 
-  /* Text */
-  --text-primary: #333333;
-  --text-secondary: #34495e;
-  --text-heading: #2c3e50;
-  --text-muted: #6c757d;
+  /* Text — neutral ink and greys, so the accent is the only color */
+  --text-primary: #3a3f47;
+  --text-secondary: #4a505a;
+  --text-heading: #1a2026;
+  --text-muted: #6b717c;
   --text-inverse: #ffffff;
 
-  /* Accent */
-  --accent-primary: #007acc;
-  --accent-secondary: #005999;
+  /* Accent — deep iris, the readable version of the dragon's opal */
+  --accent-primary: #5b54d6;
+  --accent-secondary: #463fb8;
+
+  /* Opal colors, from the dragon's eyes. Used for the news tags (everything
+     else uses the accent). Deepened by day for contrast; pastel at night */
+  --opal-purple: #6a45d1;
+  --opal-mint: #137a6b;
+  --opal-iris: #4b45c4;
+  --opal-rose: #a8396f;
+  --opal-slate: #5a6577;   /* the grey/ink companions */
 
   /* Lines */
-  --border-color: #dee2e6;    /* the one border for cards, nav, panels, dividers */
+  --border-color: #e2e4e9;    /* the one border for cards, nav, panels, dividers */
   --image-backing: #ffffff;   /* behind transparent PNGs in dark mode */
 
-  /* Category colors (news timeline tags) */
-  --category-conference: #0077aa;
-  --category-presentation: #9b5de5;
-  --category-workshop: #f15bb5;
-  --category-collaboration: #00bbf9;
-  --category-grant: #00f5d4;
-  --category-milestone: #fe6d73;
+  /* Magic palette (home hero stardust) — opal: mint, iris, rose */
+  --magic-mint: #2fb59f;
+  --magic-iris: #7a6ff0;
+  --magic-rose: #d9609f;
+
+  /* Pet dragon (home page) — dark scales by day */
+  --dragon-body: #14171c;
+  --dragon-shade: #0a0c0f;
+  --dragon-plate: #333944;
+  --dragon-wing: #181b21;
+  --dragon-wing-tip: #333a45;
+  --dragon-opal-a: #a9ebe0;
+  --dragon-opal-b: #f2b3dc;
 
   /* Corner radii */
   --card-border-radius: 10px;   /* cards, panels, floating surfaces */
@@ -79,27 +93,38 @@
 }
 
 .dark-theme {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
-  --bg-tertiary: #3d3d3d;
+  --bg-primary: #111215;
+  --bg-secondary: #1b1d22;
+  --bg-tertiary: #262930;
 
-  --text-primary: #e1e1e1;
-  --text-secondary: #b8b8b8;
-  --text-heading: #ffffff;
-  --text-muted: #888888;
-  --text-inverse: #1a1a1a;
+  --text-primary: #c9ced6;
+  --text-secondary: #aeb4be;
+  --text-heading: #f2f4f7;
+  --text-muted: #8a909b;
+  --text-inverse: #111215;
 
-  --accent-primary: #4da6d9;
-  --accent-secondary: #6bb3df;
+  /* In the dark the accent can be the true pastel opal */
+  --accent-primary: #b6c3ff;
+  --accent-secondary: #d2d9ff;
 
-  --border-color: #444;
+  --opal-purple: #c9b6ff;
+  --opal-mint: #a9ebe0;
+  --opal-iris: #b6c3ff;
+  --opal-rose: #f2b3dc;
+  --opal-slate: #aab3c2;
 
-  --category-conference: #4fb8e0;
-  --category-presentation: #c084fc;
-  --category-workshop: #f9a8d4;
-  --category-collaboration: #67e8f9;
-  --category-grant: #6ee7b7;
-  --category-milestone: #fca5a5;
+  --border-color: #2e3138;
+
+  --magic-mint: #a9ebe0;
+  --magic-iris: #b6c3ff;
+  --magic-rose: #f2b3dc;
+
+  /* ...and pale silver at night, so it shows on the dark background */
+  --dragon-body: #c9cfd8;
+  --dragon-shade: #5d6675;
+  --dragon-plate: #e9edf2;
+  --dragon-wing: #9aa3b2;
+  --dragon-wing-tip: #dde2e9;
 }
 
 /* Derived colors — computed from the palette above, so each theme only sets
@@ -108,6 +133,14 @@
 .dark-theme {
   --bg-nav: color-mix(in srgb, var(--bg-primary) 95%, transparent);   /* frosted nav + dock */
   --accent-light: color-mix(in srgb, var(--accent-primary) 10%, transparent);  /* tinted hover/active */
+
+  /* News tag colors: the opal set, plus slate and ink */
+  --category-conference: var(--opal-iris);
+  --category-presentation: var(--opal-rose);
+  --category-workshop: var(--opal-mint);
+  --category-collaboration: var(--opal-purple);
+  --category-grant: var(--opal-slate);
+  --category-milestone: var(--text-heading);
 }
 
 /* ── 2. Primitives ──────────────────────────────────────────────────────── */

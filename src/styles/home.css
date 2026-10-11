@@ -2,16 +2,31 @@
 
 /* Page wrapper */
 #home {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
 .home-hero {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
+}
+
+/* Stardust canvas behind the hero (MagicField.js); content sits above it */
+.magic-field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.home-hero > :not(.magic-field) {
+  position: relative;
 }
 
 /* Intro hero */
@@ -187,7 +202,26 @@
   transition: color var(--theme-transition);
 }
 
-/* Type tags: color comes from the --category-* tokens */
+/* Type tags: color comes from the --category-* tokens via data-category */
+[data-category="conference"] {
+  --category-color: var(--category-conference);
+}
+[data-category="presentation"] {
+  --category-color: var(--category-presentation);
+}
+[data-category="workshop"] {
+  --category-color: var(--category-workshop);
+}
+[data-category="collaboration"] {
+  --category-color: var(--category-collaboration);
+}
+[data-category="grant"] {
+  --category-color: var(--category-grant);
+}
+[data-category="milestone"] {
+  --category-color: var(--category-milestone);
+}
+
 .timeline-tag {
   font-size: 0.68rem;
   font-weight: 600;
@@ -196,33 +230,9 @@
   padding: 0.15rem 0.5rem;
   border-radius: var(--tag-border-radius);
   border: 1px solid;
-  color: var(--tag-color);
-  border-color: color-mix(in srgb, var(--tag-color) 25%, transparent);
-  background: color-mix(in srgb, var(--tag-color) 7%, transparent);
-}
-
-.timeline-tag--conference {
-  --tag-color: var(--category-conference);
-}
-
-.timeline-tag--presentation {
-  --tag-color: var(--category-presentation);
-}
-
-.timeline-tag--workshop {
-  --tag-color: var(--category-workshop);
-}
-
-.timeline-tag--collaboration {
-  --tag-color: var(--category-collaboration);
-}
-
-.timeline-tag--grant {
-  --tag-color: var(--category-grant);
-}
-
-.timeline-tag--milestone {
-  --tag-color: var(--category-milestone);
+  color: var(--category-color);
+  border-color: color-mix(in srgb, var(--category-color) 25%, transparent);
+  background: color-mix(in srgb, var(--category-color) 7%, transparent);
 }
 
 .timeline-event-title {
@@ -274,6 +284,85 @@
 .timeline-link:hover {
   color: var(--accent-secondary);
   text-decoration: underline;
+}
+
+/* Pet dragon (PetDragon.js + drawDragon.js). Positioned by JS inside #home:
+   sleeps in a corner of the contact card, follows the cursor once clicked,
+   and flies down the news line eating the dots. JS rotates the canvas to its
+   heading and draws its bites. .is-awake while active,
+   data-mode = perch | cursor | line. */
+.pet-dragon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 5.5rem;
+  height: 5.5rem;
+  padding: 0;
+  border: none;
+  border-radius: var(--round-border-radius);
+  background: none;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.pet-dragon:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.pet-dragon canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: scale var(--transition-base);
+}
+
+/* On the line it's just passing through: a bit smaller so its wings barely
+   reach the text, and it doesn't block the links under it */
+.pet-dragon[data-mode="line"] {
+  pointer-events: none;
+}
+
+.pet-dragon[data-mode="line"] canvas {
+  scale: 0.7;
+}
+
+.pet-dragon .pet-z {
+  position: absolute; /* left/top and --drift-x/y set by JS, from its head */
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--text-muted);
+  animation: pet-snooze 2.4s ease-in-out infinite;
+}
+
+.pet-dragon.is-awake .pet-z {
+  display: none;
+}
+
+@keyframes pet-snooze {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--drift-x), var(--drift-y));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-dragon .pet-z {
+    animation: none;
+  }
+}
+
+/* Dots the dragon has eaten */
+.timeline-event.is-eaten .timeline-dot {
+  transform: scale(0);
 }
 
 /* Contact */
@@ -343,6 +432,11 @@
 
   .news-timeline {
     max-width: 100%;
+  }
+
+  .pet-dragon {
+    width: 4rem;
+    height: 4rem;
   }
 
   .social-links {

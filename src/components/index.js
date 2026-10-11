@@ -12,6 +12,8 @@ export { default as ImageGallery } from "./ImageGallery";
 export { default as IntroSection } from "./IntroSection";
 export { default as ContactSection } from "./ContactSection";
 export { default as NewsTimeline } from "./NewsTimeline";
+export { default as MagicField } from "./MagicField";
+export { default as PetDragon } from "./PetDragon";
 
 // Projects Components
 export { StaticNav, StickyNav } from "./SectionNavigation";

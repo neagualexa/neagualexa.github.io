@@ -11,6 +11,12 @@ const TYPE_LABELS = {
   milestone: "Milestone",
 };
 
+// Events without a type count as milestones
+const EVENTS = newsData.events.map((event) => ({
+  ...event,
+  type: event.type || "milestone",
+}));
+
 const MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const todayISO = () => {
@@ -38,12 +44,12 @@ const formatDateRange = (start, end, includeYear) => {
   return `${s.day} ${s.month} – ${e.day} ${e.month}${yearSuffix}`;
 };
 
-const NewsTimeline = () => {
-  const today = todayISO();
+// Upcoming events first, then past events grouped by year (newest first)
+const groupByYear = (today) => {
   const upcoming = [];
   const pastByYear = {};
 
-  for (const event of newsData.events) {
+  for (const event of EVENTS) {
     const lastDate = event.end || event.start;
     if (lastDate >= today) {
       upcoming.push(event);
@@ -62,11 +68,13 @@ const NewsTimeline = () => {
       events: pastByYear[year].sort((a, b) => b.start.localeCompare(a.start)),
     }));
 
-  const blocks = [];
-  if (upcoming.length > 0) {
-    blocks.push({ year: "Upcoming", isFuture: true, events: upcoming });
-  }
-  blocks.push(...pastYears);
+  return upcoming.length > 0
+    ? [{ year: "Upcoming", isFuture: true, events: upcoming }, ...pastYears]
+    : pastYears;
+};
+
+const NewsTimeline = () => {
+  const blocks = groupByYear(todayISO());
 
   return (
     <div className="news-timeline-section">
@@ -74,70 +82,76 @@ const NewsTimeline = () => {
 
       <div className="news-timeline">
         {blocks.map((block) => (
-          <YearBlock key={block.year} yearBlock={block} />
+          <div
+            key={block.year}
+            className={`timeline-year-block${block.isFuture ? " timeline-future" : ""}`}
+          >
+            <div className="timeline-year-label">
+              {block.isFuture && (
+                <span className="timeline-future-icon">◆</span>
+              )}
+              {block.year}
+            </div>
+            <div className="timeline-events">
+              {block.events.map((event) => (
+                <div key={event.start + event.title} className="timeline-event">
+                  <div className="timeline-dot-column">
+                    <div className="timeline-dot" />
+                  </div>
+                  <EventDetails event={event} includeYear={block.isFuture} />
+                </div>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>
   );
 };
 
-const YearBlock = ({ yearBlock }) => (
-  <div className={`timeline-year-block${yearBlock.isFuture ? " timeline-future" : ""}`}>
-    <div className="timeline-year-label">
-      {yearBlock.isFuture && <span className="timeline-future-icon">◆</span>}
-      {yearBlock.year}
+const EventDetails = ({ event, includeYear }) => (
+  <div className="timeline-event-body">
+    <div className="timeline-event-meta">
+      <span className="timeline-date">
+        {formatDateRange(event.start, event.end, includeYear)}
+      </span>
+      <span className="timeline-tag" data-category={event.type}>
+        {TYPE_LABELS[event.type] || event.type}
+      </span>
     </div>
-    <div className="timeline-events">
-      {yearBlock.events.map((event, idx) => (
-        <EventRow key={idx} event={event} includeYear={yearBlock.isFuture} />
-      ))}
-    </div>
-  </div>
-);
-
-const EventRow = ({ event, includeYear }) => (
-  <div className="timeline-event">
-    <div className="timeline-dot-column">
-      <div className="timeline-dot" />
-    </div>
-    <div className="timeline-event-body">
-      <div className="timeline-event-meta">
-        <span className="timeline-date">{formatDateRange(event.start, event.end, includeYear)}</span>
-        {event.type && (
-          <span className={`timeline-tag timeline-tag--${event.type}`}>
-            {TYPE_LABELS[event.type] || event.type}
-          </span>
+    <div
+      className="timeline-event-title"
+      dangerouslySetInnerHTML={{ __html: event.title }}
+    />
+    {event.description && (
+      <div
+        className="timeline-event-desc"
+        dangerouslySetInnerHTML={{
+          __html: event.description.replace(/\n/g, "<br />"),
+        }}
+      />
+    )}
+    {event.links && event.links.length > 0 && (
+      <div className="timeline-event-links">
+        {event.links.map((link, i) =>
+          link.internal ? (
+            <Link key={i} to={link.url} className="timeline-link">
+              {link.label} →
+            </Link>
+          ) : (
+            <a
+              key={i}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="timeline-link"
+            >
+              {link.label} →
+            </a>
+          ),
         )}
       </div>
-      <div className="timeline-event-title" dangerouslySetInnerHTML={{ __html: event.title }} />
-      {event.description && (
-        <div
-          className="timeline-event-desc"
-          dangerouslySetInnerHTML={{ __html: event.description.replace(/\n/g, "<br />") }}
-        />
-      )}
-      {event.links && event.links.length > 0 && (
-        <div className="timeline-event-links">
-          {event.links.map((link, i) =>
-            link.internal ? (
-              <Link key={i} to={link.url} className="timeline-link">
-                {link.label} →
-              </Link>
-            ) : (
-              <a
-                key={i}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="timeline-link"
-              >
-                {link.label} →
-              </a>
-            )
-          )}
-        </div>
-      )}
-    </div>
+    )}
   </div>
 );
 
