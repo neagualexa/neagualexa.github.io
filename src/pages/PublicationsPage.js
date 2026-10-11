@@ -15,7 +15,7 @@ const PublicationsPage = () => {
       <div className="publications-container">
         <div className="publications-list">
           {[...publicationsData.publications]
-            .sort((a, b) => Number(b.year) - Number(a.year))
+            .sort((a, b) => b.date.localeCompare(a.date))
             .map((publication) => (
               <PublicationCard key={publication.id} publication={publication} />
             ))}
