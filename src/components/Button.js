@@ -59,7 +59,7 @@ Button.propTypes = {
   to: PropTypes.string,
   href: PropTypes.string,
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(["primary", "secondary", "neutral", "soft", "link"]),
+  variant: PropTypes.oneOf(["primary", "secondary", "neutral", "soft"]),
   size: PropTypes.oneOf(["sm", "icon"]),
   className: PropTypes.string,
 };

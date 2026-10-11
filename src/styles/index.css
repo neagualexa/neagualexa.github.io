@@ -1,0 +1,23 @@
+/* Stylesheet entry point — imported once from App.js.
+   Order matters: later files may override earlier ones.
+
+   theme.css         tokens (colors, radii, motion…) + primitives (.btn, .card, .tag)
+   base.css          reset and plain HTML elements
+   layout.css        site chrome shared by every page (nav, section wrapper, section dock)
+   home.css          /             page
+   resume.css        /resume       page
+   projects.css      /projects     page (incl. image gallery + modal)
+   publications.css  /publications page
+   media.css         dark-mode image/icon treatment, applies across pages
+
+   Page files only reference tokens from theme.css.
+   Each file keeps its own responsive rules at the bottom, under "Responsive". */
+
+@import "./theme.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./home.css";
+@import "./resume.css";
+@import "./projects.css";
+@import "./publications.css";
+@import "./media.css";

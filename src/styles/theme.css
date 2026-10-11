@@ -2,13 +2,16 @@
    Theme — the single source of truth for the site's look.
 
    1. Tokens      CSS custom properties: colors (light + dark), radii,
-                  shadows, motion, layering, typography.
+                  motion, layering, typography.
    2. Primitives  Shared building blocks used across pages:
                   .btn (+ variants/sizes), .card, .tag.
 
-   Change a token here and it updates everywhere. Component-specific layout
-   lives in styles.css and should only reference these tokens, never raw
-   colors or radii.
+   Change a token here and it updates everywhere. Page and component styles
+   live in the sibling files (see index.css) and should only reference these
+   tokens, never raw colors or radii.
+
+   Surfaces are separated by a single 1px --border-color line, never by
+   drop shadows.
    ========================================================================== */
 
 /* ── 1. Tokens ──────────────────────────────────────────────────────────── */
@@ -18,9 +21,10 @@
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --bg-tertiary: #e9ecef;
-  --bg-nav: rgba(255, 255, 255, 0.95);
-  --bg-overlay: rgba(0, 0, 0, 0.3);
-  --bg-overlay-strong: rgba(0, 0, 0, 0.7);
+
+  /* Overlays over photos/videos — dark in both themes */
+  --bg-overlay: rgba(0, 0, 0, 0.4);
+  --bg-overlay-strong: rgba(0, 0, 0, 0.8);
 
   /* Text */
   --text-primary: #333333;
@@ -32,13 +36,10 @@
   /* Accent */
   --accent-primary: #007acc;
   --accent-secondary: #005999;
-  --accent-light: rgba(0, 122, 204, 0.1);
 
-  /* Lines & shadow colors */
-  --border-color: #eee;
-  --border-accent: #007acc;
-  --shadow-light: rgba(0, 0, 0, 0.1);
-  --shadow-medium: rgba(0, 0, 0, 0.2);
+  /* Lines */
+  --border-color: #dee2e6;    /* the one border for cards, nav, panels, dividers */
+  --image-backing: #ffffff;   /* behind transparent PNGs in dark mode */
 
   /* Category colors (news timeline tags) */
   --category-conference: #0077aa;
@@ -55,19 +56,6 @@
   --tag-border-radius: var(--button-border-radius);  /* tags, chips */
   --pill-border-radius: 999px;  /* counters, fully rounded badges */
   --round-border-radius: 50%;   /* avatars, icon buttons, dots */
-
-  /* Elevation */
-  --shadow-sm: 0 2px 8px var(--shadow-medium);    /* buttons, chips */
-  --shadow-card:                                    /* resting cards (layered, soft) */
-    0.3px 0.5px 0.7px hsl(204deg 19% 67% / 0.28),
-    0.8px 1.6px 2px -0.8px hsl(204deg 19% 67% / 0.28),
-    1.9px 3.8px 4.8px -1.6px hsl(204deg 19% 67% / 0.29),
-    4.5px 9.1px 11.6px -2.4px hsl(204deg 19% 67% / 0.3);
-  --card-bg: var(--bg-primary);
-  --card-border: transparent;
-  --shadow-md: 0 4px 12px var(--shadow-medium);   /* hovered controls */
-  --shadow-lg: 0 8px 24px var(--shadow-medium);   /* popovers, floating UI */
-  --shadow-nav: 0 2px 10px var(--shadow-light);
 
   /* Motion */
   --theme-transition: 0.3s ease;   /* color/background changes, theme switch */
@@ -94,9 +82,6 @@
   --bg-primary: #1a1a1a;
   --bg-secondary: #2d2d2d;
   --bg-tertiary: #3d3d3d;
-  --bg-nav: rgba(26, 26, 26, 0.95);
-  --bg-overlay: rgba(0, 0, 0, 0.5);
-  --bg-overlay-strong: rgba(0, 0, 0, 0.8);
 
   --text-primary: #e1e1e1;
   --text-secondary: #b8b8b8;
@@ -106,15 +91,8 @@
 
   --accent-primary: #4da6d9;
   --accent-secondary: #6bb3df;
-  --accent-light: rgba(77, 166, 217, 0.1);
 
   --border-color: #444;
-  --border-accent: #4da6d9;
-  --shadow-light: rgba(0, 0, 0, 0.3);
-  --shadow-medium: rgba(0, 0, 0, 0.5);
-  --shadow-card: none;   /* dark cards are outlined instead of elevated */
-  --card-bg: transparent;
-  --card-border: var(--border-color);
 
   --category-conference: #4fb8e0;
   --category-presentation: #c084fc;
@@ -124,6 +102,14 @@
   --category-milestone: #fca5a5;
 }
 
+/* Derived colors — computed from the palette above, so each theme only sets
+   the base colors. Declared on both selectors so dark mode recomputes them. */
+:root,
+.dark-theme {
+  --bg-nav: color-mix(in srgb, var(--bg-primary) 95%, transparent);   /* frosted nav + dock */
+  --accent-light: color-mix(in srgb, var(--accent-primary) 10%, transparent);  /* tinted hover/active */
+}
+
 /* ── 2. Primitives ──────────────────────────────────────────────────────── */
 
 /* Buttons
@@ -131,7 +117,6 @@
               btn--secondary accent outline, fills on hover
               btn--neutral   quiet outline, tints accent on hover (toolbar controls)
               btn--soft      tinted surface, fills on hover/active (chips, section tabs)
-              btn--link      text-only action
    Sizes:     btn--sm, btn--icon (square/round icon-only)
    State:     .active on soft/neutral buttons marks the current selection */
 .btn {
@@ -201,39 +186,21 @@
 
 .btn--soft {
   background: var(--bg-secondary);
-  border-color: transparent;
+  border-color: var(--border-color);
   color: var(--text-primary);
-  box-shadow: var(--shadow-sm);
 }
 
 .btn--soft:hover,
 .btn--soft.active {
   background: var(--accent-primary);
+  border-color: var(--accent-primary);
   color: var(--text-inverse);
-  box-shadow: var(--shadow-md);
-}
-
-.btn--link {
-  padding: 0;
-  border: none;
-  background: none;
-  color: var(--accent-primary);
-  text-decoration: underline;
-}
-
-.btn--link:hover {
-  color: var(--accent-secondary);
-  text-decoration: underline;
 }
 
 .btn--sm {
   padding: 0.4rem 0.9rem;
   font-size: var(--font-size-sm);
   border-width: 1px;
-}
-
-.btn--link.btn--sm {
-  padding: 0;
 }
 
 .btn--icon {
@@ -257,23 +224,20 @@
 
 /* Cards */
 .card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
   border-radius: var(--card-border-radius);
-  box-shadow: var(--shadow-card);
   padding: 2rem;
   transition: all var(--theme-transition);
 }
 
-/* Muted surface: tinted panel without elevation (contact box, empty states) */
+/* Muted surface: tinted panel without a border (contact box, empty states) */
 .card--muted {
   background: var(--bg-secondary);
   border-color: transparent;
-  box-shadow: none;
 }
 
-/* Tags / chips
-   Variants:  tag (neutral), tag--accent, tag--outline */
+/* Tags / chips */
 .tag {
   display: inline-flex;
   align-items: center;
@@ -287,15 +251,3 @@
   transition: all var(--theme-transition);
 }
 
-.tag--accent {
-  background: var(--accent-light);
-  border-color: var(--border-accent);
-  color: var(--accent-primary);
-  font-weight: 500;
-}
-
-.tag--outline {
-  background: var(--bg-secondary);
-  border-color: var(--border-color);
-  color: var(--accent-primary);
-}

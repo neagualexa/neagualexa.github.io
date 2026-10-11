@@ -1,0 +1,223 @@
+/* Resume page — experience/education items, publications list, skills and certifications. */
+
+/* Resume Section */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.resume-nav-section + .resume-nav-section {
+  margin-top: 3rem;
+}
+
+.resume-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Resume item header with logo */
+.resume-item-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.institution-logo {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.institution-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.resume-item-content {
+  flex: 1;
+}
+
+.resume-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.resume-item h4 {
+  color: var(--accent-primary);
+  transition: color var(--theme-transition);
+}
+
+.resume-item .date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  transition: color var(--theme-transition);
+}
+
+.resume-item .institution {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.resume-item ul {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Publication item with button */
+.publication-item {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Fixed-size button beside the citation; the citation takes the remaining width */
+.publication-item .btn {
+  flex-shrink: 0;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+
+.publication-text {
+  flex: 1;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.4;
+  transition: color var(--theme-transition);
+}
+
+/* Resume item link */
+.resume-item-link {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Certifications Grid */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: var(--inner-border-radius);
+  transition:
+    transform var(--theme-transition),
+    background-color var(--theme-transition);
+}
+
+.certification-logo {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certification-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.certification-name {
+  flex: 1;
+  font-weight: 500;
+  color: var(--text-heading);
+  transition: color var(--theme-transition);
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.skill-category {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: var(--button-border-radius);
+  text-align: center;
+  transition: background-color var(--theme-transition);
+}
+
+.skill-category h5 {
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  transition: color var(--theme-transition);
+}
+
+.publication-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.publication-text-link__arrow {
+  color: var(--accent-primary);
+  transition: transform var(--theme-transition);
+}
+
+.publication-text-link:hover,
+.publication-text-link:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--accent-primary);
+  text-underline-offset: 3px;
+}
+
+.publication-text-link:hover .publication-text-link__arrow {
+  transform: translateX(3px);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Resume responsive adjustments */
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certification-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .resume-item-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .institution-logo {
+    width: 40px;
+    height: 40px;
+  }
+}

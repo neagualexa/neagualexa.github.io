@@ -16,8 +16,7 @@ github.io/
 ├── src/
 │   ├── App.js            # Root component — sets up routing and ThemeProvider
 │   ├── index.js          # React entry point
-│   ├── theme.css         # Design tokens + shared primitives (.btn, .card, .tag)
-│   ├── styles.css        # Page/component layout CSS
+│   ├── styles/           # All CSS — entry point index.css (see Theme System)
 │   ├── components/       # Reusable UI components
 │   ├── contexts/         # React Context (theme state)
 │   ├── pages/            # Page-level components (one per route)
@@ -92,10 +91,25 @@ To update site content, edit the relevant JSON file — no component code change
 
 - `src/contexts/ThemeContext.js` — React Context providing `theme` and `toggleTheme`
 - Defaults to system color scheme preference; persists to `localStorage`
-- `src/theme.css` holds all design tokens (colors, radii, shadows, motion, z-index, fonts) for light and `.dark-theme`, plus shared primitives:
-  - `.btn` + `btn--primary` / `--secondary` / `--neutral` / `--soft` / `--link`, sizes `btn--sm` / `btn--icon`
-  - `.card` (+ `card--muted`), `.tag` (+ `tag--accent`, `tag--outline`)
-- `src/styles.css` holds layout only and references tokens — no raw colors, radii or shadows there or in components
+- All CSS lives in `src/styles/`, loaded through `index.css` (imported once in `App.js`) in this order:
+
+  | File | Purpose |
+  |------|---------|
+  | `theme.css` | Design tokens (colors, radii, motion, z-index, fonts) for light and `.dark-theme`, plus shared primitives |
+  | `base.css` | Reset and plain HTML elements (headings, links, text, lists) |
+  | `layout.css` | Site chrome on every page: top nav, `<section>` wrapper, page intro, section nav / floating section dock |
+  | `home.css` | `/` — intro hero, news timeline, contact, social links |
+  | `resume.css` | `/resume` — resume items, skills, certifications |
+  | `projects.css` | `/projects` — project cards, project links, image gallery, image/video modal |
+  | `publications.css` | `/publications` — card grid and publication cards |
+  | `media.css` | Dark-mode treatment for images and icons, across pages |
+
+- Shared primitives in `theme.css`:
+  - `.btn` + `btn--primary` / `--secondary` / `--neutral` / `--soft`, sizes `btn--sm` / `btn--icon`
+  - `.card` (+ `card--muted`) — the one card style for every page: a single 1px `--border-color` line, no shadow (no shadows anywhere on the site)
+  - `.tag`
+- Page files reference tokens only — no raw colors, radii or shadows there or in components
+- Each page file keeps its own responsive rules at the bottom under a "Responsive" heading
 
 ---
 
@@ -130,6 +144,6 @@ npm test          # Run tests
 ## Key Conventions
 
 - **Content changes** → edit JSON files in `src/data/`
-- **Layout/style changes** → edit components or `src/styles.css`
-- **New page** → add a page component in `src/pages/`, a route in `App.js`, and a new JSON file in `src/data/`
-- **Theme colors, radii, shadows, button styles** → edit `src/theme.css`
+- **Layout/style changes** → edit the matching file in `src/styles/` (one per page, plus `layout.css` for shared chrome)
+- **New page** → add a page component in `src/pages/`, a route in `App.js`, a new JSON file in `src/data/`, and a `src/styles/<page>.css` imported from `index.css`
+- **Theme colors, radii, borders, button/card styles** → edit `src/styles/theme.css`

@@ -1,0 +1,372 @@
+/* Projects page — year sections, project cards, project links,
+   image gallery and the full-screen image/video modal. */
+
+/* Year sections and project cards */
+.year-section {
+  margin-bottom: 4rem;
+}
+
+.year-section h3 {
+  border-bottom: 3px solid var(--accent-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.year-section .section-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2rem;
+}
+
+.project-card {
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.project-card h4 {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.project-card .project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Image Gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.image-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--inner-border-radius);
+  overflow: hidden;
+  transition: transform var(--theme-transition);
+}
+
+.image-item:hover {
+  transform: scale(1.05);
+}
+
+.image-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-overlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-inverse);
+  cursor: pointer;
+  transition:
+    background-color var(--theme-transition),
+    opacity var(--theme-transition);
+}
+
+.video-overlay.is-playing {
+  opacity: 0;
+}
+
+.image-item:hover .video-overlay {
+  background: var(--bg-overlay-strong);
+}
+
+.play-button {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Video-specific styles */
+.video-item {
+  cursor: pointer;
+}
+
+.video-item video {
+  cursor: pointer;
+  pointer-events: auto; /* Allow video interaction */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: opacity var(--theme-transition);
+}
+
+.video-item:hover video {
+  opacity: 0.8;
+}
+
+.video-item:hover {
+  transform: scale(1.05);
+}
+
+.video-item:hover .video-overlay {
+  background: var(--bg-overlay-strong);
+}
+
+/* Image Modal */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-overlay-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  pointer-events: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.image-modal .modal-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.image-modal .modal-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.image-modal .modal-image-container img {
+  max-width: 98vw;
+  max-height: 98vh;
+  object-fit: contain;
+  border-radius: var(--inner-border-radius);
+  pointer-events: auto;
+}
+
+/* Modal video styles */
+.image-modal .video-container {
+  pointer-events: auto;
+}
+
+.image-modal .video-container video {
+  pointer-events: auto;
+}
+
+.image-modal .modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--accent-primary);
+  border: 2px solid var(--accent-secondary);
+  color: var(--text-inverse);
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: var(--z-modal);
+  width: 50px;
+  height: 50px;
+  border-radius: var(--round-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--theme-transition);
+  pointer-events: auto;
+}
+
+.image-modal .modal-close:hover {
+  background: var(--accent-secondary);
+  transform: scale(1.1);
+}
+
+.image-modal .modal-prev,
+.image-modal .modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--accent-primary);
+  border: 2px solid var(--accent-secondary);
+  color: var(--text-inverse);
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  border-radius: var(--inner-border-radius);
+  transition: all var(--theme-transition);
+  z-index: var(--z-modal);
+  pointer-events: auto;
+}
+
+.image-modal .modal-prev:hover,
+.image-modal .modal-next:hover {
+  background: var(--accent-secondary);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.image-modal .modal-prev {
+  left: 20px;
+}
+
+.image-modal .modal-next {
+  right: 20px;
+}
+
+.image-modal .modal-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-inverse);
+  font-size: 1.2rem;
+  background: var(--accent-primary);
+  border: 2px solid var(--accent-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--pill-border-radius);
+  pointer-events: auto;
+  transition: all var(--theme-transition);
+  font-weight: 500;
+}
+
+.modal-video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--accent-primary);
+  border: 2px solid var(--accent-secondary);
+  color: var(--text-inverse);
+  padding: 1rem;
+  border-radius: var(--inner-border-radius);
+  text-align: center;
+}
+
+.modal-play-button {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Project Links */
+.project-links {
+  margin-top: 1rem;
+}
+
+.project-links,
+.project-resources-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-resources-list {
+  margin-top: 0.5rem;
+}
+
+/* .project-resource-link is a .btn--primary with a leading icon by link type */
+.project-resource-link:before {
+  content: "";
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E");
+}
+
+.project-resource-link[href*="doi"]:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+}
+
+.project-resource-link[href$=".pdf"]:before,
+.project-resource-link[href*="pdf"]:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z'/%3E%3C/svg%3E");
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .project-card-wrapper {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Image Gallery Responsive */
+  .image-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .image-item img {
+    height: 160px;
+  }
+
+  /* Modal Responsive */
+  .image-modal .modal-prev,
+  .image-modal .modal-next {
+    font-size: 2rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .image-modal .modal-prev {
+    left: 10px;
+  }
+
+  .image-modal .modal-next {
+    right: 10px;
+  }
+
+  .image-modal .modal-close {
+    font-size: 2rem;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .image-modal .modal-counter {
+    bottom: 10px;
+    font-size: 1rem;
+  }
+
+  .image-modal .modal-image-container img {
+    max-height: 90vh;
+  }
+}

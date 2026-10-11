@@ -1,0 +1,390 @@
+/* Layout — site chrome shared by every page: top navigation, page <section>
+   wrapper, page intro, and the section nav / floating section dock. */
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg-nav);
+  backdrop-filter: blur(10px);
+  z-index: var(--z-nav);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  transition:
+    transform 0.3s ease-in-out,
+    background-color var(--theme-transition),
+    border-color var(--theme-transition);
+}
+
+/* Navigation container for flex layout */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navigation visibility states for mobile */
+nav.nav-visible {
+  transform: translateY(0);
+}
+
+nav.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* Main content spacing to account for fixed navigation */
+.main-content {
+  margin-top: 70px; /* Simple fixed value */
+  transition: margin-top 0.3s ease-in-out;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--button-border-radius);
+  transition: all var(--theme-transition);
+  white-space: nowrap;
+  min-width: fit-content;
+  text-align: center;
+}
+
+nav a:hover,
+nav a.active {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+/* Theme toggle matches the height of the small CV button beside it */
+.nav-controls .btn--icon {
+  width: 2rem;
+  height: 2rem;
+  border-width: 1px;
+}
+
+.nav-controls .btn--icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Keep the CV button compact on mobile (overrides the nav link touch-target rule) */
+.nav-controls .btn {
+  min-height: 0;
+}
+
+/* Navigation Controls Container */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Centered lead paragraph under each page title */
+.page-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+/* Static section nav: row of .btn--soft tabs */
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.section-nav .btn {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+/* Static nav: normal flow under the page title */
+.section-nav--static {
+  margin-bottom: 2rem;
+}
+
+/* Floating section dock: back-to-top + current section + section menu */
+.section-dock {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: var(--z-floating);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.section-dock.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.section-dock-bar {
+  display: flex;
+  align-items: center;
+  background: var(--bg-nav);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-border-radius);
+  padding: 0.3rem;
+}
+
+.section-dock-btn,
+.section-dock-current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  border-radius: var(--button-border-radius);
+  font: inherit;
+  transition: background var(--theme-transition), color var(--theme-transition);
+}
+
+.section-dock-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+}
+
+.section-dock-current {
+  height: 2.25rem;
+  padding: 0 0.6rem 0 0.8rem;
+  font-size: 0.85rem;
+  max-width: 260px;
+}
+
+.section-dock-btn:hover,
+.section-dock-current:hover,
+.section-dock.open .section-dock-current {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+.section-dock-btn:focus-visible,
+.section-dock-current:focus-visible,
+.section-dock-menu a:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: -2px;
+}
+
+.section-dock-divider {
+  width: 1px;
+  height: 1.25rem;
+  margin: 0 0.25rem;
+  background: var(--border-color);
+}
+
+.section-dock-current-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.section-dock-chevron {
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.section-dock.open .section-dock-chevron {
+  transform: rotate(180deg);
+}
+
+/* Section menu pane (opens above the bar) */
+.section-dock-menu {
+  width: 220px;
+  max-height: min(60vh, 420px);
+  overflow-y: auto;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-border-radius);
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.98);
+  transform-origin: bottom left;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility 0s linear 0.15s;
+}
+
+.section-dock.open .section-dock-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility 0s;
+}
+
+.section-dock-menu-header {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.3rem 0.6rem 0.35rem;
+}
+
+.section-dock-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-dock-menu li {
+  margin: 0;
+}
+
+.section-dock-menu li + li {
+  border-top: 1px solid var(--border-color);
+  margin-top: 0.125rem;
+  padding-top: 0.125rem;
+}
+
+.section-dock-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--inner-border-radius);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background var(--theme-transition), color var(--theme-transition);
+}
+
+.section-dock-menu a:hover {
+  background: var(--bg-secondary);
+}
+
+.section-dock-menu a.active {
+  background: var(--accent-light);
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (min-width: 769px) {
+  nav.nav-hidden {
+    transform: translateY(0) !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  nav ul {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body.nav-hidden .main-content {
+    margin-top: 0;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Controls (CV, theme toggle) sit above the links on mobile */
+  .nav-controls {
+    order: -1;
+  }
+
+  /* Ensure navigation transitions work smoothly on mobile */
+  nav {
+    will-change: transform;
+    padding: 0.75rem 1rem;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  /* Mobile-friendly navigation links */
+  nav a {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    min-height: 44px; /* Recommended touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-dock {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .section-dock-menu {
+    width: 100%;
+  }
+
+  .section-dock-current {
+    max-width: calc(100vw - 6rem);
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.5rem;
+  }
+
+  nav ul {
+    gap: 0.25rem;
+  }
+
+  nav a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 5rem 1rem 2rem;
+  }
+}

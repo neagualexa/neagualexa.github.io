@@ -81,7 +81,7 @@ const ProjectCard = ({ project }) => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn--primary btn--sm publication-link"
+                  className="btn btn--primary btn--sm project-resource-link"
                 >
                   {resource.text}
                 </a>

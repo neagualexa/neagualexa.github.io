@@ -1,0 +1,26 @@
+/* Media — dark-mode treatment for images and icons across all pages. */
+
+/* Dark mode: transparent PNGs (logos, diagrams) get a light backing so dark artwork stays visible */
+.dark-theme img[src*=".png" i] {
+  background-color: var(--image-backing);
+  border-radius: var(--inner-border-radius);
+  padding: 4px;
+}
+
+.dark-theme .project-card img[src*=".png" i] {
+  padding: 8px;
+}
+
+/* Photos are shown as-is */
+.dark-theme .profile-image img,
+.dark-theme .modal-image-container img {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Monochrome icons inside buttons (GitHub, LinkedIn) are inverted instead */
+.dark-theme .btn img {
+  background-color: transparent;
+  padding: 0;
+  filter: invert(1);
+}
