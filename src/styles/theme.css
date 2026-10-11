@@ -4,7 +4,7 @@
    1. Tokens      CSS custom properties: colors (light + dark), radii,
                   motion, layering, typography.
    2. Primitives  Shared building blocks used across pages:
-                  .btn (+ variants/sizes), .card, .tag.
+                  .btn (+ variants/sizes), .card, .toolbar, .tag.
 
    Change a token here and it updates everywhere. Page and component styles
    live in the sibling files (see index.css) and should only reference these
@@ -235,6 +235,64 @@
 .card--muted {
   background: var(--bg-secondary);
   border-color: transparent;
+}
+
+/* Toolbar: frosted floating bar of compact icon/text buttons
+   (section dock, image viewer controls)
+   Parts:  toolbar__btn (square 2.25rem; widen with padding for text),
+           toolbar__divider, toolbar__text (non-interactive label) */
+.toolbar {
+  display: flex;
+  align-items: center;
+  background: var(--bg-nav);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-border-radius);
+  padding: 0.3rem;
+}
+
+.toolbar__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--button-border-radius);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+  transition: background var(--theme-transition), color var(--theme-transition);
+}
+
+.toolbar__btn:hover {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+.toolbar__btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: -2px;
+}
+
+.toolbar__divider {
+  width: 1px;
+  height: 1.25rem;
+  margin: 0 0.25rem;
+  background: var(--border-color);
+}
+
+.toolbar__text {
+  padding: 0 0.6rem;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 /* Tags / chips */

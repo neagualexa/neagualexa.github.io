@@ -151,64 +151,24 @@ section {
   pointer-events: auto;
 }
 
-.section-dock-bar {
-  display: flex;
-  align-items: center;
-  background: var(--bg-nav);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--border-color);
-  border-radius: var(--card-border-radius);
-  padding: 0.3rem;
-}
-
-.section-dock-btn,
+/* The bar itself is a .toolbar (theme.css); the current-section button is a
+   text-width .toolbar__btn that stays highlighted while the menu is open */
 .section-dock-current {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: transparent;
-  border: none;
-  color: var(--text-primary);
-  cursor: pointer;
-  border-radius: var(--button-border-radius);
-  font: inherit;
-  transition: background var(--theme-transition), color var(--theme-transition);
-}
-
-.section-dock-btn {
-  width: 2.25rem;
-  height: 2.25rem;
-  flex-shrink: 0;
-}
-
-.section-dock-current {
-  height: 2.25rem;
+  width: auto;
+  flex-shrink: 1;
   padding: 0 0.6rem 0 0.8rem;
   font-size: 0.85rem;
   max-width: 260px;
 }
 
-.section-dock-btn:hover,
-.section-dock-current:hover,
 .section-dock.open .section-dock-current {
   background: var(--accent-primary);
   color: var(--text-inverse);
 }
 
-.section-dock-btn:focus-visible,
-.section-dock-current:focus-visible,
 .section-dock-menu a:focus-visible {
   outline: var(--focus-ring);
   outline-offset: -2px;
-}
-
-.section-dock-divider {
-  width: 1px;
-  height: 1.25rem;
-  margin: 0 0.25rem;
-  background: var(--border-color);
 }
 
 .section-dock-current-text {

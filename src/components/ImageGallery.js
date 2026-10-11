@@ -58,7 +58,7 @@ const ImageGallery = ({ images = [], videos = [], projectTitle }) => {
           break;
         case " ":
           if (allMedia[currentIndex]?.type === "video") {
-            const video = document.querySelector(".video-container video");
+            const video = document.querySelector(".modal-stage video");
             if (video && document.activeElement !== video) {
               e.preventDefault();
               video.paused ? video.play() : video.pause();
@@ -208,29 +208,50 @@ const ImageGallery = ({ images = [], videos = [], projectTitle }) => {
 
       {isModalOpen &&
         createPortal(
-          <div className="image-modal" onClick={handleModalClick}>
-            <div className="modal-content">
+          <div
+            className="image-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${projectTitle} media viewer`}
+            onClick={handleModalClick}
+          >
+            <div className="modal-stage" onClick={handleModalClick}>
+              {renderModalContent()}
+            </div>
+
+            <div className="toolbar modal-toolbar">
+              {allMedia.length > 1 && (
+                <>
+                  <button
+                    className="toolbar__btn"
+                    onClick={() => navigate("prev")}
+                    aria-label="Previous"
+                    title="Previous (←)"
+                  >
+                    <Icon d="M15 18l-6-6 6-6" />
+                  </button>
+                  <span className="toolbar__text">
+                    {currentIndex + 1} / {allMedia.length}
+                  </span>
+                  <button
+                    className="toolbar__btn"
+                    onClick={() => navigate("next")}
+                    aria-label="Next"
+                    title="Next (→)"
+                  >
+                    <Icon d="M9 18l6-6-6-6" />
+                  </button>
+                  <span className="toolbar__divider" aria-hidden="true" />
+                </>
+              )}
               <button
-                className="modal-close"
+                className="toolbar__btn"
                 onClick={() => setIsModalOpen(false)}
+                aria-label="Close"
+                title="Close (Esc)"
               >
-                ×
+                <Icon d="M18 6L6 18M6 6l12 12" />
               </button>
-
-              <div className="modal-image-container">
-                <button className="modal-prev" onClick={() => navigate("prev")}>
-                  ‹
-                </button>
-                <button className="modal-next" onClick={() => navigate("next")}>
-                  ›
-                </button>
-
-                {renderModalContent()}
-              </div>
-
-              <div className="modal-counter">
-                {currentIndex + 1} / {allMedia.length}
-              </div>
             </div>
           </div>,
           document.body
@@ -245,62 +266,51 @@ const ImageGallery = ({ images = [], videos = [], projectTitle }) => {
     const mediaPath = getMediaPath(currentMedia);
     if (!mediaPath) return null;
 
-    const modalStyle = {
-      maxWidth: "calc(100% - 120px)",
-      maxHeight: "calc(100% - 80px)",
-      width: "auto",
-      height: "auto",
-      margin: "0 60px 40px 60px",
-    };
-
     if (currentMedia.type === "video") {
       return (
-        <div
-          className="video-container"
-          style={{
-            ...modalStyle,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            pointerEvents: "auto",
-          }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <video
-            src={mediaPath}
-            controls
-            autoPlay
-            alt={`${projectTitle} - Video ${currentIndex + 1}`}
-            style={{
-              maxWidth: "100%",
-              maxHeight: "100%",
-              width: "auto",
-              height: "auto",
-              cursor: "auto",
-            }}
-            onClick={(e) => e.stopPropagation()}
-            onMouseDown={(e) => e.stopPropagation()}
-            onMouseUp={(e) => e.stopPropagation()}
-          />
-        </div>
+        <video
+          key={mediaPath}
+          src={mediaPath}
+          controls
+          autoPlay
+          aria-label={`${projectTitle} - Video ${currentIndex + 1}`}
+        />
       );
     }
 
     return (
       <>
         <img
+          key={mediaPath}
           src={mediaPath}
           alt={`${projectTitle} - ${currentIndex + 1}`}
-          style={modalStyle}
         />
         {isVideoThumbnail(currentMedia.src) && (
-          <div className="modal-video-overlay">
-            <div className="modal-play-button">▶</div>
+          <div className="modal-video-overlay" aria-hidden="true">
+            ▶
           </div>
         )}
       </>
     );
   }
+};
+
+// Stroke icon matching the section dock's icons
+const Icon = ({ d }) => (
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path
+      d={d}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+Icon.propTypes = {
+  d: PropTypes.string.isRequired,
 };
 
 ImageGallery.propTypes = {

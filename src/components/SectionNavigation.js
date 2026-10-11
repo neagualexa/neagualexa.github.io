@@ -99,9 +99,9 @@ const StickyNav = ({ navigation, onNavClick, activeSection, visible }) => {
         </ul>
       </div>
 
-      <div className="section-dock-bar">
+      <div className="toolbar">
         <button
-          className="section-dock-btn"
+          className="toolbar__btn"
           onClick={scrollToTop}
           aria-label="Back to top"
           title="Back to top"
@@ -119,10 +119,10 @@ const StickyNav = ({ navigation, onNavClick, activeSection, visible }) => {
           </svg>
         </button>
 
-        <span className="section-dock-divider" aria-hidden="true" />
+        <span className="toolbar__divider" aria-hidden="true" />
 
         <button
-          className="section-dock-current"
+          className="toolbar__btn section-dock-current"
           onClick={() => setIsOpen((open) => !open)}
           aria-expanded={isOpen}
           aria-controls="section-dock-menu"

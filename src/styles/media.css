@@ -13,7 +13,7 @@
 
 /* Photos are shown as-is */
 .dark-theme .profile-image img,
-.dark-theme .modal-image-container img {
+.dark-theme .modal-stage img {
   background-color: transparent;
   padding: 0;
 }

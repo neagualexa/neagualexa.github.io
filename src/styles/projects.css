@@ -139,148 +139,61 @@
   background: var(--bg-overlay-strong);
 }
 
-/* Image Modal */
+/* Image modal: full-screen viewer. Media sits on a blurred backdrop; controls
+   live in one .toolbar (theme.css) at the bottom, like the section dock. */
 .image-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--bg-overlay-strong);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  inset: 0;
   z-index: var(--z-modal);
-  pointer-events: auto;
-  width: 100vw;
-  height: 100vh;
+  background: var(--bg-overlay-strong);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
-.image-modal .modal-content {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+/* Area the media fits inside, leaving room for the toolbar below */
+.modal-stage {
+  position: absolute;
+  inset: 2rem 2rem 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
 }
 
-.image-modal .modal-image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.image-modal .modal-image-container img {
-  max-width: 98vw;
-  max-height: 98vh;
+.modal-stage img,
+.modal-stage video {
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   border-radius: var(--inner-border-radius);
-  pointer-events: auto;
 }
 
-/* Modal video styles */
-.image-modal .video-container {
-  pointer-events: auto;
-}
-
-.image-modal .video-container video {
-  pointer-events: auto;
-}
-
-.image-modal .modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: var(--accent-primary);
-  border: 2px solid var(--accent-secondary);
-  color: var(--text-inverse);
-  font-size: 2.5rem;
-  cursor: pointer;
-  z-index: var(--z-modal);
-  width: 50px;
-  height: 50px;
-  border-radius: var(--round-border-radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--theme-transition);
-  pointer-events: auto;
-}
-
-.image-modal .modal-close:hover {
-  background: var(--accent-secondary);
-  transform: scale(1.1);
-}
-
-.image-modal .modal-prev,
-.image-modal .modal-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--accent-primary);
-  border: 2px solid var(--accent-secondary);
-  color: var(--text-inverse);
-  font-size: 3rem;
-  cursor: pointer;
-  padding: 1rem 1.5rem;
-  border-radius: var(--inner-border-radius);
-  transition: all var(--theme-transition);
-  z-index: var(--z-modal);
-  pointer-events: auto;
-}
-
-.image-modal .modal-prev:hover,
-.image-modal .modal-next:hover {
-  background: var(--accent-secondary);
-  transform: translateY(-50%) scale(1.05);
-}
-
-.image-modal .modal-prev {
-  left: 20px;
-}
-
-.image-modal .modal-next {
-  right: 20px;
-}
-
-.image-modal .modal-counter {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--text-inverse);
-  font-size: 1.2rem;
-  background: var(--accent-primary);
-  border: 2px solid var(--accent-secondary);
-  padding: 0.5rem 1rem;
-  border-radius: var(--pill-border-radius);
-  pointer-events: auto;
-  transition: all var(--theme-transition);
-  font-weight: 500;
-}
-
+/* Play badge on video thumbnails */
 .modal-video-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--accent-primary);
-  border: 2px solid var(--accent-secondary);
-  color: var(--text-inverse);
-  padding: 1rem;
-  border-radius: var(--inner-border-radius);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding-left: 0.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--round-border-radius);
+  background: var(--bg-nav);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  pointer-events: none;
 }
 
-.modal-play-button {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+.modal-toolbar {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Project Links */
@@ -338,35 +251,11 @@
     height: 160px;
   }
 
-  /* Modal Responsive */
-  .image-modal .modal-prev,
-  .image-modal .modal-next {
-    font-size: 2rem;
-    padding: 0.8rem 1rem;
+  .modal-stage {
+    inset: 1rem 0.5rem 4.5rem;
   }
 
-  .image-modal .modal-prev {
-    left: 10px;
-  }
-
-  .image-modal .modal-next {
-    right: 10px;
-  }
-
-  .image-modal .modal-close {
-    font-size: 2rem;
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-  }
-
-  .image-modal .modal-counter {
-    bottom: 10px;
-    font-size: 1rem;
-  }
-
-  .image-modal .modal-image-container img {
-    max-height: 90vh;
+  .modal-toolbar {
+    bottom: 1rem;
   }
 }

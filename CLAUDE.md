@@ -107,6 +107,7 @@ To update site content, edit the relevant JSON file — no component code change
 - Shared primitives in `theme.css`:
   - `.btn` + `btn--primary` / `--secondary` / `--neutral` / `--soft`, sizes `btn--sm` / `btn--icon`
   - `.card` (+ `card--muted`) — the one card style for every page: a single 1px `--border-color` line, no shadow (no shadows anywhere on the site)
+  - `.toolbar` (+ `toolbar__btn`, `toolbar__divider`, `toolbar__text`) — frosted floating control bar, used by the section dock and the image viewer
   - `.tag`
 - Page files reference tokens only — no raw colors, radii or shadows there or in components
 - Each page file keeps its own responsive rules at the bottom under a "Responsive" heading
