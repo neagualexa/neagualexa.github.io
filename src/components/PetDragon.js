@@ -439,7 +439,7 @@ const PetDragon = () => {
       className="pet-dragon"
       aria-label="Pet dragon: click to let it follow your cursor"
       aria-pressed="false"
-      title="Click me!"
+      title="Pet me"
     >
       <canvas ref={canvasRef} />
       <span ref={zRef} className="pet-z" aria-hidden="true">
