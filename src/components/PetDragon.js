@@ -5,17 +5,24 @@ import { petMouth } from "./petMouth";
 
 // A pet dragon for the home page, drawn from above (see drawDragon.js).
 // Its home is a corner of the contact card. Click it and it follows your
-// cursor (click it again to send it home). Once you scroll down to the news it
-// flies onto the timeline line and follows you down it, eating each dot it
-// passes; they grow back when you scroll up. It naps on its perch when nothing
-// is happening, waking now and then to fly a little figure-eight (∞) around it
-// or to move to another of its perches.
+// cursor (click it again to send it home); on a touch screen there's no
+// cursor, so a tap just sends it round a little ∞ instead. Once you scroll
+// down to the news it flies onto the timeline line and follows you down it,
+// eating each dot it passes; they grow back when you scroll up. It naps on its
+// perch when nothing is happening, waking now and then to fly a little
+// figure-eight (∞) around it or to move to another of its perches.
+// With prefers-reduced-motion it stays calm: it never flies off on its own
+// (a tap just wakes it), and its wings and breathing are gentler, but it
+// glides along with your scrolling, sways its tail, blinks and chomps.
 // Lives directly inside #home, which it uses as its coordinate space.
 
 const FOLLOW = 0.4; // where on screen it flies to on the line (fraction of viewport)
 const FOLLOW_END = 0.85; // ...sliding down to here as you reach the page bottom
-const EASE = 0.08; // how quickly it catches up each frame
+const EASE = 0.08; // how quickly it catches up per 60fps frame
 const TURN_SPEED = 2.5; // rad/s it turns at, in every mode
+const LINE_TURN_SPEED = 7; // rad/s on (and flying to) the line, so it never faces the wrong way for long
+const MOVING = 18; // px/s it must be going to count as flying
+const LINE_UP = 150; // px/s it must be going up the line before it turns to face up
 const LINE_SCALE = 0.7; // drawn smaller on the line (matches home.css)
 const BITE_MS = 280; // length of one chomp of the head
 const NAP_AFTER = 1500; // ms without scrolling or mouse moves before it naps
@@ -58,7 +65,7 @@ const PetDragon = () => {
     const z = zRef.current;
     const ctx = canvas.getContext("2d");
     const home = pet.parentElement;
-    const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let size = 0; // px, the pet's box
     let headDist = 0; // px from the box center to the tip of the snout
@@ -78,6 +85,7 @@ const PetDragon = () => {
     let flight = null; // its own outing under way: an ∞ loop or a move to another perch
     let flightTimer = null;
     let wasMoving = false;
+    let lineUp = false; // on the line: heading back up (you scrolled up) or down
     let wingPose = 0; // 0 folded … 1 spread, eased toward the target pose
     let time = 0;
     let last = 0;
@@ -167,6 +175,22 @@ const PetDragon = () => {
       pet.dataset.mode = mode;
     };
 
+    // The visible screen in #home coords, shrunk so the whole pet fits in it
+    const onScreen = () => {
+      const origin = home.getBoundingClientRect();
+      const half = size / 2;
+      return {
+        left: half - origin.left,
+        right: document.documentElement.clientWidth - origin.left - half,
+        top: half - origin.top,
+        bottom: window.innerHeight - origin.top - half,
+      };
+    };
+    const clampTo = (box, p) => ({
+      x: Math.min(Math.max(p.x, box.left), box.right),
+      y: Math.min(Math.max(p.y, box.top), box.bottom),
+    });
+
     const chomp = () => {
       biteAt = performance.now();
     };
@@ -186,7 +210,7 @@ const PetDragon = () => {
     // How far into a chomp the head is: 0 → 1 (jaws open) → 0
     const biteOf = (now) => {
       const p = (now - biteAt) / BITE_MS;
-      return still || p < 0 || p > 1 ? 0 : Math.sin(Math.PI * p);
+      return p < 0 || p > 1 ? 0 : Math.sin(Math.PI * p);
     };
 
     // ∞ (lemniscate of Gerono) crossing at the perch, so it starts and ends
@@ -231,7 +255,11 @@ const PetDragon = () => {
           wasMoving = true; // counts as a landing (see below)
         } else {
           const e = (1 - Math.cos(Math.PI * p)) / 2; // 0 → 1, eased
-          target = flight.kind === "loop" ? loopPoint(e) : movePoint(e);
+          // Never off the edge of the screen
+          target = clampTo(
+            onScreen(),
+            flight.kind === "loop" ? loopPoint(e) : movePoint(e),
+          );
         }
       }
       if (mode === "cursor") {
@@ -250,31 +278,42 @@ const PetDragon = () => {
         };
       }
 
-      let vx = (target.x - pos.x) * (still ? 1 : EASE);
-      let vy = (target.y - pos.y) * (still ? 1 : EASE);
+      // Same catch-up whatever the refresh rate (60Hz, 120Hz phones...)
+      const ease = 1 - Math.pow(1 - EASE, dt * 60);
+      let vx = (target.x - pos.x) * ease;
+      let vy = (target.y - pos.y) * ease;
       // Flying home after you steered it, it glides at a steady top speed
       const glide = GLIDE_SPEED * dt;
       const speed = Math.hypot(vx, vy);
-      if (mode === "perch" && !flight && !still && speed > glide) {
+      if (mode === "perch" && !flight && speed > glide) {
         vx *= glide / speed;
         vy *= glide / speed;
       }
       pos = { x: pos.x + vx, y: pos.y + vy };
-      const moving = Math.hypot(vx, vy) > 0.3;
+      const moving = dt > 0 && Math.hypot(vx, vy) / dt > MOVING;
       // Landing on its perch starts the countdown to its next outing
       if (mode === "perch" && !flight && wasMoving && !moving) restartOutings();
       wasMoving = moving;
 
-      // Face the cursor; otherwise the way it's flying, and once it stops,
-      // down the line or the way its perch faces
+      // On the line it faces straight down it, and only turns round to face
+      // up when you scroll back up properly (not for a small bounce or
+      // nudge); the sideways settling onto the line doesn't turn it
+      const onLine = mode === "line" && Math.abs(goal.x - pos.x) < size / 2;
+      if (!onLine) lineUp = false;
+      else if (dt > 0 && -vy / dt > LINE_UP) lineUp = true;
+      else if (vy > 0) lineUp = false;
+
+      // Face the cursor; on the line, along it; otherwise the way it's
+      // flying, and once it stops, the way its perch faces
       let face;
       if (mode === "cursor")
         face = Math.atan2(goal.x - pos.x, -(goal.y - pos.y));
+      else if (onLine) face = lineUp ? 0 : Math.PI;
       else if (moving) face = Math.atan2(vx, -vy);
       else face = mode === "line" ? Math.PI : perchFace;
       const turn = turnTo(heading, face);
-      const maxTurn = TURN_SPEED * dt;
-      heading += still ? turn : Math.max(-maxTurn, Math.min(maxTurn, turn));
+      const maxTurn = (mode === "line" ? LINE_TURN_SPEED : TURN_SPEED) * dt;
+      heading += Math.max(-maxTurn, Math.min(maxTurn, turn));
 
       const turning = Math.abs(turn) > 0.02; // still swinging round to face its way
       const awake =
@@ -301,15 +340,16 @@ const PetDragon = () => {
         : null;
 
       // Wings beat while awake and fold slowly (~1s) once it naps; the tail
-      // always sways
+      // always sways. Calm: slower, and the wings only breathe half open
       if (staleColors.current) readColors();
-      time += dt * (still ? 0 : awake ? 1.3 : 0.35);
+      time += dt * (awake ? (calm ? 0.6 : 1.3) : 0.35);
       const flap = (Math.sin(time * 3.2) + 1) / 2;
+      const spread = calm ? 0.45 + 0.2 * flap : flap;
       wingPose +=
-        ((awake ? flap : 0) - wingPose) * Math.min(1, dt * (awake ? 12 : 2.5));
-      const wings = still ? 0.7 : wingPose;
+        ((awake ? spread : 0) - wingPose) *
+        Math.min(1, dt * (awake ? 12 : 2.5));
       const u = size / 2.3;
-      const lift = awake && !still ? 1 + 0.035 * Math.cos(time * 3.2 - 1) : 1;
+      const lift = awake && !calm ? 1 + 0.035 * Math.cos(time * 3.2 - 1) : 1;
       ctx.clearRect(0, 0, size, size);
       drawDragon(
         ctx,
@@ -317,7 +357,7 @@ const PetDragon = () => {
         size / 2 - 0.3 * u,
         u * lift,
         time,
-        wings,
+        wingPose,
         colors,
         {
           eyesClosed: !awake, // eyes shut while it naps
@@ -352,10 +392,72 @@ const PetDragon = () => {
       cursor = null;
       wake();
     };
+    // A mouse click toggles following the cursor; with no cursor to follow
+    // (a tap on a touch screen) it flies a little ∞ for you instead
+    let tapType = "mouse";
+    const onPointerDown = (e) => {
+      tapType = e.pointerType;
+    };
     const onClick = () => {
+      if (tapType !== "mouse") {
+        wake();
+        if (mode === "perch" && !flight && !calm) takeOff("loop");
+        return;
+      }
       following = !following;
       pet.setAttribute("aria-pressed", following);
       wake();
+    };
+
+    // Start one of its outings: a little ∞ round its perch, or a move to
+    // another perch
+    const takeOff = (kind) => {
+      if (kind === "move") {
+        // Only between perches that are both on screen
+        const box = onScreen();
+        const seen = (p) =>
+          p.x >= box.left &&
+          p.x <= box.right &&
+          p.y >= box.top &&
+          p.y <= box.bottom;
+        const next = (spot + 1 + Math.floor(Math.random() * 3)) % 4;
+        if (!seen(pos) || !seen(perches(home.getBoundingClientRect())[next]))
+          return;
+        const from = { ...pos };
+        spot = next;
+        aim();
+        const dist = Math.hypot(goal.x - from.x, goal.y - from.y);
+        flight = {
+          kind: "move",
+          start: performance.now(),
+          ms: Math.max(3000, (dist / FLIGHT_SPEED) * 1000),
+          from,
+          arc: dist * 0.15 * (Math.random() < 0.5 ? -1 : 1),
+        };
+      } else {
+        // Small enough to stay on screen round its perch: the ∞ reaches r
+        // across its facing and r/2 along it
+        const box = onScreen();
+        const cos = Math.abs(Math.cos(perchFace));
+        const sin = Math.abs(Math.sin(perchFace));
+        const room = Math.min(
+          (Math.min(goal.x - box.left, box.right - goal.x) || 0) /
+            (cos + sin / 2),
+          (Math.min(goal.y - box.top, box.bottom - goal.y) || 0) /
+            (sin + cos / 2),
+        );
+        const r = Math.min(rand(...FLIGHT_WIDTH), room);
+        if (r < FLIGHT_WIDTH[0] / 2) return; // no room for a loop here
+        const laps = Math.random() < 0.5 ? 1 : 2;
+        flight = {
+          kind: "loop",
+          start: performance.now(),
+          ms: laps * rand(...FLIGHT_LAP_MS),
+          r,
+          dir: Math.random() < 0.5 ? -1 : 1,
+          laps,
+        };
+      }
     };
 
     // Its own outings: while it's home and not following you, it rests for
@@ -363,35 +465,11 @@ const PetDragon = () => {
     // counts from its last landing or your last scroll, click or steer.
     const restartOutings = () => {
       clearTimeout(flightTimer);
-      if (still) return;
+      if (calm) return; // no outings of its own when calm
       flightTimer = setTimeout(
         () => {
-          if (mode === "perch" && !following && !document.hidden) {
-            if (Math.random() < 0.5) {
-              // Move house: fly to a different perch
-              const from = { ...pos };
-              spot = (spot + 1 + Math.floor(Math.random() * 3)) % 4;
-              aim();
-              const dist = Math.hypot(goal.x - from.x, goal.y - from.y);
-              flight = {
-                kind: "move",
-                start: performance.now(),
-                ms: Math.max(3000, (dist / FLIGHT_SPEED) * 1000),
-                from,
-                arc: dist * 0.15 * (Math.random() < 0.5 ? -1 : 1),
-              };
-            } else {
-              const laps = Math.random() < 0.5 ? 1 : 2;
-              flight = {
-                kind: "loop",
-                start: performance.now(),
-                ms: laps * rand(...FLIGHT_LAP_MS),
-                r: rand(...FLIGHT_WIDTH),
-                dir: Math.random() < 0.5 ? -1 : 1,
-                laps,
-              };
-            }
-          }
+          if (mode === "perch" && !following && !document.hidden && !flight)
+            takeOff(Math.random() < 0.5 ? "move" : "loop");
           if (!flight) restartOutings(); // no outing started: rest another round
         },
         rand(...FLIGHT_EVERY),
@@ -416,6 +494,7 @@ const PetDragon = () => {
     window.addEventListener("scroll", wake, { passive: true });
     window.addEventListener("pointermove", onPointerMove, { passive: true });
     document.documentElement.addEventListener("mouseleave", onMouseLeave);
+    pet.addEventListener("pointerdown", onPointerDown);
     pet.addEventListener("click", onClick);
 
     return () => {
@@ -428,6 +507,7 @@ const PetDragon = () => {
       window.removeEventListener("scroll", wake);
       window.removeEventListener("pointermove", onPointerMove);
       document.documentElement.removeEventListener("mouseleave", onMouseLeave);
+      pet.removeEventListener("pointerdown", onPointerDown);
       pet.removeEventListener("click", onClick);
     };
   }, []);

@@ -66,9 +66,9 @@ To update site content, edit the relevant JSON file — no component code change
 - `IntroSection.js` — Welcome hero section
 - `ContactSection.js` — Contact info and social links
 - `SocialLink.js` — Individual social media link with icon
-- `MagicField.js` — Interactive stardust canvas behind the hero (motes that form constellations around the cursor; the pet dragon eats them, and they reappear); colors from the `--magic-*` tokens, static under `prefers-reduced-motion`
+- `MagicField.js` — Interactive stardust canvas behind the hero (motes that form constellations around the cursor; the pet dragon eats them, and they reappear); colors from the `--magic-*` tokens, under `prefers-reduced-motion` the motes only twinkle in place
 - `NewsTimeline.js` — News list from `newsData.json` (upcoming, then by year)
-- `PetDragon.js` — Pet dragon: lives on a corner of the contact card (moves between corners now and then), follows the cursor after you click it (click again to send it home), and flies down the news timeline line as you scroll, eating the dots (they grow back on the way up); also eats hero stardust it flies near (via `petMouth.js`); naps only on its corner, waking every 10–25s to fly a little figure-eight (∞) or move to another corner. Colors from the `--dragon-*` tokens
+- `PetDragon.js` — Pet dragon: lives on a corner of the contact card (moves between corners now and then), follows the cursor after you click it with a mouse (click again to send it home; a touch tap only makes it fly a little ∞, it never follows), and flies down the news timeline line as you scroll (facing down it, only turning round when you scroll back up properly), eating the dots (they grow back on the way up); also eats hero stardust it flies near (via `petMouth.js`); naps only on its corner, waking every 10–25s to fly a little figure-eight (∞) or move to another corner. Under `prefers-reduced-motion` it's calm rather than frozen: no outings of its own, gentler wings, but it still follows your scroll. Colors from the `--dragon-*` tokens
 - `drawDragon.js` — Canvas drawing of the top-down dragon (from the "Dragon Overhead" sketch) used by `PetDragon.js`
 
 **Projects Page:**

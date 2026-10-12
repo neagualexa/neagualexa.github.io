@@ -6,7 +6,8 @@ import { petMouth } from "./petMouth";
 // into constellations near the cursor. The pet dragon eats any it flies close
 // to (they reappear elsewhere a few seconds later). Colors come from the
 // --magic-* tokens.
-// With prefers-reduced-motion the motes are drawn once and stay still.
+// With prefers-reduced-motion the motes stay where they are and only twinkle
+// (and still light up near the cursor, and get eaten and grow back).
 
 const MAGIC_TOKENS = ["--magic-mint", "--magic-iris", "--magic-rose"];
 const MOTE_AREA = 9000; // one mote per this many px² of hero
@@ -35,20 +36,18 @@ const MagicField = () => {
   const canvasRef = useRef(null);
   const { isDarkMode } = useTheme();
   const themeRef = useRef({ isDarkMode, stale: true });
-  const redrawRef = useRef(null);
 
   // The theme class is applied to <body> by the provider after this renders,
   // so only mark the colors stale here and re-read them on the next frame.
   useEffect(() => {
     themeRef.current = { isDarkMode, stale: true };
-    if (redrawRef.current) redrawRef.current();
   }, [isDarkMode]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const host = canvas.parentElement;
     const ctx = canvas.getContext("2d");
-    const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let width = 0;
     let height = 0;
@@ -73,7 +72,6 @@ const MagicField = () => {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       const count = Math.round((width * height) / MOTE_AREA);
       motes = Array.from({ length: count }, () => makeMote(width, height));
-      if (still) requestAnimationFrame(() => draw());
     };
 
     // The dragon's mouth in this canvas's coordinates (null if it's away)
@@ -105,11 +103,12 @@ const MagicField = () => {
             petMouth.chomp();
             continue;
           }
-          if (d < SNIFF) {
+          if (d < SNIFF && !calm) {
             m.vx += (dx / d) * 0.08;
             m.vy += (dy / d) * 0.08;
           }
         }
+        if (calm) continue; // twinkle in place, no drifting
         if (pointer) {
           const dx = pointer.x - m.x;
           const dy = pointer.y - m.y;
@@ -194,11 +193,6 @@ const MagicField = () => {
 
     const resizer = new ResizeObserver(resize);
     resizer.observe(host);
-
-    if (still) {
-      redrawRef.current = () => requestAnimationFrame(() => draw());
-      return () => resizer.disconnect();
-    }
 
     // Pause the animation while the hero is scrolled out of view
     const watcher = new IntersectionObserver(([entry]) => {

@@ -354,9 +354,20 @@
   }
 }
 
+/* Reduced motion: the z just fades in and out where it is */
+@keyframes pet-snooze-calm {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pet-dragon .pet-z {
-    animation: none;
+    animation-name: pet-snooze-calm;
   }
 }
 
