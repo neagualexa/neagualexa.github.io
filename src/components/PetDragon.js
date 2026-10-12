@@ -11,9 +11,6 @@ import { petMouth } from "./petMouth";
 // eating each dot it passes; they grow back when you scroll up. It naps on its
 // perch when nothing is happening, waking now and then to fly a little
 // figure-eight (∞) around it or to move to another of its perches.
-// With prefers-reduced-motion it stays calm: it never flies off on its own
-// (a tap just wakes it), and its wings and breathing are gentler, but it
-// glides along with your scrolling, sways its tail, blinks and chomps.
 // Lives directly inside #home, which it uses as its coordinate space.
 
 const FOLLOW = 0.4; // where on screen it flies to on the line (fraction of viewport)
@@ -65,7 +62,6 @@ const PetDragon = () => {
     const z = zRef.current;
     const ctx = canvas.getContext("2d");
     const home = pet.parentElement;
-    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let size = 0; // px, the pet's box
     let headDist = 0; // px from the box center to the tip of the snout
@@ -340,16 +336,14 @@ const PetDragon = () => {
         : null;
 
       // Wings beat while awake and fold slowly (~1s) once it naps; the tail
-      // always sways. Calm: slower, and the wings only breathe half open
+      // always sways
       if (staleColors.current) readColors();
-      time += dt * (awake ? (calm ? 0.6 : 1.3) : 0.35);
+      time += dt * (awake ? 1.3 : 0.35);
       const flap = (Math.sin(time * 3.2) + 1) / 2;
-      const spread = calm ? 0.45 + 0.2 * flap : flap;
       wingPose +=
-        ((awake ? spread : 0) - wingPose) *
-        Math.min(1, dt * (awake ? 12 : 2.5));
+        ((awake ? flap : 0) - wingPose) * Math.min(1, dt * (awake ? 12 : 2.5));
       const u = size / 2.3;
-      const lift = awake && !calm ? 1 + 0.035 * Math.cos(time * 3.2 - 1) : 1;
+      const lift = awake ? 1 + 0.035 * Math.cos(time * 3.2 - 1) : 1;
       ctx.clearRect(0, 0, size, size);
       drawDragon(
         ctx,
@@ -401,7 +395,7 @@ const PetDragon = () => {
     const onClick = () => {
       if (tapType !== "mouse") {
         wake();
-        if (mode === "perch" && !flight && !calm) takeOff("loop");
+        if (mode === "perch" && !flight) takeOff("loop");
         return;
       }
       following = !following;
@@ -465,7 +459,6 @@ const PetDragon = () => {
     // counts from its last landing or your last scroll, click or steer.
     const restartOutings = () => {
       clearTimeout(flightTimer);
-      if (calm) return; // no outings of its own when calm
       flightTimer = setTimeout(
         () => {
           if (mode === "perch" && !following && !document.hidden && !flight)

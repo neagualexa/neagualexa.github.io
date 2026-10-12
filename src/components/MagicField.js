@@ -6,8 +6,6 @@ import { petMouth } from "./petMouth";
 // into constellations near the cursor. The pet dragon eats any it flies close
 // to (they reappear elsewhere a few seconds later). Colors come from the
 // --magic-* tokens.
-// With prefers-reduced-motion the motes stay where they are and only twinkle
-// (and still light up near the cursor, and get eaten and grow back).
 
 const MAGIC_TOKENS = ["--magic-mint", "--magic-iris", "--magic-rose"];
 const MOTE_AREA = 9000; // one mote per this many px² of hero
@@ -47,7 +45,6 @@ const MagicField = () => {
     const canvas = canvasRef.current;
     const host = canvas.parentElement;
     const ctx = canvas.getContext("2d");
-    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let width = 0;
     let height = 0;
@@ -103,12 +100,11 @@ const MagicField = () => {
             petMouth.chomp();
             continue;
           }
-          if (d < SNIFF && !calm) {
+          if (d < SNIFF) {
             m.vx += (dx / d) * 0.08;
             m.vy += (dy / d) * 0.08;
           }
         }
-        if (calm) continue; // twinkle in place, no drifting
         if (pointer) {
           const dx = pointer.x - m.x;
           const dy = pointer.y - m.y;
